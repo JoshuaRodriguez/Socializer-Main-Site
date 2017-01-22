@@ -1,0 +1,190 @@
+/* CSS CLASSES */
+
+* {
+    font-family: 'Bitter', serif !important;
+}
+
+.site-header {
+    height: 80px;
+    width: 100%;
+    padding: 20px;
+}
+
+.site-logo {
+    font-family: 'Marck Script', cursive !important;
+    text-shadow: 2px 1px black;
+    font-size: 43px;
+    font-weight: 700;
+    margin-top: -2px;
+    color: white;
+    width: 144px;
+    float: left;
+}
+
+.hollow.signin.button {
+    border: 2.5px solid white !important;
+    border-radius: 5px;
+    color: white !important;
+    float: right;
+    font-size: 17px;
+    padding: 11px 17px 11px 17px;
+}
+
+.button.primary.sign.in {
+    float: right;
+    margin-right: 15px;
+    border-radius: 3px;
+    clear: both;
+    margin-top: 30px;
+}
+
+.background-image {
+    background: url('../images/beach-social.jpg') no-repeat;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-top: -80px;
+    height: 100vh;
+}
+
+.head-line {
+    width: 100%;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 1px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+.sub-head-line {
+    width: 100%;
+    color: white;
+    text-shadow: 2px 1px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(78%);
+    text-align: center;
+}
+
+.section-one {
+    margin-top: 120px;
+    margin-bottom: 85px;
+}
+
+.section-one>p {
+    width: 1056px;
+    color: #212121;
+    font-size: 22px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.create.profile {
+    background-color: #1777AE;
+    display: block;
+    color: #fefefe;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-two {
+    height: 441px;
+    background: url('../images/campfire.jpg') no-repeat;
+    background-repeat: no-repeat;
+    background-position: 50% 59%;
+    background-size: cover;
+}
+
+.site-footer {
+    height: 60px;
+    width: 100%;
+    background-color: #1777AE;
+    bottom: 0px;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-left: 36px;
+    padding-top: 22px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.blue-bolded-text {
+    color: #1777AE;
+}
+
+.modal.reset.text {
+    float: right;
+    margin-right: 15px;
+}
+
+.input.field {
+    border-radius: 3px;
+}
+
+.modal.window.text {
+    margin-left: 15px;
+    margin-top: 17px;
+    font-size: 27px;
+    color: #1777AE;
+}
+
+.reveal-overlay {
+    overflow-y: hidden;
+}
+
+
+/* CSS ID's */
+
+#checkbox {
+    margin-left: 15px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1155px) {
+    .head-line {
+        font-size: 40px;
+    }
+    .sub-head-line {
+        font-size: 22px;
+    }
+    .section-one>p {
+        width: 900px;
+    }
+}
+
+@media (max-width: 930px) {
+    .head-line {
+        font-size: 35px;
+    }
+    .sub-head-line {
+        font-size: 20px;
+    }
+    .section-one>p {
+        width: auto;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 798px) {
+    .sub-head-line {
+        margin-top: 22px;
+    }
+}
+
+@media print,screen and (min-width: 40em) {
+    .reveal {
+        width: 490px;
+        max-width: 75rem;
+    }
+}

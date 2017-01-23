@@ -1,5 +1,3 @@
-/* MAIN HTML COMPONENT CLASSES */
-
 * {
     font-family: 'Bitter', serif !important;
 }
@@ -75,7 +73,7 @@ html {
 
 .dashboard-left {
     float: left;
-    height: 500px;
+    height: 100%;
     width: 290px;
 }
 
@@ -84,21 +82,20 @@ html {
 
 .dashboard-right {
     float: left;
-    height: 500px;
+    height: 100%;
     width: 290px;
 }
 
 .dashboard-center {
     float: left;
     width: 645px;
-    height: 800px;
+    height: 100%;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .dashboard-profile-card {
     width: 100%;
-    height: 363px;
     background: white;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -116,7 +113,6 @@ html {
 
 .dashboard-message-input-card {
     width: 100%;
-    height: 60px;
     background: white;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -131,9 +127,6 @@ html {
     margin-bottom: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
-
-/* DASHBOARD CARD CONTENT WRAPPER CLASSES */
 
 .dashboard-card-content-wrapper {
     height: 100%;
@@ -172,7 +165,7 @@ html {
 
 .users-full-name {
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
     text-align: center;
     font-weight: 600;
@@ -275,7 +268,6 @@ html {
     background-position: 50% 50%;
     background-size: cover;
     margin-top: 11px;
-    margin-right: 20px
 }
 
 .dropdown-content {
@@ -284,6 +276,48 @@ html {
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-content>hr {
+    margin: 0;
+}
+
+.dropdown-content div {
+    padding: 12px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content div>a {
+    color: black;
+}
+
+.dropdown-content>div:nth-child(2):hover {
+    background-color: #1779ba;
+}
+
+.dropdown-content>div:nth-child(2):hover>a>p,
+.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
+    color: white;
+}
+
+.dropdown-content div:nth-child(4)>a>p:hover,
+.dropdown-content div:nth-child(6)>a>p:hover {
+    background-color: #1779ba;
+    color: white;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:first-child {
+    font-size: 15px;
+    margin: 0;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
+    font-size: 12px;
+    margin: 0;
+    color: grey;
 }
 
 .dropdown {
@@ -292,17 +326,37 @@ html {
     display: inline-block;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
 .show {
     display: block;
-    margin-left: -119px;
+    margin-left: -120px;
     margin-top: 57px;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 10px solid #f9f9f9;
+    margin-top: -34px;
+    margin-left: 126px;
+}
+
+.view-profile-wrapper {
+    padding-bottom: 0px !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 56px;
+    padding-top: 6px !important;
+}
+
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
 }
 
 @media (max-width: 1100px) {

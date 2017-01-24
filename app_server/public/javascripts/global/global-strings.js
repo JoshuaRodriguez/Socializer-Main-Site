@@ -20,7 +20,11 @@ module.exports = {
         "remember-me": "remember me",
         "reset-password": "reset password",
         "email-field-text": "Username or email address",
-        "password-field-text": "Password"
+        "password-field-text": "Password",
+        "help-text": "Help",
+        "settings-text": "Settings",
+        "log-out-text": "Log out",
+        "view-profile": "View profile"
     },
     "spanish": {
         "site-logo-text": "Socializer",
@@ -43,6 +47,10 @@ module.exports = {
         "remember-me": "recuérdame",
         "reset-password": "restablecer la contraseña",
         "email-field-text": "Nombre de usuario o dirección de correo electrónico",
-        "password-field-text": "Contraseña"
+        "password-field-text": "Contraseña",
+        "help-text": "Ayuda",
+        "settings-text": "Configuracion",
+        "log-out-text": "Salir",
+        "view-profile": "Ver perfil"
     }
 };

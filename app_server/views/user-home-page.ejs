@@ -26,16 +26,16 @@
           <div class="dropdown-content">
             <div class="caret"></div>
             <div class="view-profile-wrapper">
-              <a><p style="margin-left: 16px;">Joshua Rodriguez</p><p style="margin-left: 16px;">View profile</p></a>
+              <a><p style="margin-left: 16px;">Joshua Rodriguez</p><p style="margin-left: 16px;"><%= pageText.viewProfile %></p></a>
             </div>
             <hr/>
             <div>
-              <a><p class="list-item-style">Help</p></a>
-              <a><p class="list-item-style">Settings</p></a>
+              <a><p class="list-item-style"><%= pageText.helpText %></p></a>
+              <a><p class="list-item-style"><%= pageText.settingsText %></p></a>
             </div>
             <hr/>
             <div>
-              <a><p class="list-item-style">Log out</p></a>
+              <a><p class="list-item-style"><%= pageText.logOutText %></p></a>
             </div>
           </div>
         </div>
@@ -68,12 +68,26 @@
               <button class="camera-button"><i class="fa fa-camera" aria-hidden="true"></i></button>
             </div>
           </div>
+          <% for (var index = 0; index < userPosts.length; index++) { %>
           <div class="dashboard-news-feed-post-card">
-            <div class="dashboard-card-content-wrapper"></div>
+            <div class="dashboard-card-content-wrapper">
+              <div>
+                <a class="user-picture" style="background-image: url(<%= userPosts[index].userPicture %>);"></a>
+                <p class="user-name"><%= userPosts[index].userName %></p>
+                <p class="time-elapsed"><%= userPosts[index].timeElapsed %></p>
+                <div style="clear: both"></div>
+                <p class="user-post"><%= userPosts[index].posting %></p>
+                <img class="image-post" src="<%= userPosts[index].postedImage %>"></img>
+                <hr/>
+                <div>
+                  <a class="interaction-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</a>
+                  <a class="interaction-button"><i class="fa fa-comment-o" aria-hidden="true"></i> Comment</a>
+                  <a class="interaction-button"><i class="fa fa-share" aria-hidden="true"></i> Share</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="dashboard-news-feed-post-card">
-            <div class="dashboard-card-content-wrapper"></div>
-          </div>
+          <% } %>
         </div>
         <div class="dashboard-right">
           <div class="sticky-scroll-box">

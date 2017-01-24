@@ -13,5 +13,11 @@ module.exports = {
         "resetPassword": globalStrings["reset-password"],
         "emailFieldText": globalStrings["email-field-text"],
         "passwordFieldText": globalStrings["password-field-text"]
+    },
+    "homePage": {
+        "helpText": globalStrings["help-text"],
+        "settingsText": globalStrings["settings-text"],
+        "logOutText": globalStrings["log-out-text"],
+        "viewProfile": globalStrings["view-profile"]
     }
 };

@@ -1,9 +1,9 @@
 * {
-    font-family: 'Bitter', serif !important;
+    font-family: 'Roboto Slab', serif !important;
 }
 
 html {
-    background-color: rgba(230, 230, 230, 0.3);
+    background-color: rgba(230, 230, 230, 0.6);
 }
 
 .navbar-logo {
@@ -37,7 +37,7 @@ html {
     display: inline-block;
     margin-left: 20px;
     margin-top: 17px;
-    height: 100%;
+    height: 40px;
 }
 
 .navbar-links>li>a {
@@ -56,19 +56,20 @@ html {
     margin-left: 0px;
 }
 
-.navbar-links>li>a:hover {
-    color: navajowhite;
+.navbar-links>li:hover {
+    border-bottom: solid white 3px;
 }
 
 .site-content {
     padding-top: 70px;
     padding-left: 40px;
-    background-color: rgba(230, 230, 230, 0.3);
+    background-color: rgba(230, 230, 230, 0.6);
 }
 
 .dashboard-container {
     width: 1225px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .dashboard-left {
@@ -104,7 +105,6 @@ html {
 
 .dashboard-card {
     width: 100%;
-    height: 200px;
     background: white;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -137,7 +137,7 @@ html {
     padding: 16px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    background-image: url('../images/beach-sunset.jpg');
+    background-image: url('../images/cover-photo.jpg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -164,7 +164,7 @@ html {
 
 .users-full-name {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 15px;
     width: 100%;
     text-align: center;
     font-weight: 600;
@@ -174,6 +174,7 @@ html {
     width: 100%;
     font-size: 14px;
     text-align: center;
+    margin-bottom: -8px;
 }
 
 .friends-and-groups-listing {
@@ -260,13 +261,13 @@ html {
     float: right;
     border: solid white 2px;
     border-radius: 35px;
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     background-image: url(../images/random-guy.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-    margin-top: 11px;
+    margin-top: 8px;
 }
 
 .dropdown-content {
@@ -327,7 +328,7 @@ html {
 
 .show {
     display: block;
-    margin-left: -120px;
+    margin-left: -117px;
     margin-top: 57px;
 }
 
@@ -362,8 +363,8 @@ html {
     float: left;
     border: solid white 2px;
     border-radius: 35px;
-    height: 35px;
-    width: 35px;
+    height: 50px;
+    width: 50px;
     background-image: url(../images/random-guy.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -371,21 +372,21 @@ html {
 }
 
 .user-name {
-    margin-top: 7px;
+    margin-top: 15px;
     margin-left: 10px;
     float: left;
     font-size: 14px;
 }
 
 .time-elapsed {
-    margin-top: 7px;
+    margin-top: 15px;
     float: right;
     font-size: 14px;
 }
 
 .user-post {
-    font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
     font-size: 14px;
+    margin-top: 7px;
 }
 
 .interaction-button {
@@ -397,6 +398,42 @@ html {
 .image-post {
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
+}
+
+.trend {
+    color: red;
+    margin-right: 10px;
+    float: left;
+    margin-top: 4px;
+}
+
+a.see-more-trends {
+    font-size: 11px;
+}
+
+a.see-more-trends:hover {
+    text-decoration: underline;
+}
+
+.trending-topic:hover {
+    text-decoration: underline !important;
+}
+
+.see-all-groups {
+    font-size: 11px;
+}
+
+.see-all-groups:hover {
+    text-decoration: underline;
+}
+
+.add-16px-margin-left {
+    margin-left: 16px !important;
+}
+
+.dashboard-card-header {
+    display: inline-block;
 }
 
 @media (max-width: 1100px) {

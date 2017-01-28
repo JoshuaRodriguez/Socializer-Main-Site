@@ -182,7 +182,8 @@
     }
 }
 
-@media print,screen and (min-width: 40em) {
+@media print,
+screen and (min-width: 40em) {
     .reveal {
         width: 490px;
         max-width: 75rem;

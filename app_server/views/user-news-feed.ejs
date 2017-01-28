@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Socializer</title>
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/foundation-css/foundation.min.css" />
+    <link rel="stylesheet" href="stylesheets/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" href="stylesheets/user_home_page.css"/>
+  </head>
+  <body>
+    <div class="site-header">
+      <!-- SITE NAVBAR -->
+      <div style="width: 1225px; margin: 0 auto;">
+        <ul class="navbar-links">
+          <li><a><span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span><span class="text"><%= pageText.home %></span></a></li>
+          <li><a><span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span><span class="text"><%= pageText.groups %></span></a></li>
+          <li><a><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="text"><%= pageText.messages %></a></li>
+          <li><a><span class="icon"><i class="fa fa-bell-o" aria-hidden="true"></i></span><span class="text"><%= pageText.notifications %></span></a></li>
+        </ul>
+        <h3 class="navbar-logo">S</h3>
+        <!-- DROP DOWN MENU WITH USER PICTURE -->
+        <div class="dropdown">
+          <a class="settings-dropdown"></a>
+          <div class="dropdown-content">
+            <div class="caret"></div>
+            <div class="view-profile-wrapper">
+              <a>
+                <% var userName = loggedInUser.userName; %>
+                <% var whiteSpaceIndex = userName.indexOf(" "); %>
+                <% userName = userName.substring(0, whiteSpaceIndex); %>
+                <p class="add-16px-margin-left"><%= (userName || loggedInUser.userName) %></p>
+                <p class="add-16px-margin-left"><%= pageText.viewProfile %></p>
+              </a>
+            </div>
+            <hr/>
+            <div>
+              <a><p class="list-item-style"><%= pageText.helpText %></p></a>
+              <a><p class="list-item-style"><%= pageText.settingsText %></p></a>
+            </div>
+            <hr/>
+            <div>
+              <a><p class="list-item-style"><%= pageText.logOutText %></p></a>
+            </div>
+          </div>
+        </div>
+        <!-- END DROP DOWN MENU WITH USER PICTURE -->
+        <input class="input-search-field" type="text" placeholder="<%= pageText.search %>">
+      </div>
+      <!-- SITE NAVBAR -->
+    </div>
+    <div class="site-content">
+      <!-- DASHBOARD CONTAINER -->
+      <div class="dashboard-container">
+        <!-- LEFT DASHBOARD -->
+        <div class="dashboard-left">
+          <div class="box">
+            <div class="dashboard-profile-card">
+              <div class="profile-card-image-wrapper"></div>
+              <div class="profile-card-content-wrapper">
+                <div class="profile-picture"></div>
+                <h6 class="users-full-name"><%= loggedInUser.userName %></h6>
+                <p class="users-quote"><%= loggedInUser.userQuote %><P>
+                <ul class="friends-and-groups-listing">
+                  <li class="friends-listing"><%= pageText.friends %><h6 class="friend-count">1K</h6></li>
+                  <li class="groups-listing"><%= pageText.groups %><h6 class="group-count">5<h6></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END LEFT DASHBOARD -->
+        <!-- CENTER DASHBOARD -->
+        <div class="dashboard-center">
+          <!-- INPUT MESSAGE CARD -->
+          <div class="dashboard-message-input-card">
+            <div class="input-grouping">
+              <input class="input-message-field" type="text" placeholder="<%= pageText.inputMessageBox %>">
+              <button class="camera-button"><i class="fa fa-camera" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <!-- END INPUT MESSAGE CARD -->
+          <!-- SHOW NEWS FEED POSTS -->
+          <% for (var index = 0; index < userPosts.length; index++) { %>
+          <div class="dashboard-news-feed-post-card">
+            <div class="dashboard-card-content-wrapper">
+              <div>
+                <a class="user-picture" style="background-image: url(<%= userPosts[index].userPicture %>);"></a>
+                <p class="user-name"><%= userPosts[index].user %></p>
+                <p class="time-elapsed"><%= userPosts[index].timeElapsed %></p>
+                <div style="clear: both"></div>
+                <p class="user-post"><%= userPosts[index].posting %></p>
+                <% if (userPosts[index].postedImage) { %>
+                <img class="image-post" src="<%= userPosts[index].postedImage %>"></img>
+                <% } %>
+                <hr/>
+                <div>
+                  <a class="interaction-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= pageText.like %></a>
+                  <a class="interaction-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</a>
+                  <a class="interaction-button"><i class="fa fa-comment-o" aria-hidden="true"></i> <%= pageText.comment %></a>
+                  <a class="interaction-button"><i class="fa fa-share" aria-hidden="true"></i> <%= pageText.share %></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <!-- END SHOW NEWS FEED POSTS -->
+        </div>
+        <!-- END CENTER DASHBOARD -->
+        <!-- RIGHT DASHBOARD -->
+        <div class="dashboard-right">
+          <div class="dashboard-card">
+            <div class="dashboard-card-content-wrapper" style="font-size: 14px;">
+              <!-- CARD TITLE AND HEADER -->
+              <div>
+                <p class="dashboard-card-header">Trending Topics</p>
+                <small>.</small>
+                <a class="see-more-trends">See more</a>
+              </div>
+              <!-- END CARD TITLE AND HEADER -->
+              <div>
+                <ul style="margin: 0; list-style: none;">
+                  <% for (var index = 0; index < trendingTopics.length; index++) { %>
+                  <li>
+                    <div>
+                      <i class="fa fa-fire trend" aria-hidden="true"></i>
+                      <div style="display: inline-block">
+                        <a href="" class="trending-topic"><%= trendingTopics[index].topicTitle %></a>
+                        <% if (index != trendingTopics.length - 1) { %>
+                        <p style="font-size: 12px;"><%= trendingTopics[index].numberOfPeopleTalking %></p>
+                        <% } else { %>
+                        <p style="font-size: 12px; margin-bottom: 0px;"><%= trendingTopics[index].numberOfPeopleTalking %></p>
+                        <% } %>
+                      </div>
+                    </div>
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- SOCIALIZER GROUP CARDS -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-content-wrapper" style="font-size: 14px;">
+              <!-- CARD TITLE AND HEADER -->
+              <div>
+                <p class="dashboard-card-header">Your Socializer Groups</p>
+                <small>.</small>
+                <a class="see-all-groups">View All</a>
+              </div>
+              <!-- END CARD TITLE AND HEADER -->
+              <div>
+                <ul style="margin: 0";>
+                  <!-- SOCIALIZER GROUP ELEMENTS -->
+                  <% for (var index = 0; index < socializerGroups.length; index++) { %>
+                  <li>
+                    <div style="overflow: auto; margin-bottom: 10px;">
+                      <a class="user-picture" style="background-image: url('<%= socializerGroups[index].groupImage %>'); margin-right: 10px;"></a>
+                      <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
+                    </div>
+                  </li>
+                  <% } %>
+                  <!-- END SOCIALIZER GROUP ELEMENTS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- END SOCIALIZER GROUPS CARD -->
+        </div>
+        <!-- END RIGHT DASHBOARD -->
+      </div>
+      <!-- END DASHBOARD CONTAINER -->
+    </div>
+    <div class="site-footer"></div>
+    <script type="text/javascript" src="javascripts/foundation-js/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/foundation-js/foundation.min.js"></script>
+    <script type="text/javascript" src="javascripts/foundation-js/what-input.js"></script>
+    <script type="text/javascript" src="javascripts/foundation-js/run-foundation.js"></script>
+    <script type="text/javascript" src="javascripts/settings-dropdown.js"></script>
+  </body>
+</html>

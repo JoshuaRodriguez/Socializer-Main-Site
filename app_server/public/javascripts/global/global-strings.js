@@ -24,7 +24,17 @@ module.exports = {
         "help-text": "Help",
         "settings-text": "Settings",
         "log-out-text": "Log out",
-        "view-profile": "View profile"
+        "view-profile": "View profile",
+        "friends": "Friends",
+        "groups": "Groups",
+        "home": "Home",
+        "messages": "Messages",
+        "notifications": "Notifications",
+        "like": "Like",
+        "comment": "Comment",
+        "share": "Share",
+        "search": "Search",
+        "input-message-box": "What's on your mind?"
     },
     "spanish": {
         "site-logo-text": "Socializer",
@@ -51,6 +61,16 @@ module.exports = {
         "help-text": "Ayuda",
         "settings-text": "Configuracion",
         "log-out-text": "Salir",
-        "view-profile": "Ver perfil"
+        "view-profile": "Ver perfil",
+        "friends": "Amigos",
+        "groups": "Groupos",
+        "home": "Inicio",
+        "messages": "Mensajes",
+        "notifications": "Notificaciones",
+        "like": "Me gusta",
+        "comment": "Comentar",
+        "share": "Compartir",
+        "search": "Buscar",
+        "input-message-box": "Que estas pensando?"
     }
 };

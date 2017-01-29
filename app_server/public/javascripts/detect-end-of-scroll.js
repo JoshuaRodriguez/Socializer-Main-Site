@@ -3,6 +3,7 @@
     var body = $("body");
     var dashboardCenter = $('.dashboard-center');
     var loading = $('.loading');
+    var fetching = false;
 
     var myTestUser = {
         userImage: "../images/random-guy.jpg",
@@ -40,11 +41,15 @@
     };
 
     browserWindow.scroll(function() {
-        if (Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop()) >= Math.floor(body.height() - 100)) {
+        var currentScrollPosition = Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop());
+        var bodyHeight = Math.floor(body.height() - 100);
+        if (currentScrollPosition >= bodyHeight && fetching == false) {
+            fetching = true;
             setTimeout(function() {
                 loading.before(createUserPost(myTestUser));
                 loading.hide();
-            }, 2000);
+                fetching = false;
+            });
             loading.show();
         }
     });

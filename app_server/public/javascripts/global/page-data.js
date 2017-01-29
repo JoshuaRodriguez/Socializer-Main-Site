@@ -19,15 +19,15 @@ module.exports = {
         "settingsText": globalStrings["settings-text"],
         "logOutText": globalStrings["log-out-text"],
         "viewProfile": globalStrings["view-profile"],
-        "friends": globalStrings["friends"],
-        "groups": globalStrings["groups"],
-        "home": globalStrings["home"],
-        "messages": globalStrings["messages"],
-        "notifications": globalStrings["notifications"],
-        "like": globalStrings["like"],
-        "comment": globalStrings["comment"],
-        "share": globalStrings["share"],
         "inputMessageBox": globalStrings["input-message-box"],
-        "search": globalStrings["search"]
+        "friends": globalStrings.friends,
+        "groups": globalStrings.groups,
+        "home": globalStrings.home,
+        "messages": globalStrings.messages,
+        "notifications": globalStrings.notifications,
+        "like": globalStrings.like,
+        "comment": globalStrings.comment,
+        "share": globalStrings.share,
+        "search": globalStrings.search
     }
 };

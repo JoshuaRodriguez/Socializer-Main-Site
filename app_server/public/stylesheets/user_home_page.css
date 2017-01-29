@@ -1,5 +1,6 @@
 * {
-    font-family: 'Roboto Slab', serif !important;
+    font-family: 'Nunito Sans', sans-serif !important;
+    /*font-weight: 700;*/
 }
 
 html {
@@ -174,7 +175,7 @@ html {
     width: 100%;
     font-size: 14px;
     text-align: center;
-    margin-bottom: -8px;
+    margin-bottom: -6px;
 }
 
 .friends-and-groups-listing {
@@ -208,7 +209,7 @@ html {
 }
 
 .input-message-field {
-    width: 552px;
+    width: 551px;
     margin: 0 !important;
     display: inline-block;
     border-radius: 3px;
@@ -406,6 +407,7 @@ html {
     margin-right: 10px;
     float: left;
     margin-top: 4px;
+    height: 34px;
 }
 
 a.see-more-trends {
@@ -434,6 +436,88 @@ a.see-more-trends:hover {
 
 .dashboard-card-header {
     display: inline-block;
+}
+
+.edit-about {
+    font-size: 11px;
+}
+
+.edit-about:hover {
+    text-decoration: underline;
+}
+
+.show-all-link {
+    font-size: 11px;
+}
+
+.show-all-link:hover {
+    text-decoration: underline;
+}
+
+.refresh-link {
+    font-size: 11px;
+}
+
+.refresh-link:hover {
+    text-decoration: underline;
+}
+
+.arrow-box {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 1px;
+    border-color: #1779ba;
+    border-style: solid;
+    transition: 0.7s ease;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: none;
+}
+
+.large-arrow {
+    font-size: 28px !important;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+
+.add-friend-button {
+    border: solid 1px #1779ba;
+    border-radius: 4px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    color: white;
+    font-size: 13px;
+    background: #1779ba;
+}
+
+.add-friend-button:hover {
+    background: #0E6096;
+    color: white;
+}
+
+.add-friend-button>i {
+    font-size: 14px !important;
+    margin-right: 3px;
+}
+
+.on-people-you-may-know {
+    display: none;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 12px !important;
+}
+
+.on-trending-topics {
+    display: none;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 12px !important;
 }
 
 @media (max-width: 1100px) {

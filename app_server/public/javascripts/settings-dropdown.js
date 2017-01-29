@@ -1,5 +1,4 @@
 (function() {
-
     var settingsDropdown = $(".settings-dropdown");
     var dropDownContent = $(".dropdown-content");
     var browserWindow = $(window);
@@ -22,5 +21,4 @@
             settingsDropdown.toggled = 0;
         }
     });
-
 })();

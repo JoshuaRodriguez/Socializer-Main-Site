@@ -33,8 +33,8 @@ var sampleControllerData = {
         user: "Daniel Castilla",
         userPicture: "../images/random-guy-2.jpg",
         timeElapsed: "1 day ago",
-        posting: "I just got accepted into Medical School boy! Everyone turn up!",
-        postedImage: "http://www.hopkinsmedicine.org/sebin/l/w/som_640.jpg"
+        posting: "Playing the new Resident Evil 7: Biohazard! Sick game!",
+        postedImage: "http://cdn.idigitaltimes.com/sites/idigitaltimes.com/files/2016/10/09/resident-evil-7-hands.jpg"
     }, {
         user: "Phoebe Toshiko",
         userPicture: "../images/random-girl.jpg",
@@ -67,5 +67,18 @@ var sampleControllerData = {
     }, {
         groupName: 'Coders of Reddit',
         groupImage: 'http://www.ichanical.com/wp-content/uploads/2015/04/html-programming.jpg'
+    }],
+    peopleYouMayKnow: [{
+        userName: 'Christian Castilla',
+        profilePicture: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032914_1341682239188761_1208149176963666741_n.jpg?oh=fe8d9971188ec420de4dc9753487a867&oe=591C0E56'
+    }, {
+        userName: 'Kyle Blasingame',
+        profilePicture: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032289_1133493216748605_769622635020935443_n.jpg?oh=f4d4a46c62368787d243e6969dc2343c&oe=5912CDF3'
+    }, {
+        userName: 'Abdullah Hamad Almoqbil',
+        profilePicture: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/67745_1329335653324_4607492_n.jpg?oh=6cb9d324cbac2906626e0c7cdbb5fe53&oe=5901D790'
+    }, {
+        userName: 'Asaif Aamir',
+        profilePicture: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/12122630_10207379515663022_4169579083574170794_n.jpg?oh=85d02339695c6c26d33cf10aa9c63b53&oe=594A533B'
     }]
 };

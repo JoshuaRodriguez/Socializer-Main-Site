@@ -14,6 +14,7 @@ var sampleControllerData = {
     loggedInUser: {
         userName: "Joshua Rodriguez-Santiago",
         userQuote: "System Architect",
+        userPicture: "../images/random-guy.jpg"
     },
     userPosts: [{
         user: "Joshua Rodriguez-Santiago",
@@ -68,7 +69,7 @@ var sampleControllerData = {
         groupName: 'Coders of Reddit',
         groupImage: 'http://www.ichanical.com/wp-content/uploads/2015/04/html-programming.jpg'
     }],
-    peopleYouMayKnow: [{
+    possibleFriends: [{
         userName: 'Christian Castilla',
         profilePicture: 'https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032914_1341682239188761_1208149176963666741_n.jpg?oh=fe8d9971188ec420de4dc9753487a867&oe=591C0E56'
     }, {

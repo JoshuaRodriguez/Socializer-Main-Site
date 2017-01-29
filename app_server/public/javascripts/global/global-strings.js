@@ -34,7 +34,15 @@ module.exports = {
         "comment": "Comment",
         "share": "Share",
         "search": "Search",
-        "input-message-box": "What's on your mind?"
+        "input-message-box": "What's on your mind?",
+        "dislike": "Dislike",
+        "socializer-group-box": "Your Socializer Groups",
+        "refresh": "Refresh",
+        "view-all": "View all",
+        "see-more": "See more",
+        "show-all": "Show all",
+        "people-you-may-know": "People you may know",
+        "add-friend": "Add friend"
     },
     "spanish": {
         "site-logo-text": "Socializer",
@@ -71,6 +79,14 @@ module.exports = {
         "comment": "Comentar",
         "share": "Compartir",
         "search": "Buscar",
-        "input-message-box": "Que estas pensando?"
+        "input-message-box": "Que estas pensando?",
+        "dislike": "No me gusta",
+        "socializer-group-box": "Tus Groupos Socializer",
+        "refresh": "Refrescar",
+        "view-all": "Ver todo",
+        "see-more": "Ver mas",
+        "show-all": "Mostrar todo",
+        "people-you-may-know": "Los Conoces?",
+        "add-friend": "Añadir amigo"
     }
 };

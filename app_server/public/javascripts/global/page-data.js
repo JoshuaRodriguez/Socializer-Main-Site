@@ -20,6 +20,7 @@ module.exports = {
         "logOutText": globalStrings["log-out-text"],
         "viewProfile": globalStrings["view-profile"],
         "inputMessageBox": globalStrings["input-message-box"],
+        "socializerGroupText": globalStrings["socializer-group-box"],
         "friends": globalStrings.friends,
         "groups": globalStrings.groups,
         "home": globalStrings.home,
@@ -28,6 +29,13 @@ module.exports = {
         "like": globalStrings.like,
         "comment": globalStrings.comment,
         "share": globalStrings.share,
-        "search": globalStrings.search
+        "search": globalStrings.search,
+        "dislike": globalStrings.dislike,
+        "refresh": globalStrings.refresh,
+        "viewAll": globalStrings["view-all"],
+        "seeMore": globalStrings["see-more"],
+        "showAll": globalStrings["show-all"],
+        "peopleYouMayKnow": globalStrings["people-you-may-know"],
+        "addFriend": globalStrings["add-friend"]
     }
 };

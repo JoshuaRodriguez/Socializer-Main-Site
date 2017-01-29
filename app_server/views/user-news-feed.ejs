@@ -75,28 +75,28 @@
           <div class="dashboard-card">
             <div class="dashboard-card-content-wrapper" style="font-size: 14px;">
               <div>
-                <p class="dashboard-card-header">People You May Know</p>
+                <p class="dashboard-card-header"><%= pageText.peopleYouMayKnow %></p>
                 <small>.</small>
-                <a class="refresh-link">Refresh</a>
+                <a class="refresh-link"><%= pageText.refresh %></a>
                 <small>.</small>
-                <a class="show-all-link">Show all</a>
+                <a class="show-all-link"><%= pageText.showAll %></a>
                 <div>
                   <ul style="margin: 0; list-style: none;">
-                    <% for (var index = 0; index < peopleYouMayKnow.length; index++) { %>
-                    <% if (index != peopleYouMayKnow.length - 1) { %> 
+                    <% for (var index = 0; index < possibleFriends.length; index++) { %>
+                    <% if (index != possibleFriends.length - 1) { %> 
                     <li>
                       <div class="possible-friend" style="overflow: auto; margin-bottom: 20px;">
-                        <a class="user-picture" style="background-image: url('<%= peopleYouMayKnow[index].profilePicture %>'); margin-right: 10px;"></a>
-                        <p style="margin-top: 1px; margin-bottom: 2px"><a style="color: black;"><%= peopleYouMayKnow[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
-                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i> Add Friend</a>
+                        <a class="user-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>); margin-right: 10px;"></a>
+                        <p style="margin-top: 1px; margin-bottom: 2px"><a style="color: black;"><%= possibleFriends[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
                       </div>
                     </li>
                     <% } else { %>
                     <li>
                       <div class="possible-friend" style="overflow: auto; margin-bottom: 0px;">
-                        <a class="user-picture" style="background-image: url('<%= peopleYouMayKnow[index].profilePicture %>'); margin-right: 10px;"></a>
-                        <p style="margin-top: 1px; margin-bottom: 2px"><a style="color: black;"><%= peopleYouMayKnow[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
-                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i> Add Friend</a>
+                        <a class="user-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>); margin-right: 10px;"></a>
+                        <p style="margin-top: 1px; margin-bottom: 2px"><a style="color: black;"><%= possibleFriends[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
                       </div>
                     </li>
                     <% } %>
@@ -127,17 +127,21 @@
                 <a class="user-picture" style="background-image: url(<%= userPosts[index].userPicture %>);"></a>
                 <p class="user-name"><%= userPosts[index].user %></p>
                 <p class="time-elapsed"><%= userPosts[index].timeElapsed %></p>
-                <div style="clear: both"></div>
+                <div style="clear: both;"></div>
                 <p class="user-post"><%= userPosts[index].posting %></p>
                 <% if (userPosts[index].postedImage) { %>
                 <img class="image-post" src="<%= userPosts[index].postedImage %>"></img>
                 <% } %>
                 <hr/>
                 <div>
-                  <a class="interaction-button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= pageText.like %></a>
-                  <a class="interaction-button"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</a>
-                  <a class="interaction-button"><i class="fa fa-comment-o" aria-hidden="true"></i> <%= pageText.comment %></a>
-                  <a class="interaction-button"><i class="fa fa-share" aria-hidden="true"></i> <%= pageText.share %></a>
+                  <a class="interaction-button like"><i class="fa fa-thumbs-o-up" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.like %></a>
+                  <a class="interaction-button dislike"><i class="fa fa-thumbs-o-down" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.dislike %></a>
+                  <a class="interaction-button comment"><i class="fa fa-comment-o" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.comment %></a>
+                  <a class="interaction-button share"><i class="fa fa-share" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.share %></a>
+                </div>
+                <div class="comment-box">
+                  <a class="user-picture" style="background-image: url(<%= loggedInUser.userPicture %>); margin-right: 10px;"></a>
+                  <input class="input-comment-field" type="text" placeholder="<%= pageText.comment %>">
                 </div>
               </div>
             </div>
@@ -160,7 +164,7 @@
               <div>
                 <p class="dashboard-card-header">Trending Topics</p>
                 <small>.</small>
-                <a class="see-more-trends">See more</a>
+                <a class="see-more-trends"><%= pageText.seeMore %></a>
               </div>
               <!-- END CARD TITLE AND HEADER -->
               <div>
@@ -188,26 +192,26 @@
             <div class="dashboard-card-content-wrapper" style="font-size: 14px;">
               <!-- CARD TITLE AND HEADER -->
               <div>
-                <p class="dashboard-card-header">Your Socializer Groups</p>
+                <p class="dashboard-card-header"><%= pageText.socializerGroupText %></p>
                 <small>.</small>
-                <a class="see-all-groups">View All</a>
+                <a class="see-all-groups"><%= pageText.viewAll %></a>
               </div>
               <!-- END CARD TITLE AND HEADER -->
               <div>
-                <ul style="margin: 0; list-style: none";>
+                <ul style="margin: 0; list-style: none;">
                   <!-- SOCIALIZER GROUP ELEMENTS -->
                   <% for (var index = 0; index < socializerGroups.length; index++) { %>
                   <% if (index != socializerGroups.length - 1) { %>
                   <li>
                     <div style="overflow: auto; margin-bottom: 10px;">
-                      <a class="user-picture" style="background-image: url('<%= socializerGroups[index].groupImage %>'); margin-right: 10px;"></a>
+                      <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
                       <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
                     </div>
                   </li>
                   <% } else { %>
                   <li>
                     <div style="overflow: auto; margin-bottom: 0px;">
-                      <a class="user-picture" style="background-image: url('<%= socializerGroups[index].groupImage %>'); margin-right: 10px;"></a>
+                      <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
                       <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
                     </div>
                   </li>
@@ -224,8 +228,8 @@
       </div>
       <!-- END DASHBOARD CONTAINER -->
     </div>
-    <a class='back-to-top' href='#top'>
-      <div class='arrow-box'>
+    <a class="back-to-top" href="#top">
+      <div class="arrow-box">
         <i class="fa fa-arrow-up large-arrow" aria-hidden="true"></i>
       </div>
     </a>
@@ -234,9 +238,10 @@
     <script type="text/javascript" src="javascripts/foundation-js/foundation.min.js"></script>
     <script type="text/javascript" src="javascripts/foundation-js/what-input.js"></script>
     <script type="text/javascript" src="javascripts/foundation-js/run-foundation.js"></script>
-    <script type="text/javascript" src="javascripts/settings-dropdown.js"></script>
-    <script type="text/javascript" src="javascripts/arrow-scroll.js"></script>
-    <script type="text/javascript" src="javascripts/hide-elements-on-x.js"></script>
-    <script type="text/javascript" src="javascripts/detect-end-of-scroll.js"></script>
+    <script type="text/javascript" src="javascripts/user-home-page-js/settings-dropdown.js"></script>
+    <script type="text/javascript" src="javascripts/user-home-page-js/arrow-scroll.js"></script>
+    <script type="text/javascript" src="javascripts/user-home-page-js/hide-elements-on-x.js"></script>
+    <script type="text/javascript" src="javascripts/user-home-page-js/detect-end-of-scroll.js"></script>
+    <script type="text/javascript" src="javascripts/user-home-page-js/user-post-interactions.js"></script>
   </body>
 </html>

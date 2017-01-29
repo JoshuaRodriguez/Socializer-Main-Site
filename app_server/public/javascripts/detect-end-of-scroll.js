@@ -1,6 +1,6 @@
 (function() {
     var browserWindow = $(window);
-    var documentInWindow = $(document);
+    var body = $("body");
     var dashboardCenter = $('.dashboard-center');
     var loading = $('.loading');
 
@@ -40,11 +40,11 @@
     };
 
     browserWindow.scroll(function() {
-        if (browserWindow.scrollTop() + browserWindow.height() == documentInWindow.height()) {
+        if (Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop()) >= Math.floor(body.height() - 100)) {
             setTimeout(function() {
                 loading.before(createUserPost(myTestUser));
                 loading.hide();
-            }, 200);
+            }, 2000);
             loading.show();
         }
     });

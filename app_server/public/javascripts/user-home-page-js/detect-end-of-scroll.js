@@ -3,59 +3,35 @@
     var body = $("body");
     var dashboardCenter = $('.dashboard-center');
     var loading = $('.loading');
-    var fetching = false;
 
+    var fetching = false;
     var loggedInUser = {
         userName: "Joshua Rodriguez-Santiago",
-        userQuote: "System Architect",
         userPicture: "../images/random-guy.jpg"
     };
-
-    var pageText = {
-        "dislike": "Dislike",
-        "like": "Like",
-        "comment": "Comment",
-        "share": "Share"
-    };
-
-    var myTestUsers = [{
+    var sampleUserPost = {
         userImage: "../images/random-guy-2.jpg",
         userName: 'Daniel Castilla',
         timeElapsed: '10m',
-        userPost: 'My name is boopin bop'
-    }, {
-        userImage: "../images/random-guy.jpg",
-        userName: 'Joshua Rodriguez-Santiago',
-        timeElapsed: '10m',
-        userPost: 'This is loading freaky fast!'
-    }, {
-        userImage: "../images/random-girl.jpg",
-        userName: 'Phoebe Toshiko',
-        timeElapsed: '10m',
-        userPost: 'Omg its really rainy and windy outside! =('
-    }];
+        userPost: 'My name is boopin bop',
+        postedImage: ''
+    };
 
-    var chooseRandomTestUser = function(max, min) {
-        return myTestUsers[Math.floor(Math.random() * (max - min + 1)) + min];
-    }
-
-    var addUserPost = function(loggedInUser, userData) {
-
-        var div = '<div class="dashboard-news-feed-post-card">' +
+    var buildNewsFeedPost = function(loggedInUser, postFromUser, pageText) {
+        var newsFeedPost = '<div class="dashboard-news-feed-post-card">' +
             '<div class="dashboard-card-content-wrapper">' +
             '<div>' +
-            '<a class="user-picture" style="background-image: url(' + userData.userImage + ');"></a>' +
-            '<p class="user-name">' + userData.userName + '</p>' +
-            '<p class="time-elapsed">' + userData.timeElapsed + '</p>' +
-            '<div style="clear: both"></div>' +
-            '<p class="user-post">' + userData.userPost + '</p>';
+            '<a class="user-picture" style="background-image: url(' + postFromUser.userImage + ')"></a>' +
+            '<p class="user-name">' + postFromUser.userName + '</p>' +
+            '<p class="time-elapsed">' + postFromUser.timeElapsed + '</p>' +
+            '<div style="clear: both;"></div>' +
+            '<p class="user-post">' + postFromUser.userPost + '</p>';
 
-        if (userData.postedImage) {
-            div += '<img class="image-post" src=' + userData.postedImage + '></img>';
+        if (postFromUser.postedImage) {
+            newsFeedPost += '<img class="image-post" src="' + postFromUser.postedImage + '"></img>';
         }
 
-        div += '<hr>' +
-            '<div>' +
+        newsFeedPost += '<hr/><div>' +
             '<a class="interaction-button like"><i class="fa fa-thumbs-o-up" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.like + '</a>' +
             '<a class="interaction-button dislike"><i class="fa fa-thumbs-o-down" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.dislike + '</a>' +
             '<a class="interaction-button comment"><i class="fa fa-comment-o" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.comment + '</a>' +
@@ -63,25 +39,30 @@
             '</div>' +
             '<div class="comment-box">' +
             '<a class="user-picture" style="background-image: url(' + loggedInUser.userPicture + '); margin-right: 10px;"></a>' +
-            '<input class="input-comment-field" type="text" placeholder="Comment">' +
+            '<input class="input-comment-field" type="text" placeholder="' + pageText.comment + '">' +
             '</div>' +
             '</div>' +
             '</div>' +
             '</div>';
 
-        return div;
+        return newsFeedPost;
     };
 
     browserWindow.scroll(function() {
         var currentScrollPosition = Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop());
         var bodyHeight = Math.floor(body.height() - 100);
-        if (currentScrollPosition >= bodyHeight && fetching == false) {
+        if (currentScrollPosition >= bodyHeight && fetching === false) {
             fetching = true;
-            setTimeout(function() {
-                loading.before(addUserPost(loggedInUser, chooseRandomTestUser(2, 0)));
-                loading.hide();
-                fetching = false;
-            }, 500);
+            $.get("/getLang")
+                .fail(function(err) {
+                    console.log("Failed to fetch data, status_code: " + err.status);
+                })
+                .done(function(data) {
+                    var newsFeedPost = buildNewsFeedPost(loggedInUser, sampleUserPost, data.homePage);
+                    loading.before(newsFeedPost);
+                    loading.hide();
+                    fetching = false;
+                });
             loading.show();
         }
     });

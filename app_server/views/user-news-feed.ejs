@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/foundation-css/foundation.min.css" />
     <link rel="stylesheet" href="stylesheets/font-awesome/font-awesome.min.css" />
-    <link rel="stylesheet" href="stylesheets/user_home_page.css"/>
+    <link rel="stylesheet" href="stylesheets/user-news-feed.css"/>
   </head>
   <body>
     <div class="site-header">
@@ -24,7 +24,7 @@
         <h3 class="navbar-logo">S</h3>
         <!-- DROP DOWN MENU WITH USER PICTURE -->
         <div class="dropdown">
-          <a class="settings-dropdown"></a>
+          <a class="settings-dropdown" style="background-image: url(<%= loggedInUser.userPicture %>);"></a>
           <div class="dropdown-content">
             <div class="caret"></div>
             <div class="view-profile-wrapper">
@@ -59,9 +59,9 @@
         <div class="dashboard-left">
           <!-- PROFILE CARD -->
           <div class="dashboard-profile-card">
-            <div class="profile-card-image-wrapper"></div>
+            <div class="profile-card-image-wrapper" style="background-image: url(<%= loggedInUser.backgroundImage %>);"></div>
             <div class="profile-card-content-wrapper">
-              <div class="profile-picture"></div>
+              <div class="profile-picture" style="background-image: url(<%= loggedInUser.userPicture %>);"></div>
               <h6 class="users-full-name"><%= loggedInUser.userName %></h6>
               <p class="users-quote"><%= loggedInUser.userQuote %><P>
               <ul class="friends-and-groups-listing">
@@ -139,10 +139,27 @@
                   <a class="interaction-button comment"><i class="fa fa-comment-o" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.comment %></a>
                   <a class="interaction-button share"><i class="fa fa-share" style="margin-right: 8px;" aria-hidden="true"></i><%= pageText.share %></a>
                 </div>
+                <!-- MINI PROFILE VIEW -->
+                <div class="mini-profile-view">
+                  <div class="mini-profile-view-caret caret"></div>
+                  <div class="profile-card-image-wrapper" style="background-image: url(<%= userPosts[index].backgroundImage %>);"></div>
+                  <div class="profile-card-content-wrapper">
+                    <div class="profile-picture" style="background-image: url(<%= userPosts[index].userPicture %>);"></div>
+                    <h6 class="users-full-name"><%= userPosts[index].user %></h6>
+                    <p class="users-quote"><%= userPosts[index].userQuote %><P>
+                    <div style="width: 177px; margin: 0 auto;">
+                      <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+                      <a class="add-friend-button"><i class="fa fa-envelope" aria-hidden="true"></i><%= pageText.messages.substring(0, 7) %></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- END MINI PROFILE VIEW -->
+                <!-- COMMENT BOX -->
                 <div class="comment-box">
                   <a class="user-picture" style="background-image: url(<%= loggedInUser.userPicture %>); margin-right: 10px;"></a>
                   <input class="input-comment-field" type="text" placeholder="<%= pageText.comment %>">
                 </div>
+                <!-- END COMMENT BOX -->
               </div>
             </div>
           </div>
@@ -223,6 +240,15 @@
             </div>
           </div>
           <!-- END SOCIALIZER GROUPS CARD -->
+          <!-- SELECT LANGUAGE CARD -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-content-wrapper" style="font-size: 14px;">
+                <a href="/setLang?lang=english">English (US)</a>
+                <small>.</small>
+                <a href="/setLang?lang=spanish">Español</a>
+              </div>
+            </div>
+          <!-- END SELECT LANGUAGE CARD -->
         </div>
         <!-- END RIGHT DASHBOARD -->
       </div>
@@ -238,10 +264,6 @@
     <script type="text/javascript" src="javascripts/foundation-js/foundation.min.js"></script>
     <script type="text/javascript" src="javascripts/foundation-js/what-input.js"></script>
     <script type="text/javascript" src="javascripts/foundation-js/run-foundation.js"></script>
-    <script type="text/javascript" src="javascripts/user-home-page/settings-dropdown.js"></script>
-    <script type="text/javascript" src="javascripts/user-home-page/arrow-scroll.js"></script>
-    <script type="text/javascript" src="javascripts/user-home-page/hide-elements-on-x.js"></script>
-    <script type="text/javascript" src="javascripts/user-home-page/detect-end-of-scroll.js"></script>
-    <script type="text/javascript" src="javascripts/user-home-page/user-post-interactions.js"></script>
+    <script type="text/javascript" src="javascripts/user-news-feed.js"></script>
   </body>
 </html>

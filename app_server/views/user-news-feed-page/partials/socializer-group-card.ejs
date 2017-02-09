@@ -1,0 +1,30 @@
+<div class="dashboard-card">
+    <div class="dashboard-card-content-wrapper font-size-14px">
+        <div>
+            <p class="dashboard-card-header"><%= pageText.socializerGroupText %></p>
+            <small>.</small>
+            <a class="see-all-groups"><%= pageText.viewAll %></a>
+        </div>
+        <div>
+            <ul style="margin: 0; list-style: none;">
+                <% for (var index = 0; index < socializerGroups.length; index++) { %>
+                <% if (index != socializerGroups.length - 1) { %>
+                <li>
+                    <div style="overflow: auto; margin-bottom: 10px;">
+                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
+                        <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
+                    </div>
+                </li>
+                <% } else { %>
+                <li>
+                    <div style="overflow: auto; margin-bottom: 0px;">
+                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
+                        <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
+                    </div>
+                </li>
+                <% } %>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</div>

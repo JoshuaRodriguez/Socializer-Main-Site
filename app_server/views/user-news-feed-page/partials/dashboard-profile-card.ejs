@@ -1,0 +1,12 @@
+<div class="dashboard-profile-card">
+    <div class="profile-card-image-wrapper" style="background-image: url(<%= loggedInUser.backgroundImage %>);"></div>
+    <div class="profile-card-content-wrapper">
+        <div class="profile-picture" style="background-image: url(<%= loggedInUser.userPicture %>);"></div>
+        <h6 class="users-full-name"><%= loggedInUser.userName %></h6>
+        <p class="users-quote"><%= loggedInUser.userQuote %><P>
+        <ul class="friends-and-groups-listing">
+            <li class="friends-listing"><%= pageText.friends %><h6 class="friend-count">1K</h6></li>
+            <li class="groups-listing"><%= pageText.groups %><h6 class="group-count">5</h6></li>
+        </ul>
+    </div>
+</div>

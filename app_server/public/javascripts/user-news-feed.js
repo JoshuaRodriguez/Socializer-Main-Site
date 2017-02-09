@@ -4,7 +4,7 @@
     var arrowBox = $('.arrow-box');
     var backToTop = $('.back-to-top');
 
-    var scrollSmoothly = function(objectWithEventListener) {
+    var scrollSmoothly = function() {
         $('html, body').animate({
             scrollTop: "0px"
         }, 500);
@@ -22,8 +22,8 @@
         showArrowBoxIfPassedThreshold(619);
     });
 
-    backToTop.on('click', function(event) {
-        scrollSmoothly(this);
+    backToTop.on('click', function() {
+        scrollSmoothly();
     });
 })();
 
@@ -31,101 +31,23 @@
 (function() {
     var browserWindow = $(window);
     var body = $("body");
-    var dashboardCenter = $('.dashboard-center');
-    var loading = $('.loading');
+    var loading = $('.loading-news-feed');
     var fetching = false;
-
-    var loggedInUser = {
-        userName: "Daniel Castilla",
-        userPicture: "../images/random-guy-2.jpg"
-    };
-
-    var sampleUserPosts = [{
-        userName: 'Daniel Castilla',
-        userImage: "../images/random-guy-2.jpg",
-        userQuote: 'Saving lives is my motto',
-        userPost: 'My name is Daniel Castilla',
-        timeElapsed: '35m',
-        postedImage: '',
-        backgroundImage: "../images/campfire.jpg"
-    }, {
-        userName: 'Joshua Rodriguez',
-        userImage: "../images/random-guy.jpg",
-        userQuote: 'System Architeect',
-        userPost: 'Socializer is the best networking platform on earth',
-        timeElapsed: '10m',
-        postedImage: '',
-        backgroundImage: "../images/cover-photo.jpg"
-    }, {
-        userImage: "../images/random-girl.jpg",
-        userName: 'Phoebe Toshiko',
-        timeElapsed: '45m',
-        userPost: 'Today is such a beautiful day for a picnic!',
-        postedImage: '',
-        userQuote: 'Enjoying life one day at a time',
-        backgroundImage: "../images/beach-sunset.jpg"
-    }];
-
-    var buildNewsFeedPost = function(loggedInUser, postFromUser, pageText) {
-        var newsFeedPost = '<div class="dashboard-news-feed-post-card">' +
-            '<div class="dashboard-card-content-wrapper">' +
-            '<div>' +
-            '<a class="user-picture" style="background-image: url(' + postFromUser.userImage + ')"></a>' +
-            '<p class="user-name">' + postFromUser.userName + '</p>' +
-            '<p class="time-elapsed">' + postFromUser.timeElapsed + '</p>' +
-            '<div style="clear: both;"></div>' +
-            '<p class="user-post">' + postFromUser.userPost + '</p>';
-
-        if (postFromUser.postedImage) {
-            newsFeedPost += '<img class="image-post" src="' + postFromUser.postedImage + '"></img>';
-        }
-
-        newsFeedPost += '<hr/><div>' +
-            '<a class="interaction-button like"><i class="fa fa-thumbs-o-up" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.like + '</a>' +
-            '<a class="interaction-button dislike"><i class="fa fa-thumbs-o-down" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.dislike + '</a>' +
-            '<a class="interaction-button comment"><i class="fa fa-comment-o" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.comment + '</a>' +
-            '<a class="interaction-button share"><i class="fa fa-share" style="margin-right: 8px;" aria-hidden="true"></i>' + pageText.share + '</a>' +
-            '</div>' +
-            '<div class="mini-profile-view">' +
-            '<div class="mini-profile-view-caret caret"></div>' +
-            '<div class="profile-card-image-wrapper" style="background-image: url(' + postFromUser.backgroundImage + ');"></div>' +
-            '<div class="profile-card-content-wrapper">' +
-            '<div class="profile-picture" style="background-image: url(' + postFromUser.userImage + ');"></div>' +
-            '<h6 class="users-full-name">' + postFromUser.userName + '</h6>' +
-            '<p class="users-quote">' + postFromUser.userQuote + '<P>' +
-            '<div style="width: 177px; margin: 0 auto;">' +
-            '<a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i>' + pageText.addFriend + '</a>' +
-            '<a class="add-friend-button"><i class="fa fa-envelope" aria-hidden="true"></i>' + pageText.messages.substring(0, 7) + '</a>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="comment-box">' +
-            '<a class="user-picture" style="background-image: url(' + loggedInUser.userPicture + '); margin-right: 10px;"></a>' +
-            '<input class="input-comment-field" type="text" placeholder="' + pageText.comment + '">' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
-
-        return newsFeedPost;
-    };
 
     browserWindow.scroll(function() {
         var currentScrollPosition = Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop());
         var bodyHeight = Math.floor(body.height() - 100);
         if (currentScrollPosition >= bodyHeight && fetching === false) {
             fetching = true;
-            $.get("/getCurrentLangText")
-                .fail(function(err) {
-                    console.log("Failed to fetch data, status_code: " + err.status);
-                })
-                .done(function(data) {
-                    var index = Math.floor(Math.random() * 3) + 0;
-                    var newsFeedPost = buildNewsFeedPost(loggedInUser, sampleUserPosts[index], data.homePage);
-                    loading.before(newsFeedPost);
-                    loading.hide();
-                    fetching = false;
-                });
+            $.get("render/fetchNewsFeedPosts")
+            .fail(function(err) {
+                console.log("Failed to fetch data, status_code: " + err.status);
+            })
+            .done(function(data) {
+                loading.before(data);
+                loading.hide();
+                fetching = false;
+            });
             loading.show();
         }
     });
@@ -182,9 +104,29 @@
 
 /** USER POST INTERACTIONS FUNCTIONALITY **/
 (function() {
+
+    var loadCommentSection = function(commentFeed, loadingGif) {
+        $.get("render/fetchUserComments")
+            .fail(function(err) {
+                console.log("Failed to fetch data, status_code: " + err.status);
+            })
+            .done(function(data) {
+                commentFeed.append(data);
+                commentFeed.show();
+                loadingGif.hide();
+            });
+        loadingGif.show();
+    };
+
     $("body").on("click", "a.interaction-button", function(event) {
+        var parentDiv = $(this).parent('div');
+        var commentBox = parentDiv.siblings('.comment-box');
+        var commentFeed = parentDiv.siblings('.comment-feed');
+        var loadingGif = parentDiv.siblings('.loading-user-comments');
+
         if (event.target.matches("a.interaction-button.comment")) {
-            $(this).parent('div').siblings('.comment-box').show();
+            commentBox.show();
+            loadCommentSection(commentFeed, loadingGif);
         } else if (event.target.matches("a.interaction-button.like")) {
             console.log("LIKED POST");
         } else if (event.target.matches("a.interaction-button.dislike")) {
@@ -215,5 +157,4 @@
             $(this).stop(true, true).show();
         });
     });
-
 })();

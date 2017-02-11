@@ -14,10 +14,12 @@ var setLang = function(req, res, next) {
 
 var fetchNewsFeedPosts = function(req, res, next) {
     var lang = req.app.get('setLang');
+
     var loggedInUser = {
         userName: "Daniel Castilla",
         userPicture: "/images/random-guy-2.jpg"
     };
+
     var sampleUserPosts = [{
         user: 'Daniel Castilla',
         userPicture: "/images/random-guy-2.jpg",
@@ -43,22 +45,33 @@ var fetchNewsFeedPosts = function(req, res, next) {
         userQuote: 'Enjoying life one day at a time',
         backgroundImage: "/images/beach-sunset.jpg"
     }];
+
     var templateData = {
         loggedInUser: loggedInUser,
-        userPost: sampleUserPosts[Math.floor(Math.random() * 3)],
         pageText: pageData(null, lang).homePage
     };
+
     var templatePath = "app_server/views/user-news-feed-page/partials/news-feed-post.ejs";
-    ejs.renderFile(templatePath, templateData, function(err, data) {
-        if (err) {
-            res.status(500).send({ "message": "Internal Server Error", "error": err });
-        } else {
-            res.status(200).send(data);
-        }
-    });
+
+    var htmlData = "";
+
+    for (var i = 0; i < Math.floor(Math.random() * 20); i++) {
+        templateData.userPost = sampleUserPosts[Math.floor(Math.random() * 3)];
+        ejs.renderFile(templatePath, templateData, function (err, data) {
+            if (!err) {
+                htmlData += data;
+            } else {
+                res.status(500).send({ "message": "Internal Server Error", "error": err });
+            }
+        });
+    }
+
+    res.status(200).send(htmlData);
 };
 
 var fetchUserComments = function(req, res, next) {
+    var templatePath = "app_server/views/user-news-feed-page/partials/user-comment-in-feed.ejs";
+
     var sampleUserComments = [{
         userName: 'Daniel Castilla',
         userImage: "../images/random-guy-2.jpg",
@@ -72,17 +85,23 @@ var fetchUserComments = function(req, res, next) {
         userName: 'Phoebe Toshiko',
         userPost: 'Acceptable'
     }];
-    var templateData = {
-        userComment: sampleUserComments[Math.floor(Math.random() * 3)]
-    };
-    var templatePath = "app_server/views/user-news-feed-page/partials/user-comment-in-feed.ejs";
-    ejs.renderFile(templatePath, templateData, function(err, data) {
-        if (err) {
-            res.status(500).send({ "message": "Internal Server Error", "error": err });
-        } else {
-            res.status(200).send(data);
-        }
-    });
+
+    var templateData = { };
+
+    var htmlData = "";
+
+    for (var i = 0; i < Math.floor(Math.random() * 20); i++) {
+        templateData.userComment = sampleUserComments[Math.floor(Math.random() * 3)];
+        ejs.renderFile(templatePath, templateData, function(err, data) {
+            if (!err) {
+                htmlData += data;
+            } else {
+                res.status(500).send({ "message": "Internal Server Error", "error": err });
+            }
+        });
+    }
+
+    res.status(200).send(htmlData);
 };
 
 module.exports = {

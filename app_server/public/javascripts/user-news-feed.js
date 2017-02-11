@@ -44,9 +44,11 @@
                 console.log("Failed to fetch data, status_code: " + err.status);
             })
             .done(function(data) {
-                loading.before(data);
-                loading.hide();
-                fetching = false;
+                setTimeout(function(){
+                    loading.before(data);
+                    loading.hide();
+                    fetching = false;
+                }, 1000);
             });
             loading.show();
         }
@@ -120,9 +122,11 @@
             console.log("Failed to fetch data, status_code: " + err.status);
         })
         .done(function(data) {
-            commentFeed.append(data);
-            commentFeed.show();
-            loadingGif.hide();
+            setTimeout(function() {
+                commentFeed.append(data);
+                commentFeed.show();
+                loadingGif.hide();
+            }, 1000);
         });
         loadingGif.show();
     };

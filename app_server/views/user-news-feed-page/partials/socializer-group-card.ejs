@@ -10,16 +10,22 @@
                 <% for (var index = 0; index < socializerGroups.length; index++) { %>
                 <% if (index != socializerGroups.length - 1) { %>
                 <li>
-                    <div style="overflow: auto; margin-bottom: 10px;">
+                    <div class="socializer-group" style="overflow: auto; margin-bottom: 10px;">
                         <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
-                        <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
+                        <p style="margin-top: 13px;">
+                            <a style="color: black;"><%= socializerGroups[index].groupName %></a>
+                            <i class="fa fa-times socializer-group" aria-hidden="true"></i>
+                        </p>
                     </div>
                 </li>
                 <% } else { %>
                 <li>
-                    <div style="overflow: auto; margin-bottom: 0px;">
+                    <div class="socializer-group" style="overflow: auto; margin-bottom: 0px;">
                         <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
-                        <p style="margin-top: 13px;"><a style="color: black;"><%= socializerGroups[index].groupName %></a></p>
+                        <p style="margin-top: 13px;">
+                            <a style="color: black;"><%= socializerGroups[index].groupName %></a>
+                            <i class="fa fa-times socializer-group" aria-hidden="true"></i>
+                        </p>
                     </div>
                 </li>
                 <% } %>

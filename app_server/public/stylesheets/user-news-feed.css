@@ -662,6 +662,13 @@ a.see-more-trends:hover {
     font-size: 14px;
 }
 
+.fa.fa-times.socializer-group {
+    display: none;
+    float: right;
+    font-size: 12px !important;
+    margin-top: 4px;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
     background-color: #F5F5F5;

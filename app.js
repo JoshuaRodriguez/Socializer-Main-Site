@@ -27,9 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(appServerDir, "public")));
 app.use(function(req, res, next) {
     var lang = req.app.get('setLang');
-    if (!lang) {
-        req.app.set('setLang', 'english');
-    }
+    if (!lang) { req.app.set('setLang', 'english'); }
     next();
 });
 

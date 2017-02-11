@@ -63,10 +63,20 @@
         $(this).parent().eq(0).fadeOut(200);
     });
 
+    $(".fa.fa-times.socializer-group").on("click", function() {
+        $(this).parent().parent().fadeOut(200);
+    });
+
     $('.possible-friend').hover(function() {
         $(this).children().eq(1).children('i').show();
     }, function() {
         $(this).children().eq(1).children('i').hide();
+    });
+
+    $(".socializer-group").hover(function() {
+        $(this).children().eq(1).children().eq(1).show();
+    }, function() {
+        $(this).children().eq(1).children().eq(1).hide();
     });
 
     $('.trending').hover(function() {
@@ -104,17 +114,16 @@
 
 /** USER POST INTERACTIONS FUNCTIONALITY **/
 (function() {
-
     var loadCommentSection = function(commentFeed, loadingGif) {
         $.get("render/fetchUserComments")
-            .fail(function(err) {
-                console.log("Failed to fetch data, status_code: " + err.status);
-            })
-            .done(function(data) {
-                commentFeed.append(data);
-                commentFeed.show();
-                loadingGif.hide();
-            });
+        .fail(function(err) {
+            console.log("Failed to fetch data, status_code: " + err.status);
+        })
+        .done(function(data) {
+            commentFeed.append(data);
+            commentFeed.show();
+            loadingGif.hide();
+        });
         loadingGif.show();
     };
 

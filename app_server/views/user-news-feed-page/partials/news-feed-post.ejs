@@ -1,11 +1,12 @@
 <div class="dashboard-news-feed-post-card">
     <div class="dashboard-card-content-wrapper font-size-14px">
         <div>
-            <a class="user-picture" style="background-image: url(<%= userPost.userPicture %>);"></a>
-            <p class="user-name"><%= userPost.user %></p>
+            <span class="data-attr" data-user-id="<%= userPost.userId %>"></span>
+            <a class="user-picture" style="background-image: url(<%= userPost.profilePicture %>);"></a>
+            <p class="user-name"><%= userPost.name %></p>
             <p class="time-elapsed"><%= userPost.timeElapsed %></p>
             <div style="clear: both;"></div>
-            <p class="user-post"><%= userPost.posting %></p>
+            <p class="user-post"><%= userPost.postText %></p>
             <% if (userPost.postedImage) { %>
             <img class="image-post" src="<%= userPost.postedImage %>"></img>
             <% } %>
@@ -16,25 +17,12 @@
                 <a class="interaction-button comment"><i class="fa fa-comment-o margin-right-8px" aria-hidden="true"></i><%= pageText.comment %></a>
                 <a class="interaction-button share"><i class="fa fa-share margin-right-8px" aria-hidden="true"></i><%= pageText.share %></a>
             </div>
-            <div class="mini-profile-view">
-                <div class="mini-profile-view-caret caret"></div>
-                <div class="profile-card-image-wrapper" style="background-image: url(<%= userPost.backgroundImage %>);"></div>
-                <div class="profile-card-content-wrapper">
-                    <div class="profile-picture" style="background-image: url(<%= userPost.userPicture %>);"></div>
-                    <h6 class="users-full-name"><%= userPost.user %></h6>
-                    <p class="users-quote"><%= userPost.userQuote %><P>
-                    <div class="mini-profile-view-buttons">
-                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
-                        <a class="add-friend-button"><i class="fa fa-envelope" aria-hidden="true"></i><%= pageText.messages.substring(0, 7) %></a>
-                    </div>
-                </div>
-            </div>
             <div class="comment-feed"></div>
             <div class="loading-user-comments">
                 <image src="images/ellipsis.gif" style="height: 36px; margin-top: 15px;"></image>
             </div>
             <div class="comment-box">
-                <a class="comment-box-user-picture" style="background-image: url(<%= loggedInUser.userPicture %>);"></a>
+                <a class="comment-box-user-picture" style="background-image: url(<%= loggedInUser.profilePicture %>);"></a>
                 <input class="input-comment-field" type="text" placeholder="<%= pageText.comment %>">
             </div>
         </div>

@@ -1,7 +1,8 @@
 <div class="user-post-in-comment-feed">
-    <a class="user-picture" style="background-image: url(<%= userComment.userImage %>);"></a>
+    <span class="data-attr" data-user-id="<%= user.userId %>"></span>
+    <a class="user-picture" style="background-image: url(<%= user.profilePicture %>);"></a>
     <div class="user-comment">
-        <a class="postedBy"><%= userComment.userName %></a>
-        <p><%= userComment.userPost %></p>
+        <a class="postedBy"><%= user.name %></a>
+        <p><%= user.commentText %></p>
     </div>
 </div>

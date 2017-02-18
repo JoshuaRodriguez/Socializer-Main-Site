@@ -11,19 +11,21 @@
                     <% for (var index = 0; index < possibleFriends.length; index++) { %>
                     <% if (index != possibleFriends.length - 1) { %> 
                     <li>
-                      <div class="possible-friend">
-                        <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
-                        <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
-                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
-                      </div>
+                        <div class="possible-friend">
+                            <span class="data-attr" data-user-id="<%= possibleFriends[index].userId %>"></span>
+                            <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
+                            <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].name %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                            <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+                        </div>
                     </li>
                     <% } else { %>
                     <li>
-                      <div class="possible-friend last-in-list" >
-                        <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
-                        <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].userName %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
-                        <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
-                      </div>
+                        <div class="possible-friend last-in-list" >
+                            <span class="data-attr" data-user-id="<%= possibleFriends[index].userId %>"></span>
+                            <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
+                            <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].name %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                            <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+                        </div>
                     </li>
                     <% } %>
                     <% } %>

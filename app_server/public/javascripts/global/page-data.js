@@ -38,7 +38,8 @@ module.exports = function(requestedPage, lang) {
             "seeMore": globalStrings[lang]["see-more"],
             "showAll": globalStrings[lang]["show-all"],
             "peopleYouMayKnow": globalStrings[lang]["people-you-may-know"],
-            "addFriend": globalStrings[lang]["add-friend"]
+            "addFriend": globalStrings[lang]["add-friend"],
+            "joinGroup": globalStrings[lang]["join-group"]
         }
     };
 

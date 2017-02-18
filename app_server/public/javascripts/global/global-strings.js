@@ -42,7 +42,8 @@ module.exports = {
         "see-more": "See more",
         "show-all": "Show all",
         "people-you-may-know": "People you may know",
-        "add-friend": "Add friend"
+        "add-friend": "Add friend",
+        "join-group": "Join group"
     },
     "spanish": {
         "site-logo-text": "Socializer",
@@ -87,6 +88,7 @@ module.exports = {
         "see-more": "Ver mas",
         "show-all": "Mostrar todo",
         "people-you-may-know": "Los Conoces?",
-        "add-friend": "Añadir amigo"
+        "add-friend": "Añadir amigo",
+        "join-group": "Unirse al grupo"
     }
 };

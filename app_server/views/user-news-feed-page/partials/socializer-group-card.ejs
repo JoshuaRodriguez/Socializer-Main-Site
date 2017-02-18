@@ -11,9 +11,10 @@
                 <% if (index != socializerGroups.length - 1) { %>
                 <li>
                     <div class="socializer-group" style="overflow: auto; margin-bottom: 10px;">
-                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
+                        <span class="data-attr" data-user-id="<%= socializerGroups[index].userId %>"></span>
+                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].profilePicture %>); margin-right: 10px;"></a>
                         <p style="margin-top: 13px;">
-                            <a style="color: black;"><%= socializerGroups[index].groupName %></a>
+                            <a style="color: black;"><%= socializerGroups[index].name %></a>
                             <i class="fa fa-times socializer-group" aria-hidden="true"></i>
                         </p>
                     </div>
@@ -21,9 +22,10 @@
                 <% } else { %>
                 <li>
                     <div class="socializer-group" style="overflow: auto; margin-bottom: 0px;">
-                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].groupImage %>); margin-right: 10px;"></a>
+                        <span class="data-attr" data-user-id="<%= socializerGroups[index].userId %>"></span>
+                        <a class="user-picture" style="background-image: url(<%= socializerGroups[index].profilePicture %>); margin-right: 10px;"></a>
                         <p style="margin-top: 13px;">
-                            <a style="color: black;"><%= socializerGroups[index].groupName %></a>
+                            <a style="color: black;"><%= socializerGroups[index].name %></a>
                             <i class="fa fa-times socializer-group" aria-hidden="true"></i>
                         </p>
                     </div>

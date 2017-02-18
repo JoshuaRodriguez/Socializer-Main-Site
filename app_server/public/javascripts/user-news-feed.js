@@ -122,11 +122,9 @@
             console.log("Failed to fetch data, status_code: " + err.status);
         })
         .done(function(data) {
-            setTimeout(function() {
-                commentFeed.append(data);
-                commentFeed.show();
-                loadingGif.hide();
-            }, 1000);
+            commentFeed.append(data);
+            commentFeed.show();
+            loadingGif.hide();
         });
         loadingGif.show();
     };
@@ -152,21 +150,46 @@
 
 /** MOUSE OVER PROFILE PICTURE ON POST FUNCTIONALITY **/
 (function() {
-    $(document).on("mouseover", "a.user-picture", function() {
-        var miniProfileView = $(this).parent().children(".mini-profile-view");
+    $(document).on("mouseover", "a.user-picture, a.possible-friend-picture", function() {
+        var pictureEl = $(this);
+        var userId = $(this).siblings(".data-attr").data().userId
         var newsFeedPostImageTop = $(this).position().top;
+
+        var removeProfileViewFromDOM = function(element, time) {
+            setTimeout(function() {
+                if (element.css("display") != "block") {
+                    element.remove();
+                }
+            }, time);
+        };
+
         var timeoutId = setTimeout(function() {
-            miniProfileView.css({ top: newsFeedPostImageTop + 59 });
-            miniProfileView.show();
+            $.post("render/fetchMiniProfileView", { userId: userId })
+            .fail(function(err) {
+                console.log("Failed to fetch data, status_code: " + err.status);
+            })
+            .done(function(data) {
+                var renderedProfileView = $($.parseHTML(data));
+                pictureEl.after(renderedProfileView);
+                renderedProfileView.css({ top: newsFeedPostImageTop + 59 });
+                renderedProfileView.show();
+            });
         }, 500);
 
-        $(document).on("mouseout", "a.user-picture, .mini-profile-view", function() {
+        $(document).on("mouseout", "a.user-picture, a.possible-friend-picture, .mini-profile-view", function() {
             clearTimeout(timeoutId);
-            $(this).parent().children(".mini-profile-view").fadeOut(200);
-
+            var currentElement = $(this);
+            if (currentElement.is("a.user-picture") || currentElement.is("a.possible-friend-picture")) {
+                var miniProfileViewEl = currentElement.siblings('.mini-profile-view');
+                miniProfileViewEl.fadeOut(200);
+                removeProfileViewFromDOM(miniProfileViewEl, 300);
+            } else if (currentElement.is(".mini-profile-view")) {
+                currentElement.fadeOut(200);
+                removeProfileViewFromDOM(currentElement, 300);
+            }
         });
 
-        $(document).on("mouseover", ".mini-profile-view", function(event) {
+        $(document).on("mouseover", ".mini-profile-view", function() {
             $(this).stop(true, true).show();
         });
     });

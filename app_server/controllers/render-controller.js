@@ -13,7 +13,7 @@ var setLang = function(req, res) {
 };
 
 var fetchNewsFeedPosts = function(req, res) {
-    var templatePath = "app_server/views/user-news-feed-page/partials/news-feed-post.ejs";
+    var templatePath = "app_server/views/partials/news-feed-post.ejs";
 
     var lang = req.app.get('setLang');
 
@@ -70,7 +70,7 @@ var fetchNewsFeedPosts = function(req, res) {
 };
 
 var fetchUserComments = function(req, res) {
-    var templatePath = "app_server/views/user-news-feed-page/partials/user-comment-in-feed.ejs";
+    var templatePath = "app_server/views/partials/user-comment-in-feed.ejs";
 
     var sampleUserComments = [{
         userId: 1,
@@ -115,7 +115,7 @@ var fetchUserComments = function(req, res) {
 };
 
 var fetchMiniProfileView = function(req, res, next) {
-    var templatePath = "app_server/views/user-news-feed-page/partials/mini-profile-view.ejs";
+    var templatePath = "app_server/views/partials/mini-profile-view.ejs";
 
     var lang = req.app.get('setLang');
 

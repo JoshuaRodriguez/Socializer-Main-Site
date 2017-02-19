@@ -4,5 +4,6 @@ var pageController = require("../controllers/site-controller.js");
 
 router.get("/", pageController.landingPage);
 router.get("/home", pageController.userHomePage);
+router.get("/:userProfilePageName", pageController.userProfilePage);
 
 module.exports = router;

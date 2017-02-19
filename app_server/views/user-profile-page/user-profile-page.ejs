@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- META TAGS -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- END META TAGS -->
+
+        <!-- SITE TITLE -->
+        <title>Socializer</title>
+        <!-- END SITE TITLE -->
+
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+        <!-- END FONTS -->
+
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="stylesheets/foundation-css/foundation.min.css" />
+        <link rel="stylesheet" href="stylesheets/font-awesome/font-awesome.min.css" />
+        <link rel="stylesheet" href="stylesheets/user-news-feed.css"/>
+        <!-- END CSS FILES -->
+    </head>
+    <body>
+        <!-- SITE HEADER -->
+        <div class="site-header">
+            <!-- NEWS FEED PAGE NAVBAR -->
+            <%- include("../partials/site-navbar.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
+            <!-- END NEWS FEED PAGE NAVBAR -->
+        </div>
+        <!-- END SITE HEADER -->
+
+        <!-- SITE CONTENT -->
+        <div class="site-content"></div>
+        <!-- END SITE CONTENT -->
+
+        <!-- BACK TO TOP ARROW -->
+        <a class="back-to-top" href="#top">
+            <div class="arrow-box">
+                <i class="fa fa-arrow-up large-arrow" aria-hidden="true"></i>
+            </div>
+        </a>
+        <!-- END BACK TO TOP ARROW -->
+
+        <!-- SITE FOOTER -->
+        <div class="site-footer"></div>
+        <!-- END SITE FOOTER -->
+
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" src="javascripts/foundation-js/jquery.js"></script>
+        <script type="text/javascript" src="javascripts/foundation-js/foundation.min.js"></script>
+        <script type="text/javascript" src="javascripts/foundation-js/what-input.js"></script>
+        <script type="text/javascript" src="javascripts/foundation-js/run-foundation.js"></script>
+        <script type="text/javascript" src="javascripts/user-profile-page.js"></script>
+        <!-- END JAVASCRIPT FILES -->
+    </body>
+</html>

@@ -1,6 +1,6 @@
 var pageData = require("../public/javascripts/global/page-data.js");
 
-var dummyData = function(lang) {
+var homePageDummyData = function(lang) {
     return {
         pageText: pageData("homePage", lang),
         loggedInUser: {
@@ -83,6 +83,19 @@ var dummyData = function(lang) {
     };
 };
 
+var userProfilePageDummyData = function(lang) {
+    return {
+        pageText: pageData("homePage", lang),
+        loggedInUser: {
+            userId: 1,
+            name: "Daniel Castilla",
+            quote: "Saving lives is my motto",
+            profilePicture: "../images/random-guy-2.jpg",
+            coverPhoto: "../images/campfire.jpg"
+        }
+    };
+};
+
 var landingPage = function(req, res, next) {
     var lang = req.app.get('setLang');
     res.render("landing-page/landing-page", pageData("landingPage", lang));
@@ -90,10 +103,16 @@ var landingPage = function(req, res, next) {
 
 var userHomePage = function(req, res, next) {
     var lang = req.app.get('setLang');
-    res.render("user-news-feed-page/user-news-feed", dummyData(lang));
+    res.render("user-news-feed-page/user-news-feed", homePageDummyData(lang));
+};
+
+var userProfilePage = function(req, res, next) {
+    var lang = req.app.get('setLang');
+    res.render("user-profile-page/user-profile-page", userProfilePageDummyData(lang));
 };
 
 module.exports = {
     landingPage: landingPage,
-    userHomePage: userHomePage
+    userHomePage: userHomePage,
+    userProfilePage: userProfilePage
 };

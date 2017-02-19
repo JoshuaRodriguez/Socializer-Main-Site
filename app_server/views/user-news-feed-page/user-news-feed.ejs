@@ -26,7 +26,7 @@
         <!-- SITE HEADER -->
         <div class="site-header">
             <!-- NEWS FEED PAGE NAVBAR -->
-            <%- include("./partials/site-navbar.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
+            <%- include("../partials/site-navbar.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
             <!-- END NEWS FEED PAGE NAVBAR -->
         </div>
         <!-- END SITE HEADER -->
@@ -40,11 +40,11 @@
                 <!-- LEFT DASHBOARD -->
                 <div class="dashboard-left">
                     <!-- PROFILE CARD -->
-                    <%- include("./partials/dashboard-profile-card.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
+                    <%- include("../partials/dashboard-profile-card.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
                     <!-- END PROFILE CARD -->
 
                     <!-- PEOPLE YOU MAY KNOW CARD -->
-                    <%- include("./partials/potential-friends-card.ejs", { possibleFriends: possibleFriends }); %>
+                    <%- include("../partials/potential-friends-card.ejs", { possibleFriends: possibleFriends }); %>
                     <!-- END PEOPLE YOU MAY KNOW CARD -->
                 </div>
                 <!-- END LEFT DASHBOARD -->
@@ -52,17 +52,17 @@
                 <!-- CENTER DASHBOARD -->
                 <div class="dashboard-center">
                     <!-- INPUT MESSAGE CARD -->
-                    <%- include("./partials/new-post-input-field.ejs", { pageText: pageText }); %>
+                    <%- include("../partials/new-post-input-field.ejs", { pageText: pageText }); %>
                     <!-- END INPUT MESSAGE CARD -->
 
                     <!-- SHOW NEWS FEED POSTS -->
                     <% for (var index = 0; index < userPosts.length; index++) { %>
-                    <%- include("./partials/news-feed-post.ejs", { userPost: userPosts[index], pageText: pageText, loggedInUser: loggedInUser }); %>
+                    <%- include("../partials/news-feed-post.ejs", { userPost: userPosts[index], pageText: pageText, loggedInUser: loggedInUser }); %>
                     <% } %>
                     <!-- END SHOW NEWS FEED POSTS -->
 
                     <!-- LOADING GIF -->
-                    <%- include("./partials/loading-gif-news-feed.ejs"); %>
+                    <%- include("../partials/loading-gif-news-feed.ejs"); %>
                     <!-- END LOADING GIF -->
                 </div>
                 <!-- END CENTER DASHBOARD -->
@@ -70,15 +70,15 @@
                 <!-- RIGHT DASHBOARD -->
                 <div class="dashboard-right">
                     <!-- TRENDING TOPICS CARD -->
-                    <%- include("./partials/trending-topics-card.ejs", { trendingTopics: trendingTopics, pageText: pageText }); %>
+                    <%- include("../partials/trending-topics-card.ejs", { trendingTopics: trendingTopics, pageText: pageText }); %>
                     <!-- END TRENDING TOPICS CARD -->
 
                     <!-- SOCIALIZER GROUP CARDS -->
-                    <%- include("./partials/socializer-group-card.ejs", { socializerGroups: socializerGroups, pageText: pageText }); %>
+                    <%- include("../partials/socializer-group-card.ejs", { socializerGroups: socializerGroups, pageText: pageText }); %>
                     <!-- END SOCIALIZER GROUPS CARD -->
 
                     <!-- SELECT LANGUAGE CARD -->
-                    <%- include("./partials/select-language-card.ejs"); %>
+                    <%- include("../partials/select-language-card.ejs"); %>
                     <!-- END SELECT LANGUAGE CARD -->
                 </div>
                 <!-- END RIGHT DASHBOARD -->

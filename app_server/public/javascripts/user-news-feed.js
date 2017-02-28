@@ -1,8 +1,8 @@
 /** ARROW SCROLL FUNCTIONALITY **/
 (function() {
-    var browserWindow = $(window);
-    var arrowBox = $('.arrow-box');
-    var backToTop = $('.back-to-top');
+    var $browserWindow = $(window);
+    var $arrowBox = $('.arrow-box');
+    var $backToTop = $('.back-to-top');
 
     var scrollSmoothly = function() {
         $('html, body').animate({
@@ -11,32 +11,32 @@
     };
 
     var showArrowBoxIfPassedThreshold = function(value) {
-        if (browserWindow.scrollTop() > value) {
-            arrowBox.show();
+        if ($browserWindow.scrollTop() > value) {
+            $arrowBox.show();
         } else {
-            arrowBox.hide();
+            $arrowBox.hide();
         }
     };
 
-    browserWindow.on('scroll', function() {
+    $browserWindow.on('scroll', function() {
         showArrowBoxIfPassedThreshold(619);
     });
 
-    backToTop.on('click', function() {
+    $backToTop.on('click', function() {
         scrollSmoothly();
     });
 })();
 
 /** DETECT END OF SCROLL FUNCTIONALITY **/
 (function() {
-    var browserWindow = $(window);
-    var body = $("body");
-    var loading = $('.loading-news-feed');
+    var $browserWindow = $(window);
+    var $body = $("body");
+    var $loading = $('.loading-news-feed');
     var fetching = false;
 
-    browserWindow.scroll(function() {
-        var currentScrollPosition = Math.floor(browserWindow.innerHeight() + browserWindow.scrollTop());
-        var bodyHeight = Math.floor(body.height() - 100);
+    $browserWindow.scroll(function() {
+        var currentScrollPosition = Math.floor($browserWindow.innerHeight() + $browserWindow.scrollTop());
+        var bodyHeight = Math.floor($body.height() - 100);
         if (currentScrollPosition >= bodyHeight && fetching === false) {
             fetching = true;
             $.get("render/fetchNewsFeedPosts")
@@ -45,12 +45,12 @@
             })
             .done(function(data) {
                 setTimeout(function(){
-                    loading.before(data);
-                    loading.hide();
+                    $loading.before(data);
+                    $loading.hide();
                     fetching = false;
                 }, 1000);
             });
-            loading.show();
+            $loading.show();
         }
     });
 })();
@@ -90,26 +90,26 @@
 
 /** SETTINGS DROP DOWN FUNCTIONALITY **/
 (function() {
-    var settingsDropdown = $(".settings-dropdown");
-    var dropDownContent = $(".dropdown-content");
-    var browserWindow = $(window);
+    var $settingsDropdown = $(".settings-dropdown");
+    var $dropDownContent = $(".dropdown-content");
+    var $browserWindow = $(window);
 
-    settingsDropdown.toggled = 0;
+    $settingsDropdown.toggled = 0;
 
-    settingsDropdown.click(function() {
-        if (!settingsDropdown.toggled) {
-            dropDownContent.addClass("show");
-            settingsDropdown.toggled = 1;
+    $settingsDropdown.click(function() {
+        if (!$settingsDropdown.toggled) {
+            $dropDownContent.addClass("show");
+            $settingsDropdown.toggled = 1;
         } else {
-            dropDownContent.removeClass("show");
-            settingsDropdown.toggled = 0;
+            $dropDownContent.removeClass("show");
+            $settingsDropdown.toggled = 0;
         }
     });
 
-    browserWindow.click(function(event) {
+    $browserWindow.click(function(event) {
         if (!event.target.matches("a.settings-dropdown")) {
-            dropDownContent.removeClass("show");
-            settingsDropdown.toggled = 0;
+            $dropDownContent.removeClass("show");
+            $settingsDropdown.toggled = 0;
         }
     });
 })();
@@ -130,14 +130,14 @@
     };
 
     $("body").on("click", "a.interaction-button", function(event) {
-        var parentDiv = $(this).parent('div');
-        var commentBox = parentDiv.siblings('.comment-box');
-        var commentFeed = parentDiv.siblings('.comment-feed');
-        var loadingGif = parentDiv.siblings('.loading-user-comments');
+        var $parentDiv = $(this).parent('div');
+        var $commentBox = $parentDiv.siblings('.comment-box');
+        var $commentFeed = $parentDiv.siblings('.comment-feed');
+        var $loadingGif = $parentDiv.siblings('.loading-user-comments');
 
         if (event.target.matches("a.interaction-button.comment")) {
-            commentBox.show();
-            loadCommentSection(commentFeed, loadingGif);
+            $commentBox.show();
+            loadCommentSection($commentFeed, $loadingGif);
         } else if (event.target.matches("a.interaction-button.like")) {
             console.log("LIKED POST");
         } else if (event.target.matches("a.interaction-button.dislike")) {
@@ -151,9 +151,9 @@
 /** MOUSE OVER PROFILE PICTURE ON POST FUNCTIONALITY **/
 (function() {
     $(document).on("mouseover", "a.user-picture, a.possible-friend-picture", function() {
-        var pictureEl = $(this);
-        var userId = $(this).siblings(".data-attr").data().userId
-        var newsFeedPostImageTop = $(this).position().top;
+        var $pictureEl = $(this);
+        var $userId = $(this).siblings(".data-attr").data().userId
+        var $newsFeedPostImageTop = $(this).position().top;
 
         var removeProfileViewFromDOM = function(element, time) {
             setTimeout(function() {
@@ -164,28 +164,28 @@
         };
 
         var timeoutId = setTimeout(function() {
-            $.post("render/fetchMiniProfileView", { userId: userId })
+            $.post("render/fetchMiniProfileView", { userId: $userId })
             .fail(function(err) {
                 console.log("Failed to fetch data, status_code: " + err.status);
             })
             .done(function(data) {
-                var renderedProfileView = $($.parseHTML(data));
-                pictureEl.after(renderedProfileView);
-                renderedProfileView.css({ top: newsFeedPostImageTop + 59 });
-                renderedProfileView.show();
+                var $renderedProfileView = $($.parseHTML(data));
+                $pictureEl.after($renderedProfileView);
+                $renderedProfileView.css({ top: $newsFeedPostImageTop + 59 });
+                $renderedProfileView.show();
             });
         }, 500);
 
         $(document).on("mouseout", "a.user-picture, a.possible-friend-picture, .mini-profile-view", function() {
             clearTimeout(timeoutId);
-            var currentElement = $(this);
-            if (currentElement.is("a.user-picture") || currentElement.is("a.possible-friend-picture")) {
-                var miniProfileViewEl = currentElement.siblings('.mini-profile-view');
-                miniProfileViewEl.fadeOut(200);
-                removeProfileViewFromDOM(miniProfileViewEl, 300);
-            } else if (currentElement.is(".mini-profile-view")) {
-                currentElement.fadeOut(200);
-                removeProfileViewFromDOM(currentElement, 300);
+            var $currentElement = $(this);
+            if ($currentElement.is("a.user-picture") || $currentElement.is("a.possible-friend-picture")) {
+                var $miniProfileViewEl = $currentElement.siblings('.mini-profile-view');
+                $miniProfileViewEl.fadeOut(200);
+                removeProfileViewFromDOM($miniProfileViewEl, 300);
+            } else if ($currentElement.is(".mini-profile-view")) {
+                $currentElement.fadeOut(200);
+                removeProfileViewFromDOM($currentElement, 300);
             }
         });
 

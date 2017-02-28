@@ -23,15 +23,15 @@
 ### How do I get set up? ###
 
 * So, lets get you up and running with the current version of this project.
-First thing to do is to go ahead and create a fork of this project (meaning   you will have a copy of this repository in your own personal bit bucket account). 
+First thing to do is to go ahead and clone the project onto your machine.
 
-1. To do this you will find on the left hand side of this page a menu with a section called ACTIONS. You will find the option to fork there, go ahead and click on that. Enter any name you want for the forked repository (it's your copy of this after all), then click fork repository.
+1. To do this you will find on the left hand side of this page a menu with a section called ACTIONS. You will find the option to clone there, go ahead and click on that. Copy the git clone command shown (It's automatically highlighted for you).
 
-2. You will find a copy of this project and the repository in your bit bucket account after step one. The next thing to do is to go ahead and clone your copy of the project onto your machine. Click on the clone action on the left menu of your copied repository, you will be presented with a terminal / git shell command which you will run in a terminal / git shell.
+2. Open a terminal/git shell (windows) and post the git clone command that you copied from step 1. Run this command from the directory of your choice (other wise it will clone into the directory you are currently in)
 
-3. Once step two is completed, open a terminal(Linux/Mac) or git shell (windows) (if they aren't already open) and navigate to the root folder of the project. There you will type in the terminal(Linux/Mac) or git shell (windows) **npm install** (this will install all dependencies required by the project to run. NPM relies on the package.json file found in the project.
+3. Once step two is completed, with an open terminal(Linux/Mac) or git shell (windows) (if they aren't already open) and navigate to the root folder of the project. There you will type in the terminal(Linux/Mac) or git shell (windows) **npm install** (this will install all dependencies required by the project to run. NPM relies on the package.json file found in the project.
 
-4. This step isn't required but HIGHLY recommended. Open a terminal (if its not already open) and enter the following: **npm install -g nodemon**, this useful java script module detects any changes in code in your local copy of the project code and automatically restarts the server with the new changes.
+4. Open a terminal (if its not already open) and enter the following: **npm install -g nodemon**. This useful java script module detects any changes in code in your local copy of the project cand automatically restarts the server with the new changes.
 
 5. With nodemon installed (skip this is you are not using nodemon) go ahead run nodemon from the terminal/git shell in the root directory of the project. Nodemon will run the www script found in the bin folder of the project. If all went well, go ahead and go to localhost:3000 and see if you get the website.
 

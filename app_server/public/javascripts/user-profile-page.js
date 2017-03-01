@@ -27,6 +27,7 @@
     });
 })();
 
+/** SETTINGS DROP DOWN FUNCTIONALITY **/
 (function() {
     var $settingsDropdown = $(".settings-dropdown");
     var $dropDownContent = $(".dropdown-content");

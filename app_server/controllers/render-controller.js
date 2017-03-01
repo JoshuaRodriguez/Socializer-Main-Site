@@ -90,7 +90,7 @@ var fetchUserComments = function(req, res) {
     }, {
         userId: 4,
         name: 'Christian Castilla',
-        profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032914_1341682239188761_1208149176963666741_n.jpg?oh=fe8d9971188ec420de4dc9753487a867&oe=591C0E56",
+        profilePicture: "/images/christian.jpg",
         commentText: 'Not sure how I feel about that...'
     }];
 
@@ -144,45 +144,45 @@ var fetchMiniProfileView = function(req, res, next) {
     }, {
         userId: 4,
         name: 'Christian Castilla',
-        profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032914_1341682239188761_1208149176963666741_n.jpg?oh=fe8d9971188ec420de4dc9753487a867&oe=591C0E56",
+        profilePicture: "/images/christian.jpg",
         quote: "Visiting Peru",
-        coverPhoto: "http://www.reallywildchallenges.com/images/easyblog_images/299/2e1ax_simplistic_entry_dreamstime_9947942.jpg"
+        coverPhoto: "/images/christian-cover-photo.jpg"
     }, {
         userId: 5,
         name: 'Kyle Blasingame',
-        profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032289_1133493216748605_769622635020935443_n.jpg?oh=f4d4a46c62368787d243e6969dc2343c&oe=5912CDF3",
+        profilePicture: "/images/kyle.jpg",
         quote: "I love working at Publix",
-        coverPhoto: "http://pointsnearme.com/wp-content/uploads/2017/01/publix-near-me-cover-520x245.jpg"
+        coverPhoto: "/images/kyle-cover-photo.jpg"
     }, {
         userId: 6,
         name: 'Abdullah Hamad Almoqbil',
-        profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/67745_1329335653324_4607492_n.jpg?oh=6cb9d324cbac2906626e0c7cdbb5fe53&oe=5901D790",
+        profilePicture: "/images/abdullah.jpg",
         quote: "الحَمْد لله",
-        coverPhoto: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
+        coverPhoto: "/images/abdullah-cover-photo.png"
     }, {
         userId: 7,
         name: 'Asaif Aamir',
-        profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/12122630_10207379515663022_4169579083574170794_n.jpg?oh=85d02339695c6c26d33cf10aa9c63b53&oe=594A533B",
+        profilePicture: "/images/asaif.jpg",
         quote: "Briyani Rice ^_^",
-        coverPhoto: "http://www.wefindyougo.com/wp-content/uploads/2013/10/Pakistani-Food.jpg"
+        coverPhoto: "/images/asaif-cover-photo.jpg"
     }, {
         userId: 8,
         name: 'SFL Javascript Meet',
-        profilePicture: "http://www.acadecap.org/wp-content/uploads/2016/08/495484_385c_3.jpg",
+        profilePicture: "/images/javascript.jpg",
         quote: "Weekly meetings on Saturday at 9 AM!",
-        coverPhoto: "https://udemy-images.udemy.com/course/750x422/672274_cd11_2.jpg"
+        coverPhoto: "/images/javascript-cover-photo.jpg"
     }, {
         userId: 9,
         name: 'South Florida Android Devs',
-        profilePicture: "https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI.png",
+        profilePicture: "/images/android.png",
         quote: "Gather with your local Android developers!",
-        coverPhoto: "https://speckycdn-sdm.netdna-ssl.com/wp-content/uploads/2016/04/material-design-calendar-google.jpg"
+        coverPhoto: "/images/android-cover-photo.jpg"
     }, {
         userId: 10,
         name: 'Coders of Reddit',
-        profilePicture: "http://www.ichanical.com/wp-content/uploads/2015/04/html-programming.jpg",
+        profilePicture: "/images/programming.jpg",
         quote: "Join fellow Redditors who love coding!",
-        coverPhoto: "http://marketingland.com/wp-content/ml-loads/2014/07/reddit-combo-1920-800x450.png"
+        coverPhoto: "/images/programming-cover-photo.png"
     }];
 
     var templateData = {

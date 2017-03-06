@@ -1,5 +1,5 @@
 var ejs = require("ejs");
-var pageData = require("../public/javascripts/global/page-data.js");
+var pageData = require("../global/page-data.js");
 
 var setLang = function(req, res) {
     if (req.query.lang) {

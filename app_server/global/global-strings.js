@@ -1,5 +1,5 @@
 module.exports = {
-    "english": {
+    english: {
         "site-logo-text": "Socializer",
         "sign-in-button-text": "Sign in",
         "main-page-headline": "Welcome to the evolution of social networking",
@@ -45,7 +45,7 @@ module.exports = {
         "add-friend": "Add friend",
         "join-group": "Join group"
     },
-    "spanish": {
+    spanish: {
         "site-logo-text": "Socializer",
         "sign-in-button-text": "Registrarse",
         "main-page-headline": "Bienvenidos a la evolución de las redes sociales",

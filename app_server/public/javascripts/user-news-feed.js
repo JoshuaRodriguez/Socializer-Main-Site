@@ -152,7 +152,7 @@
 (function() {
     $(document).on("mouseover", "a.user-picture, a.possible-friend-picture", function() {
         var $pictureEl = $(this);
-        var $userId = $(this).siblings(".data-attr").data().userId
+        var $userId = $(this).siblings(".data-attr").data().userId;
         var $newsFeedPostImageTop = $(this).position().top;
 
         var removeProfileViewFromDOM = function(element, time) {

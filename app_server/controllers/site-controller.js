@@ -1,4 +1,4 @@
-var pageData = require("../public/javascripts/global/page-data.js");
+var pageData = require("../global/page-data.js");
 
 var homePageDummyData = function(lang) {
     return {
@@ -18,7 +18,7 @@ var homePageDummyData = function(lang) {
             postText: "Etiam eget elit vel dui vehicula lacinia nec nec mauris. Donec cursus porttitor risus ut laoreet. Nam dapibus leo felis, non lacinia nisl dignissim at. " +
             "Ut maximus sollicitudin ligula, eget efficitur lacus fermentum non. Fusce dapibus imperdiet suscipit. Morbi ultricies et odio vitae pellentesque. " +
             "In porttitor egestas mauris, vitae facilisis ipsum sagittis eget. Suspendisse suscipit nunc non ligula condimentum commodo.",
-            postedImage: "",
+            postedImage: ""
         }, {
             userId: 3,
             name: "Phoebe Toshiko",
@@ -96,17 +96,17 @@ var userProfilePageDummyData = function(lang) {
     };
 };
 
-var landingPage = function(req, res, next) {
+var landingPage = function(req, res) {
     var lang = req.app.get('setLang');
     res.render("landing-page/landing-page", pageData("landingPage", lang));
 };
 
-var userHomePage = function(req, res, next) {
+var userHomePage = function(req, res) {
     var lang = req.app.get('setLang');
     res.render("user-news-feed-page/user-news-feed", homePageDummyData(lang));
 };
 
-var userProfilePage = function(req, res, next) {
+var userProfilePage = function(req, res) {
     var lang = req.app.get('setLang');
     res.render("user-profile-page/user-profile-page", userProfilePageDummyData(lang));
 };

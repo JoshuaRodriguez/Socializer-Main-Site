@@ -114,7 +114,7 @@ var fetchUserComments = function(req, res) {
     res.status(200).send(htmlData);
 };
 
-var fetchMiniProfileView = function(req, res, next) {
+var fetchMiniProfileView = function(req, res) {
     var templatePath = "app_server/views/partials/mini-profile-view.ejs";
 
     var lang = req.app.get('setLang');

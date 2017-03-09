@@ -32,8 +32,8 @@ app.use(function(req, res, next) {
 });
 
 // set up site entry points
-app.use("/", siteRoutes);
 app.use("/render", renderRoutes);
+app.use("/", siteRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

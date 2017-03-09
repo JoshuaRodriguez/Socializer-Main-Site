@@ -17,9 +17,9 @@
         <!-- END FONTS -->
 
         <!-- CSS FILES -->
-        <link rel="stylesheet" href="stylesheets/foundation-css/foundation.min.css" />
-        <link rel="stylesheet" href="stylesheets/font-awesome/font-awesome.min.css" />
-        <link rel="stylesheet" href="stylesheets/user-profile-page.css"/>
+        <link rel="stylesheet" href="../../stylesheets/foundation-css/foundation.min.css" />
+        <link rel="stylesheet" href="../../stylesheets/font-awesome/font-awesome.min.css" />
+        <link rel="stylesheet" href="../../stylesheets/user-profile-page.css"/>
         <!-- END CSS FILES -->
     </head>
     <body>
@@ -35,17 +35,17 @@
         <div class="site-content">
             <div class="profile-container">
                 <div class="profile-header">
-                    <div class="top-section-base" style="background-image: url(/images/campfire.jpg);"></div>
+                    <div class="top-section-base" style="background-image: url(../../images/campfire.jpg);"></div>
                     <div class="bottom-section-base">
-                        <div class="profile-picture" style="background-image: url(images/random-guy-2.jpg);"></div>
+                        <div class="profile-picture" style="background-image: url(../../images/random-guy-2.jpg);"></div>
                         <div class="tab-menu">
                             <ul>
-                                <li><a>Timeline</a></li>
-                                <li><a>About</a></li>
-                                <li><a>Friends</a></li>
-                                <li><a>Photos</a></li>
-                                <li><a>Videos</a></li>
-                                <li><a>Socializer Groups</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>">Timeline</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>/about">About</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>/friends">Friends</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>/photos">Photos</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>/videos">Videos</a></li>
+                                <li><a href="/<%= loggedInUser.userName %>/groups">Socializer Groups</a><span class="profile-section-caret"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -68,11 +68,11 @@
         <!-- END SITE FOOTER -->
 
         <!-- JAVASCRIPT FILES -->
-        <script type="text/javascript" src="javascripts/foundation-js/jquery.js"></script>
-        <script type="text/javascript" src="javascripts/foundation-js/foundation.min.js"></script>
-        <script type="text/javascript" src="javascripts/foundation-js/what-input.js"></script>
-        <script type="text/javascript" src="javascripts/foundation-js/run-foundation.js"></script>
-        <script type="text/javascript" src="javascripts/user-profile-page.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/jquery.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/foundation.min.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/what-input.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/run-foundation.js"></script>
+        <script type="text/javascript" src="../../javascripts/user-profile-page.js"></script>
         <!-- END JAVASCRIPT FILES -->
     </body>
 </html>

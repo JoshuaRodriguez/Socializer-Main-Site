@@ -111,7 +111,7 @@ html {
     margin-top: -31px;
     margin-left: auto;
     margin-right: auto;
-    width: 603px;
+    width: 631px;
 }
 
 .tab-menu > ul {
@@ -300,6 +300,17 @@ html {
 
 .margin-right-8px {
     margin-right: 8px;
+}
+
+.profile-section-caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 10px solid rgba(230, 230, 230, 0.6);
+    display: block;
+    margin: 0 auto;
 }
 
 ::-webkit-scrollbar {

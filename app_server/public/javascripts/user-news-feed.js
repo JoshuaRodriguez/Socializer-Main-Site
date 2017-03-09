@@ -70,15 +70,15 @@
     });
 
     $('.possible-friend').hover(function() {
-        $(this).children().eq(1).children('i').show();
+        $(this).children('.possible-friend-text-wrapper').children('i').show();
     }, function() {
-        $(this).children().eq(1).children('i').hide();
+        $(this).children('.possible-friend-text-wrapper').children('i').hide();
     });
 
     $(".socializer-group").hover(function() {
-        $(this).children().eq(1).children().eq(1).show();
+        $(this).eq(0).children().eq(2).children().eq(1).show()
     }, function() {
-        $(this).children().eq(1).children().eq(1).hide();
+        $(this).eq(0).children().eq(2).children().eq(1).hide();
     });
 
     $('.trending').hover(function() {

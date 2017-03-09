@@ -88,6 +88,7 @@ var userProfilePageDummyData = function(lang) {
         pageText: pageData("homePage", lang),
         loggedInUser: {
             userId: 1,
+            userName: 'daniel.castilla.710',
             name: "Daniel Castilla",
             quote: "Saving lives is my motto",
             profilePicture: "../images/random-guy-2.jpg",
@@ -108,11 +109,25 @@ var userHomePage = function(req, res) {
 
 var userProfilePage = function(req, res) {
     var lang = req.app.get('setLang');
-    res.render("user-profile-page/user-profile-page", userProfilePageDummyData(lang));
+    res.render("user-profile-pages/timeline", userProfilePageDummyData(lang));
+};
+
+var userProfileSection = function(req, res, next) {
+    var lang = req.app.get('setLang');
+    var section = req.params.section;
+    var sectionNames = ["timeline", "about", "friends", "photos", "videos", "groups"];
+
+    if (sectionNames.includes(section)) {
+        res.render("user-profile-pages/" + section, userProfilePageDummyData(lang));
+    } else {
+        next();
+    }
+
 };
 
 module.exports = {
     landingPage: landingPage,
     userHomePage: userHomePage,
-    userProfilePage: userProfilePage
+    userProfilePage: userProfilePage,
+    userProfileSection: userProfileSection
 };

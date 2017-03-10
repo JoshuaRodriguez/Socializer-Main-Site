@@ -1,11 +1,11 @@
 /** ARROW SCROLL FUNCTIONALITY **/
 (function() {
     var $browserWindow = $(window);
-    var $arrowBox = $('.arrow-box');
-    var $backToTop = $('.back-to-top');
+    var $arrowBox = $(".arrow-box");
+    var $backToTop = $(".back-to-top");
 
     var scrollSmoothly = function() {
-        $('html, body').animate({
+        $("html, body").animate({
             scrollTop: "0px"
         }, 500);
     };
@@ -18,11 +18,11 @@
         }
     };
 
-    $browserWindow.on('scroll', function() {
+    $browserWindow.on("scroll", function() {
         showArrowBoxIfPassedThreshold(619);
     });
 
-    $backToTop.on('click', function() {
+    $backToTop.on("click", function() {
         scrollSmoothly();
     });
 })();
@@ -31,7 +31,7 @@
 (function() {
     var $browserWindow = $(window);
     var $body = $("body");
-    var $loading = $('.loading-news-feed');
+    var $loading = $(".loading-news-feed");
     var fetching = false;
 
     $browserWindow.scroll(function() {
@@ -40,9 +40,6 @@
         if (currentScrollPosition >= bodyHeight && fetching === false) {
             fetching = true;
             $.get("render/fetchNewsFeedPosts")
-            .fail(function(err) {
-                console.log("Failed to fetch data, status_code: " + err.status);
-            })
             .done(function(data) {
                 setTimeout(function(){
                     $loading.before(data);
@@ -69,10 +66,10 @@
         $(this).parent().parent().fadeOut(200);
     });
 
-    $('.possible-friend').hover(function() {
-        $(this).children('.possible-friend-text-wrapper').children('i').show();
+    $(".possible-friend").hover(function() {
+        $(this).children(".possible-friend-text-wrapper").children("i").show();
     }, function() {
-        $(this).children('.possible-friend-text-wrapper').children('i').hide();
+        $(this).children(".possible-friend-text-wrapper").children("i").hide();
     });
 
     $(".socializer-group").hover(function() {
@@ -81,10 +78,10 @@
         $(this).eq(0).children().eq(2).children().eq(1).hide();
     });
 
-    $('.trending').hover(function() {
-        $(this).children('.fa.fa-times.on-trending-topics').show();
+    $(".trending").hover(function() {
+        $(this).children(".fa.fa-times.on-trending-topics").show();
     }, function() {
-        $(this).children('.fa.fa-times.on-trending-topics').hide();
+        $(this).children(".fa.fa-times.on-trending-topics").hide();
     });
 })();
 
@@ -118,9 +115,6 @@
 (function() {
     var loadCommentSection = function(commentFeed, loadingGif) {
         $.get("render/fetchUserComments")
-        .fail(function(err) {
-            console.log("Failed to fetch data, status_code: " + err.status);
-        })
         .done(function(data) {
             commentFeed.append(data);
             commentFeed.show();
@@ -130,20 +124,20 @@
     };
 
     $("body").on("click", "a.interaction-button", function(event) {
-        var $parentDiv = $(this).parent('div');
-        var $commentBox = $parentDiv.siblings('.comment-box');
-        var $commentFeed = $parentDiv.siblings('.comment-feed');
-        var $loadingGif = $parentDiv.siblings('.loading-user-comments');
+        var $parentDiv = $(this).parent("div");
+        var $commentBox = $parentDiv.siblings(".comment-box");
+        var $commentFeed = $parentDiv.siblings(".comment-feed");
+        var $loadingGif = $parentDiv.siblings(".loading-user-comments");
 
         if (event.target.matches("a.interaction-button.comment")) {
             $commentBox.show();
             loadCommentSection($commentFeed, $loadingGif);
         } else if (event.target.matches("a.interaction-button.like")) {
-            console.log("LIKED POST");
+            // LIKED POST
         } else if (event.target.matches("a.interaction-button.dislike")) {
-            console.log("DISLIKED POST");
+            // DISLIKED POST
         } else if (event.target.matches("a.interaction-button.share")) {
-            console.log("SHARED POST");
+            // SHARED POST
         }
     });
 })();
@@ -165,9 +159,6 @@
 
         var timeoutId = setTimeout(function() {
             $.post("render/fetchMiniProfileView", { userId: $userId })
-            .fail(function(err) {
-                console.log("Failed to fetch data, status_code: " + err.status);
-            })
             .done(function(data) {
                 var $renderedProfileView = $($.parseHTML(data));
                 $pictureEl.parent().after($renderedProfileView);
@@ -180,7 +171,7 @@
             clearTimeout(timeoutId);
             var $currentElement = $(this);
             if ($currentElement.is("a.user-picture") || $currentElement.is("a.possible-friend-picture")) {
-                var $miniProfileViewEl = $currentElement.parent().siblings('.mini-profile-view');
+                var $miniProfileViewEl = $currentElement.parent().siblings(".mini-profile-view");
                 $miniProfileViewEl.fadeOut(200);
                 removeProfileViewFromDOM($miniProfileViewEl, 300);
             } else if ($currentElement.is(".mini-profile-view")) {

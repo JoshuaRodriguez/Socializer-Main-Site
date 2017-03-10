@@ -1,11 +1,11 @@
 /** ARROW SCROLL FUNCTIONALITY **/
 (function() {
     var $browserWindow = $(window);
-    var $arrowBox = $('.arrow-box');
-    var $backToTop = $('.back-to-top');
+    var $arrowBox = $(".arrow-box");
+    var $backToTop = $(".back-to-top");
 
     var scrollSmoothly = function() {
-        $('html, body').animate({
+        $("html, body").animate({
             scrollTop: "0px"
         }, 500);
     };
@@ -18,11 +18,11 @@
         }
     };
 
-    $browserWindow.on('scroll', function() {
+    $browserWindow.on("scroll", function() {
         showArrowBoxIfPassedThreshold(619);
     });
 
-    $backToTop.on('click', function() {
+    $backToTop.on("click", function() {
         scrollSmoothly();
     });
 })();

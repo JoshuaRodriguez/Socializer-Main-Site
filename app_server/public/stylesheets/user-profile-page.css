@@ -78,6 +78,7 @@ html {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .bottom-section-base {
@@ -312,22 +313,60 @@ html {
     border: 0 solid transparent;
     border-right-width: 10px;
     border-left-width: 10px;
-    border-bottom: 10px solid rgba(230, 230, 230, 0.6);
+    border-bottom: 8.7px solid rgb(230, 230, 230);
     display: block;
     margin: 0 auto;
 }
 
 .profile-photos-container {
-    height: 500px; 
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .profile-photos-header {
     width: 100%;
     height: 66px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 13px;
+}
+
+.profile-photos-header-text {
+    color: black;
+    display: inline-block;
+    font-size: 21px;
+    margin: 0;
+}
+
+.fa.fa-camera-retro {
+    font: normal normal normal 21px/1 FontAwesome !important;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.profile-photos-view {
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.loading-photos-gif {
+    width: 36px;
+    margin: 0 auto;
+    display: none;
+}
+
+.photo {
+    height: 195px;
+    width: 195px;
+    display: inline-block;
+    margin: 8px -6px -8px 9px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar {

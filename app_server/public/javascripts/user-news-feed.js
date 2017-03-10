@@ -76,7 +76,7 @@
     });
 
     $(".socializer-group").hover(function() {
-        $(this).eq(0).children().eq(2).children().eq(1).show()
+        $(this).eq(0).children().eq(2).children().eq(1).show();
     }, function() {
         $(this).eq(0).children().eq(2).children().eq(1).hide();
     });
@@ -170,7 +170,7 @@
             })
             .done(function(data) {
                 var $renderedProfileView = $($.parseHTML(data));
-                $pictureEl.after($renderedProfileView);
+                $pictureEl.parent().after($renderedProfileView);
                 $renderedProfileView.css({ top: $newsFeedPostImageTop + 59 });
                 $renderedProfileView.show();
             });
@@ -180,7 +180,7 @@
             clearTimeout(timeoutId);
             var $currentElement = $(this);
             if ($currentElement.is("a.user-picture") || $currentElement.is("a.possible-friend-picture")) {
-                var $miniProfileViewEl = $currentElement.siblings('.mini-profile-view');
+                var $miniProfileViewEl = $currentElement.parent().siblings('.mini-profile-view');
                 $miniProfileViewEl.fadeOut(200);
                 removeProfileViewFromDOM($miniProfileViewEl, 300);
             } else if ($currentElement.is(".mini-profile-view")) {

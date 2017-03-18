@@ -2,3 +2,4 @@
 
 # Ignore foundation-js files
 app_server/public/javascripts/foundation-js
+app_server/public/lightbox

@@ -43,7 +43,12 @@ module.exports = {
         "show-all": "Show all",
         "people-you-may-know": "People you may know",
         "add-friend": "Add friend",
-        "join-group": "Join group"
+        "join-group": "Join group",
+        "timeline": "Timeline",
+        "about": "About",
+        "photos": "Photos",
+        "videos": "Videos",
+        "socializer-groups":"Socializer Groups"
     },
     spanish: {
         "site-logo-text": "Socializer",
@@ -89,6 +94,11 @@ module.exports = {
         "show-all": "Mostrar todo",
         "people-you-may-know": "Los Conoces?",
         "add-friend": "Añadir amigo",
-        "join-group": "Unirse al grupo"
+        "join-group": "Unirse al grupo",
+        "timeline": "Biografía",
+        "about": "Información",
+        "photos": "Fotos",
+        "videos": "Vídeos",
+        "socializer-groups":"Groupos Socializer"
     }
 };

@@ -1,3 +1,28 @@
+
+/**************** TABLE OF CONTENTS **************/
+/*                                               */
+/*   SECTION 1 - Global CSS Settings             */
+/*   SECTION 2 - Page Structure CSS              */
+/*   SECTION 3 - Site Navbar CSS                 */
+/*   SECTION 4 - Dashboard Profile Card CSS      */
+/*   SECTION 5 - Potential Friends Card CSS      */
+/*   SECTION 6 - Input Field For New Post        */
+/*   SECTION 7 - News Feed Post CSS              */
+/*   SECTION 8 - Trending Topics Card CSS        */
+/*   SECTION 9 - Socializer Group Card CSS       */
+/*   SECTION 10 - Mini Profile View CSS          */
+/*   SECTION 11 - Media Queries                  */
+/*   SECTION 12 - MISC                           */
+/*                                               */
+/*************************************************/
+
+
+/***************************************/
+/*                                     */
+/*   SECTION 1 - Global CSS Settings   */
+/*                                     */
+/***************************************/
+
 * {
     font-family: 'Nunito Sans', sans-serif !important;
 }
@@ -6,9 +31,125 @@ html {
     background-color: rgba(230, 230, 230, 0.6);
 }
 
+.fa {
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome !important;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+.add-16px-margin-left {
+    margin-left: 16px !important;
+}
+
+.margin-right-8px {
+    margin-right: 8px;
+}
+
+/***************************************/
+/*                                     */
+/*            END SECTION 1            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*    SECTION 2 - Page Structure CSS   */
+/*                                     */
+/***************************************/
+
+.site-header {
+    height: 57px;
+    background-color: #1779ba;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.site-content {
+    padding-top: 70px;
+    padding-left: 40px;
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+.dashboard-container {
+    width: 1225px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.dashboard-left {
+    float: left;
+    height: 100%;
+    width: 290px;
+}
+
+.dashboard-center {
+    float: left;
+    width: 645px;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dashboard-right {
+    float: left;
+    height: 100%;
+    width: 290px;
+}
+
+/** START BACK-TO-TOP ARROW CSS **/
+.arrow-box {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 1px;
+    border-color: #1779ba;
+    border-style: solid;
+    transition: 0.7s ease;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: none;
+}
+
+.large-arrow {
+    font-size: 28px !important;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+/** END BACK-TO-TOP ARROW CSS **/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 2            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*     SECTION 3 - Site Navbar CSS     */
+/*                                     */
+/***************************************/
+
 .site-navbar {
     width: 1225px;
     margin: 0 auto;
+}
+
+.navbar-links {
+    height: 100%;
+    list-style: none;
+    float: left;
+    margin: 0;
 }
 
 .navbar-logo {
@@ -21,23 +162,121 @@ html {
     left: 50%
 }
 
-.site-header {
-    height: 57px;
-    background-color: #1779ba;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
 }
 
-.navbar-links {
-    height: 100%;
-    list-style: none;
-    float: left;
+.settings-dropdown {
+    float: right;
+    border: solid white 2px;
+    border-radius: 35px;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-top: 8px;
+}
+
+/** START DROPDOWN-CONTENT CSS **/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-content>hr {
     margin: 0;
 }
 
+.dropdown-content div {
+    padding: 12px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content div>a {
+    color: black;
+}
+
+.dropdown-content>div:nth-child(2):hover {
+    background-color: #1779ba;
+}
+
+.dropdown-content>div:nth-child(2):hover>a>p,
+.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
+    color: white;
+}
+
+.dropdown-content div:nth-child(4)>a>p:hover,
+.dropdown-content div:nth-child(6)>a>p:hover {
+    background-color: #1779ba;
+    color: white;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:first-child {
+    font-size: 15px;
+    margin: 0;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
+    font-size: 12px;
+    margin: 0;
+    color: grey;
+}
+/** END DROPDOWN-CONTENT CSS **/
+
+.caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 10px solid #f9f9f9;
+    margin-top: -34px;
+    margin-left: 126px;
+}
+
+.view-profile-wrapper {
+    padding-bottom: 0px !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 56px;
+    padding-top: 6px !important;
+}
+
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+}
+
+.input-search-field {
+    height: 33px;
+    width: 150px;
+    float: right;
+    margin-top: 12px !important;
+    margin-right: 19px !important;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.input-search-field:focus {
+    transition: all 0.4s ease-in-out;
+    border-color: #1779ba;
+    width: 200px;
+}
+
+/** START NAVBAR-LINKS CSS **/
 .navbar-links>li {
     display: inline-block;
     margin-left: 20px;
@@ -64,41 +303,33 @@ html {
 .navbar-links>li:hover {
     border-bottom: solid white 3px;
 }
+/** END NAVBAR-LINKS CSS **/
 
-.site-content {
-    padding-top: 70px;
-    padding-left: 40px;
-    background-color: rgba(230, 230, 230, 0.6);
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
 }
 
-.dashboard-container {
-    width: 1225px;
-    margin: 0 auto;
-    overflow: auto;
+.show {
+    display: block;
+    margin-left: -117px;
+    margin-top: 57px;
 }
 
-.dashboard-left {
-    float: left;
-    height: 100%;
-    width: 290px;
-}
+/***************************************/
+/*                                     */
+/*            END SECTION 3            */
+/*                                     */
+/***************************************/
 
-
-/* DASHBOARD CARD CLASSES */
-
-.dashboard-right {
-    float: left;
-    height: 100%;
-    width: 290px;
-}
-
-.dashboard-center {
-    float: left;
-    width: 645px;
-    height: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+/**************************************************/
+/*                                                */
+/*     SECTION 4 - Dashboard Profile Card CSS     */
+/*                                                */
+/**************************************************/
 
 .dashboard-profile-card {
     width: 100%;
@@ -106,35 +337,6 @@ html {
     border-radius: 4px;
     margin-bottom: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-card {
-    width: 100%;
-    background: white;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-message-input-card {
-    width: 100%;
-    background: white;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-news-feed-post-card {
-    width: 100%;
-    background: white;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-card-content-wrapper {
-    height: 100%;
-    padding: 16px;
 }
 
 .profile-card-image-wrapper {
@@ -206,6 +408,134 @@ html {
     text-align: center;
 }
 
+/**************************************************/
+/*                                                */
+/*                  END SECTION 4                 */
+/*                                                */
+/**************************************************/
+
+/**************************************************/
+/*                                                */
+/*     SECTION 5 - Potential Friends Card CSS     */
+/*                                                */
+/**************************************************/
+
+.dashboard-card {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card-content-wrapper {
+    height: 100%;
+    padding: 16px;
+}
+
+.dashboard-card-header {
+    display: inline-block;
+}
+
+.refresh-link {
+    font-size: 11px;
+}
+
+.refresh-link:hover {
+    text-decoration: underline;
+}
+
+
+.show-all-link {
+    font-size: 11px;
+}
+
+.show-all-link:hover {
+    text-decoration: underline;
+}
+
+.possible-friend-list {
+    margin: 0;
+    list-style: none;
+}
+
+.possible-friend {
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.possible-friend-picture {
+    float: left;
+    border: solid white 2px;
+    border-radius: 35px;
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.possible-friend-text-wrapper {
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+.add-friend-button {
+    border: solid 1px #1779ba;
+    border-radius: 4px;
+    padding-left: 6px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    color: white;
+    font-size: 13px;
+    background: #1779ba;
+}
+
+.add-friend-button:hover {
+    background: #0E6096;
+    color: white;
+}
+
+.add-friend-button>i {
+    font-size: 14px !important;
+    margin-right: 3px;
+}
+
+.last-in-list {
+    overflow: auto;
+    margin-bottom: 0px;
+}
+
+.on-people-you-may-know {
+    display: none;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 12px !important;
+}
+
+/**************************************************/
+/*                                                */
+/*                  END SECTION 5                 */
+/*                                                */
+/**************************************************/
+
+/**************************************************/
+/*                                                */
+/*     SECTION 6 - Input Field For New Post       */
+/*                                                */
+/**************************************************/
+
+.dashboard-message-input-card {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .input-grouping {
     padding: 10px;
 }
@@ -234,131 +564,24 @@ html {
     transition: all 0.2s ease-in-out;
 }
 
-.fa {
-    display: inline-block;
-    font: normal normal normal 16px/1 FontAwesome !important;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/**************************************************/
+/*                                                */
+/*                  END SECTION 6                 */
+/*                                                */
+/**************************************************/
 
-.input-search-field {
-    height: 33px;
-    width: 150px;
-    float: right;
-    margin-top: 12px !important;
-    margin-right: 19px !important;
-    display: inline-block;
-    border-radius: 5px;
-    transition: all 0.4s ease-in-out;
-}
+/**************************************************/
+/*                                                */
+/*         SECTION 7 - News Feed Post CSS         */
+/*                                                */
+/**************************************************/
 
-.input-search-field:focus {
-    transition: all 0.4s ease-in-out;
-    border-color: #1779ba;
-    width: 200px;
-}
-
-.settings-dropdown {
-    float: right;
-    border: solid white 2px;
-    border-radius: 35px;
-    height: 40px;
-    width: 40px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    margin-top: 8px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border: solid 1px rgba(0, 0, 0, 0.2);
+.dashboard-news-feed-post-card {
+    width: 100%;
+    background: white;
     border-radius: 4px;
-}
-
-.dropdown-content>hr {
-    margin: 0;
-}
-
-.dropdown-content div {
-    padding: 12px 0px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content div>a {
-    color: black;
-}
-
-.dropdown-content>div:nth-child(2):hover {
-    background-color: #1779ba;
-}
-
-.dropdown-content>div:nth-child(2):hover>a>p,
-.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
-    color: white;
-}
-
-.dropdown-content div:nth-child(4)>a>p:hover,
-.dropdown-content div:nth-child(6)>a>p:hover {
-    background-color: #1779ba;
-    color: white;
-}
-
-.dropdown-content>div:nth-child(2)>a>p:first-child {
-    font-size: 15px;
-    margin: 0;
-}
-
-.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
-    font-size: 12px;
-    margin: 0;
-    color: grey;
-}
-
-.dropdown {
-    float: right;
-    position: relative;
-    display: inline-block;
-}
-
-.show {
-    display: block;
-    margin-left: -117px;
-    margin-top: 57px;
-}
-
-.caret {
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    border-right-width: 10px;
-    border-left-width: 10px;
-    border-bottom: 10px solid #f9f9f9;
-    margin-top: -34px;
-    margin-left: 126px;
-}
-
-.view-profile-wrapper {
-    padding-bottom: 0px !important;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    height: 56px;
-    padding-top: 6px !important;
-}
-
-.list-item-style {
-    font-size: 13px;
-    margin-bottom: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 16px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .user-picture {
@@ -390,210 +613,35 @@ html {
     margin-top: 7px;
 }
 
-.interaction-button {
-    font-size: 12px;
-    color: black;
-    margin-right: 16px;
-}
-
 .image-post {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
 }
 
-.trend {
-    color: red;
-    margin-right: 10px;
-    float: left;
-    margin-top: 4px;
-    height: 34px;
+.interaction-button {
+    font-size: 12px;
+    color: black;
+    margin-right: 16px;
 }
 
-a.see-more-trends {
-    font-size: 11px;
-}
-
-a.see-more-trends:hover {
-    text-decoration: underline;
-}
-
-.trending-topic:hover {
-    text-decoration: underline !important;
-}
-
-.see-all-groups {
-    font-size: 11px;
-}
-
-.see-all-groups:hover {
-    text-decoration: underline;
-}
-
-.add-16px-margin-left {
-    margin-left: 16px !important;
-}
-
-.dashboard-card-header {
-    display: inline-block;
-}
-
-.edit-about {
-    font-size: 11px;
-}
-
-.edit-about:hover {
-    text-decoration: underline;
-}
-
-.show-all-link {
-    font-size: 11px;
-}
-
-.show-all-link:hover {
-    text-decoration: underline;
-}
-
-.refresh-link {
-    font-size: 11px;
-}
-
-.refresh-link:hover {
-    text-decoration: underline;
-}
-
-.arrow-box {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    bottom: 20px;
-    right: 1px;
-    border-color: #1779ba;
-    border-style: solid;
-    transition: 0.7s ease;
-    border-radius: 50px;
-    margin-right: 10px;
+.comment-feed {
     display: none;
+    margin-top: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 500px;
 }
 
-.large-arrow {
-    font-size: 28px !important;
-    margin-left: 4px;
-    margin-top: 2px;
-}
-
-.add-friend-button {
-    border: solid 1px #1779ba;
-    border-radius: 4px;
-    padding-left: 6px;
-    padding-top: 4px;
-    padding-bottom: 2px;
-    padding-right: 6px;
-    color: white;
-    font-size: 13px;
-    background: #1779ba;
-}
-
-.add-friend-button:hover {
-    background: #0E6096;
-    color: white;
-}
-
-.add-friend-button>i {
-    font-size: 14px !important;
-    margin-right: 3px;
-}
-
-.on-people-you-may-know {
+.loading-user-comments {
+    width: 36px;
+    margin: 0 auto;
     display: none;
-    float: right;
-    margin-top: 5px;
-    cursor: pointer;
-    font-size: 12px !important;
-}
-
-.on-trending-topics {
-    display: none;
-    float: right;
-    margin-top: 5px;
-    cursor: pointer;
-    font-size: 12px !important;
-}
-
-.input-comment-field {
-    width: 531px;
-    margin-top: 5px !important;
-    margin-bottom: 0px !important;
-    display: inline-block;
-    border-radius: 3px;
 }
 
 .comment-box {
     margin-top: 15px;
     display: none;
-}
-
-.mini-profile-view {
-    border-radius: 4px;
-    width: 290px;
-    position: absolute;
-    border: 1px solid rgba(0, 0, 0, 0.0980392);
-    background: white;
-    margin-left: 0px;
-    top: 218px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
-    display: none;
-}
-
-.mini-profile-view-caret {
-    margin-left: 14px;
-    margin-top: -10px;
-    border-bottom: 10px solid gray;
-}
-
-.possible-friend {
-    overflow: auto;
-    margin-bottom: 20px;
-}
-
-.last-in-list {
-    overflow: auto;
-    margin-bottom: 0px;
-}
-
-.possible-friend-list {
-    margin: 0;
-    list-style: none;
-}
-
-.font-size-14px {
-    font-size: 14px;
-}
-
-.possible-friend-picture {
-    float: left;
-    border: solid white 2px;
-    border-radius: 35px;
-    height: 50px;
-    width: 50px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    margin-right: 10px;
-}
-
-.possible-friend-text-wrapper {
-    margin-top: 1px;
-    margin-bottom: 2px;
-}
-
-.margin-right-8px {
-    margin-right: 8px;
-}
-
-.mini-profile-view-buttons {
-    width: 177px;
-    margin: 0 auto;
 }
 
 .comment-box-user-picture {
@@ -608,36 +656,15 @@ a.see-more-trends:hover {
     margin-right: 10px;
 }
 
-.loading-user-comments {
-    width: 36px;
-    margin: 0 auto;
-    display: none;
+.input-comment-field {
+    width: 531px;
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    display: inline-block;
+    border-radius: 3px;
 }
 
-.loading-news-feed {
-    width: 70px;
-    margin: 0 auto;
-    display: none;
-}
-
-.list-of-trending-topics {
-    margin: 0;
-    list-style: none;
-}
-
-.people-talking-about-trend {
-    font-size: 12px;
-    margin-bottom: 0px;
-}
-
-.comment-feed {
-    display: none;
-    margin-top: 15px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    max-height: 500px;
-}
-
+/** CSS FOR USER COMMENT THAT SHOWS UP IN A POST **/
 .user-post-in-comment-feed {
     margin-top: 23px;
     margin-bottom: 23px;
@@ -661,6 +688,77 @@ a.see-more-trends:hover {
 .user-comment>p {
     font-size: 14px;
 }
+/** END CSS FOR USER COMMENT THAT SHOWS UP IN A POST **/
+
+/**************************************************/
+/*                                                */
+/*                  END SECTION 7                 */
+/*                                                */
+/**************************************************/
+
+/**************************************************/
+/*                                                */
+/*       SECTION 8 - Trending Topics Card CSS     */
+/*                                                */
+/**************************************************/
+
+a.see-more-trends {
+    font-size: 11px;
+}
+
+a.see-more-trends:hover {
+    text-decoration: underline;
+}
+
+.list-of-trending-topics {
+    margin: 0;
+    list-style: none;
+}
+
+.trending-topic:hover {
+    text-decoration: underline !important;
+}
+
+.trend {
+    color: red;
+    margin-right: 10px;
+    float: left;
+    margin-top: 4px;
+    height: 34px;
+}
+
+.people-talking-about-trend {
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.on-trending-topics {
+    display: none;
+    float: right;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 12px !important;
+}
+
+/**************************************************/
+/*                                                */
+/*                  END SECTION 8                 */
+/*                                                */
+/**************************************************/
+
+/**************************************************/
+/*                                                */
+/*       SECTION 9 - Socializer Group Card CSS    */
+/*                                                */
+/**************************************************/
+
+.see-all-groups {
+    font-size: 11px;
+}
+
+.see-all-groups:hover {
+    text-decoration: underline;
+}
 
 .fa.fa-times.socializer-group {
     display: none;
@@ -669,21 +767,52 @@ a.see-more-trends:hover {
     margin-top: 4px;
 }
 
-::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F5F5F5;
+/**************************************************/
+/*                                                */
+/*                  END SECTION 9                 */
+/*                                                */
+/**************************************************/
+
+/****************************************/
+/*                                      */
+/*  SECTION 10 - Mini Profile View CSS  */
+/*                                      */
+/****************************************/
+
+.mini-profile-view {
+    border-radius: 4px;
+    width: 290px;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.0980392);
+    background: white;
+    margin-left: 0px;
+    top: 218px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #F5F5F5;
+.mini-profile-view-caret {
+    margin-left: 14px;
+    margin-top: -10px;
+    border-bottom: 10px solid gray;
 }
 
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-color: #D3D3D3;
+.mini-profile-view-buttons {
+    width: 177px;
+    margin: 0 auto;
 }
+
+/*****************************************/
+/*                                       */
+/*             END SECTION 10            */
+/*                                       */
+/*****************************************/
+
+/***************************************/
+/*                                     */
+/*      SECTION 11 - Media Queries     */
+/*                                     */
+/***************************************/
 
 @media (max-width: 1100px) {
     .navbar-links>li>a>span.text {
@@ -710,3 +839,58 @@ a.see-more-trends:hover {
         transition: all 0.1s ease-in-out;
     }
 }
+
+/*::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #D3D3D3;
+}*/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 11           */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*          SECTION 12 - MISC          */
+/*                                     */
+/***************************************/
+
+.edit-about {
+    font-size: 11px;
+}
+
+.edit-about:hover {
+    text-decoration: underline;
+}
+
+.loading-news-feed {
+    width: 70px;
+    margin: 0 auto;
+    display: none;
+}
+
+.fa.fa-times.socializer-group {
+    display: none;
+    float: right;
+    font-size: 12px !important;
+    margin-top: 4px;
+}
+
+/***************************************/
+/*                                     */
+/*            END SECTION 12           */
+/*                                     */
+/***************************************/

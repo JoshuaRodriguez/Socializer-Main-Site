@@ -11,7 +11,7 @@
         <div class="dropdown-content">
             <div class="caret"></div>
             <div class="view-profile-wrapper">
-                <a>
+                <a href="/<%= loggedInUser.userName %>">
                     <% var name = loggedInUser.name; %>
                     <% var whiteSpaceIndex = name.indexOf(" "); %>
                     <% name = name.substring(0, whiteSpaceIndex); %>

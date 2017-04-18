@@ -8,7 +8,7 @@
             <a class="show-all-link"><%= pageText.showAll %></a>
             <div>
                 <ul class="possible-friend-list">
-                    <% for (var index = 0; index < possibleFriends.length; index++) { %>
+                    <% possibleFriends.forEach(function(possibleFriend, index) { %>
                     <% if (index != possibleFriends.length - 1) { %> 
                     <li>
                         <div class="possible-friend">
@@ -28,7 +28,7 @@
                         </div>
                     </li>
                     <% } %>
-                    <% } %>
+                    <% }); %>
                 </ul>
             </div>
         </div>

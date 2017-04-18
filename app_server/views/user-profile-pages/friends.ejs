@@ -34,22 +34,7 @@
         <!-- SITE CONTENT -->
         <div class="site-content">
             <div class="profile-container">
-                <div class="profile-header">
-                    <div class="top-section-base" style="background-image: url(../../images/campfire.jpg);"></div>
-                    <div class="bottom-section-base">
-                        <div class="profile-picture" style="background-image: url(../../images/random-guy-2.jpg);"></div>
-                        <div class="tab-menu">
-                            <ul>
-                                <li><a href="/<%= loggedInUser.userName %>">Timeline</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/about">About</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/friends">Friends</a><span class="profile-section-caret"></span></li>
-                                <li><a href="/<%= loggedInUser.userName %>/photos">Photos</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/videos">Videos</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/groups">Socializer Groups</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <%- include("../partials/user-profile-page-profile-header.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
                 <div class="profile-friends-container">
                     <div class="profile-friends-header">
                         <h4 class="profile-friends-header-text"><i class="fa fa-users" aria-hidden="true"></i>Friends</h4>
@@ -58,6 +43,7 @@
                         <ul style="list-style: none;">
                             <li style="display: inline-block;">
                                 <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="4"></span>
                                     <a class="friends-profile-picture" style="background-image: url(../../images/christian.jpg);"></a>
                                     <div class="name-and-friend-count">
                                         <a href="" style="font-size:14px; font-weight: bold;">Christian Castilla</a>
@@ -68,6 +54,7 @@
                             </li>
                             <li style="display: inline-block;">
                                 <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="5"></span>
                                     <a class="friends-profile-picture" style="background-image: url(../../images/kyle.jpg);"></a>
                                     <div class="name-and-friend-count">
                                         <a href="" style="font-size:14px; font-weight: bold;">Kyle Blasingame</a>
@@ -78,6 +65,7 @@
                             </li>
                             <li style="display: inline-block;">
                                 <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="3"></span>
                                     <a class="friends-profile-picture" style="background-image: url(../../images/random-girl.jpg);"></a>
                                     <div class="name-and-friend-count">
                                         <a href="" style="font-size:14px; font-weight: bold;">Phoebe Toshiko</a>
@@ -88,6 +76,7 @@
                             </li>
                             <li style="display: inline-block;">
                                 <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="2"></span>
                                     <a class="friends-profile-picture" style="background-image: url(../../images/random-guy.jpg);"></a>
                                     <div class="name-and-friend-count">
                                         <a href="" style="font-size:14px; font-weight: bold;">Joshua Rodriguez-Santiago</a>
@@ -98,6 +87,7 @@
                             </li>
                             <li style="display: inline-block;">
                                 <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="6"></span>
                                     <a class="friends-profile-picture" style="background-image: url(../../images/abdullah.jpg);"></a>
                                     <div class="name-and-friend-count">
                                         <a href="" style="font-size:14px; font-weight: bold;">Abdullah Hamad Almoqbil</a>

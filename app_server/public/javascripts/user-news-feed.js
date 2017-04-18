@@ -45,7 +45,7 @@
                     $loading.before(data);
                     $loading.hide();
                     fetching = false;
-                }, 1000);
+                }, 500);
             });
             $loading.show();
         }
@@ -146,8 +146,9 @@
 (function() {
     $(document).on("mouseover", "a.user-picture, a.possible-friend-picture", function() {
         var $pictureEl = $(this);
-        var $userId = $(this).siblings(".data-attr").data().userId;
-        var $newsFeedPostImageTop = $(this).position().top;
+        var $userId = $pictureEl.siblings(".data-attr").data().userId;
+        var $newsFeedPostImageTop = $pictureEl.position().top;
+        var extraSpacing = 59;
 
         var removeProfileViewFromDOM = function(element, time) {
             setTimeout(function() {
@@ -162,7 +163,7 @@
             .done(function(data) {
                 var $renderedProfileView = $($.parseHTML(data));
                 $pictureEl.parent().after($renderedProfileView);
-                $renderedProfileView.css({ top: $newsFeedPostImageTop + 59 });
+                $renderedProfileView.css({ top: $newsFeedPostImageTop + extraSpacing });
                 $renderedProfileView.show();
             });
         }, 500);

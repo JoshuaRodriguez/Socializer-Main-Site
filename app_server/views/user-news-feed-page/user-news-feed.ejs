@@ -56,9 +56,9 @@
                     <!-- END INPUT MESSAGE CARD -->
 
                     <!-- SHOW NEWS FEED POSTS -->
-                    <% for (var index = 0; index < userPosts.length; index++) { %>
-                    <%- include("../partials/news-feed-post.ejs", { userPost: userPosts[index], pageText: pageText, loggedInUser: loggedInUser }); %>
-                    <% } %>
+                    <% userPosts.forEach(function(userPost) { %>
+                    <%- include("../partials/news-feed-post.ejs", { userPost: userPost, pageText: pageText, loggedInUser: loggedInUser }); %>
+                    <% }); %>
                     <!-- END SHOW NEWS FEED POSTS -->
 
                     <!-- LOADING GIF -->

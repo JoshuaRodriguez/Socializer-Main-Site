@@ -52,3 +52,48 @@
         }
     });
 })();
+
+/** MOUSE OVER PROFILE PICTURE ON POST FUNCTIONALITY **/
+(function() {
+    $(document).on("mouseover", ".friends-profile-picture", function() {
+        var $pictureEl = $(this);
+        var $userId = $pictureEl.siblings(".data-attr").data().userId;
+        var $pictureElTop = $pictureEl.position().top;
+        var extraSpacing = 106;
+
+        var removeProfileViewFromDOM = function(element, time) {
+            setTimeout(function() {
+                if (element.css("display") != "block") {
+                    element.remove();
+                }
+            }, time);
+        };
+
+        var timeoutId = setTimeout(function() {
+            $.post("../../render/fetchMiniProfileView", { userId: $userId })
+            .done(function(data) {
+                var $renderedProfileView = $($.parseHTML(data));
+                $pictureEl.parent().after($renderedProfileView);
+                $renderedProfileView.css({ top: $pictureElTop + extraSpacing });
+                $renderedProfileView.show();
+            });
+        }, 500);
+
+        $(document).on("mouseout", ".friends-profile-picture, .mini-profile-view", function() {
+            clearTimeout(timeoutId);
+            var $currentElement = $(this);
+            if ($currentElement.is(".friends-profile-picture")) {
+                var $miniProfileViewEl = $currentElement.parent().siblings(".mini-profile-view");
+                $miniProfileViewEl.fadeOut(200);
+                removeProfileViewFromDOM($miniProfileViewEl, 300);
+            } else if ($currentElement.is(".mini-profile-view")) {
+                $currentElement.fadeOut(200);
+                removeProfileViewFromDOM($currentElement, 300);
+            }
+        });
+
+        $(document).on("mouseover", ".mini-profile-view", function() {
+            $(this).stop(true, true).show();
+        });
+    });
+})();

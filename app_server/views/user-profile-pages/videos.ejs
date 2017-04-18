@@ -34,22 +34,7 @@
         <!-- SITE CONTENT -->
         <div class="site-content">
             <div class="profile-container">
-                <div class="profile-header">
-                    <div class="top-section-base" style="background-image: url(../../images/campfire.jpg);"></div>
-                    <div class="bottom-section-base">
-                        <div class="profile-picture" style="background-image: url(../../images/random-guy-2.jpg);"></div>
-                        <div class="tab-menu">
-                            <ul>
-                                <li><a href="/<%= loggedInUser.userName %>">Timeline</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/about">About</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/friends">Friends</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/photos">Photos</a></li>
-                                <li><a href="/<%= loggedInUser.userName %>/videos">Videos</a><span class="profile-section-caret"></span></li>
-                                <li><a href="/<%= loggedInUser.userName %>/groups">Socializer Groups</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <%- include("../partials/user-profile-page-profile-header.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
             </div>
         </div>
         <!-- END SITE CONTENT -->

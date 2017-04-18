@@ -7,7 +7,7 @@
         </div>
         <div>
             <ul style="margin: 0; list-style: none;">
-                <% for (var index = 0; index < socializerGroups.length; index++) { %>
+                <% socializerGroups.forEach(function(socializerGroup, index) { %>
                 <% if (index != socializerGroups.length - 1) { %>
                 <li>
                     <div class="socializer-group" style="overflow: auto; margin-bottom: 10px;">
@@ -31,7 +31,7 @@
                     </div>
                 </li>
                 <% } %>
-                <% } %>
+                <% }); %>
             </ul>
         </div>
     </div>

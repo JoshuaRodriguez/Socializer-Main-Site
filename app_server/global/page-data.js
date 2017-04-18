@@ -40,6 +40,23 @@ module.exports = function(requestedPage, lang) {
             "peopleYouMayKnow": globalStrings[lang]["people-you-may-know"],
             "addFriend": globalStrings[lang]["add-friend"],
             "joinGroup": globalStrings[lang]["join-group"]
+        },
+        "userProfilePage": {
+            "timeLine": globalStrings[lang]["timeline"],
+            "friends": globalStrings[lang]["friends"],
+            "about": globalStrings[lang]["about"],
+            "photos": globalStrings[lang]["photos"],
+            "videos": globalStrings[lang]["videos"],
+            "socializerGroups": globalStrings[lang]["socializer-groups"],
+            "home": globalStrings[lang]["home"],
+            "messages": globalStrings[lang]["messages"],
+            "notifications": globalStrings[lang]["notifications"],
+            "groups": globalStrings[lang]["groups"],
+            "search": globalStrings[lang]["search"],
+            "helpText": globalStrings[lang]["help-text"],
+            "settingsText": globalStrings[lang]["settings-text"],
+            "logOutText": globalStrings[lang]["log-out-text"],
+            "viewProfile": globalStrings[lang]["view-profile"]
         }
     };
 

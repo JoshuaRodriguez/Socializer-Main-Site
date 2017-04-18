@@ -5,6 +5,7 @@ var homePageDummyData = function(lang) {
         pageText: pageData("homePage", lang),
         loggedInUser: {
             userId: 1,
+            userName: "daniel.castilla.710",
             name: "Daniel Castilla",
             quote: "Saving lives is my motto",
             profilePicture: "../images/random-guy-2.jpg",
@@ -16,8 +17,7 @@ var homePageDummyData = function(lang) {
             profilePicture: "../images/random-guy.jpg",
             timeElapsed: "10m",
             postText: "Etiam eget elit vel dui vehicula lacinia nec nec mauris. Donec cursus porttitor risus ut laoreet. Nam dapibus leo felis, non lacinia nisl dignissim at. " +
-            "Ut maximus sollicitudin ligula, eget efficitur lacus fermentum non. Fusce dapibus imperdiet suscipit. Morbi ultricies et odio vitae pellentesque. " +
-            "In porttitor egestas mauris, vitae facilisis ipsum sagittis eget. Suspendisse suscipit nunc non ligula condimentum commodo.",
+            "Ut maximus sollicitudin ligula, eget efficitur lacus fermentum non. Fusce dapibus imperdiet suscipit.",
             postedImage: ""
         }, {
             userId: 3,
@@ -85,7 +85,7 @@ var homePageDummyData = function(lang) {
 
 var userProfilePageDummyData = function(lang) {
     return {
-        pageText: pageData("homePage", lang),
+        pageText: pageData("userProfilePage", lang),
         loggedInUser: {
             userId: 1,
             userName: "daniel.castilla.710",

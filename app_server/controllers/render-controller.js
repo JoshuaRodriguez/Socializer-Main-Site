@@ -1,5 +1,5 @@
 var ejs = require("ejs");
-var pageData = require("../global/page-data.js");
+var pageText = require("../global/page-text.js");
 
 var setLang = function(req, res) {
     if (req.query.lang) {
@@ -48,7 +48,7 @@ var fetchNewsFeedPosts = function(req, res) {
 
     var templateData = {
         loggedInUser: loggedInUser,
-        pageText: pageData("homePage", lang)
+        pageText: pageText("homePage", lang)
     };
 
     var callback = function(err, data) {
@@ -186,7 +186,7 @@ var fetchMiniProfileView = function(req, res) {
     }];
 
     var templateData = {
-        pageText: pageData("homePage", lang)
+        pageText: pageText("homePage", lang)
     };
 
     for (var index = 0; index < sampleUsers.length; index++) {

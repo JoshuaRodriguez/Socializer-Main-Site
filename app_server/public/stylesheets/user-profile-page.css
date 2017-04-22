@@ -1,3 +1,18 @@
+/**************** TABLE OF CONTENTS **************/
+/*                                               */
+/*   SECTION 1 - Global CSS Settings             */
+/*   SECTION 2 - Page Structure CSS              */
+/*   SECTION 3 - Site Navbar CSS                 */
+/*   SECTION 4 - Dashboard Profile Card CSS      */
+/*                                               */
+/*************************************************/
+
+/***************************************/
+/*                                     */
+/*   SECTION 1 - Global CSS Settings   */
+/*                                     */
+/***************************************/
+
 * {
     font-family: 'Nunito Sans', sans-serif !important;
 }
@@ -6,20 +21,17 @@ html {
     background-color: rgba(230, 230, 230, 0.6);
 }
 
-.site-navbar {
-    width: 1225px;
-    margin: 0 auto;
-}
+/***************************************/
+/*                                     */
+/*            END SECTION 1            */
+/*                                     */
+/***************************************/
 
-.navbar-logo {
-    font-size: 40px;
-    color: white;
-    font-family: 'Marck Script', cursive !important;
-    margin-bottom: 0;
-    width: 24px;
-    position: absolute;
-    left: 50%
-}
+/***************************************/
+/*                                     */
+/*   SECTION 2 - Page Structure CSS    */
+/*                                     */
+/***************************************/
 
 .site-header {
     height: 57px;
@@ -31,6 +43,51 @@ html {
     width: 100%;
 }
 
+.site-content {
+    padding-top: 70px;
+    padding-left: 40px;
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+/** START BACK-TO-TOP ARROW CSS **/
+.arrow-box {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 1px;
+    border-color: #1779ba;
+    border-style: solid;
+    transition: 0.7s ease;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: none;
+}
+
+.large-arrow {
+    font-size: 28px !important;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+/** END BACK-TO-TOP ARROW CSS **/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 2            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*     SECTION 3 - Site Navbar CSS     */
+/*                                     */
+/***************************************/
+
+.site-navbar {
+    width: 1225px;
+    margin: 0 auto;
+}
+
 .navbar-links {
     height: 100%;
     list-style: none;
@@ -38,6 +95,131 @@ html {
     margin: 0;
 }
 
+.navbar-logo {
+    font-size: 40px;
+    color: white;
+    font-family: 'Marck Script', cursive !important;
+    margin-bottom: 0px;
+    width: 24px;
+    position: absolute;
+    left: 50%
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.settings-dropdown {
+    float: right;
+    border: solid white 2px;
+    border-radius: 35px;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-top: 8px;
+}
+
+/** START DROPDOWN-CONTENT CSS **/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-content>hr {
+    margin: 0;
+}
+
+.dropdown-content div {
+    padding: 12px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content div>a {
+    color: black;
+}
+
+.dropdown-content>div:nth-child(2):hover {
+    background-color: #1779ba;
+}
+
+.dropdown-content>div:nth-child(2):hover>a>p,
+.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
+    color: white;
+}
+
+.dropdown-content div:nth-child(4)>a>p:hover,
+.dropdown-content div:nth-child(6)>a>p:hover {
+    background-color: #1779ba;
+    color: white;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:first-child {
+    font-size: 15px;
+    margin: 0;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
+    font-size: 12px;
+    margin: 0;
+    color: grey;
+}
+/** END DROPDOWN-CONTENT CSS **/
+
+.caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 10px solid #f9f9f9;
+    margin-top: -34px;
+    margin-left: 126px;
+}
+
+.view-profile-wrapper {
+    padding-bottom: 0px !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 56px;
+    padding-top: 6px !important;
+}
+
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+}
+
+.input-search-field {
+    height: 33px;
+    width: 150px;
+    float: right;
+    margin-top: 12px !important;
+    margin-right: 19px !important;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.input-search-field:focus {
+    transition: all 0.4s ease-in-out;
+    border-color: #1779ba;
+    width: 200px;
+}
+
+/** START NAVBAR-LINKS CSS **/
 .navbar-links>li {
     display: inline-block;
     margin-left: 20px;
@@ -58,18 +240,45 @@ html {
 }
 
 .navbar-links:first-child {
-    margin-left: 0;
+    margin-left: 0px;
 }
 
 .navbar-links>li:hover {
     border-bottom: solid white 3px;
 }
+/** END NAVBAR-LINKS CSS **/
 
-.site-content {
-    padding-top: 70px;
-    padding-left: 40px;
-    background-color: rgba(230, 230, 230, 0.6);
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
 }
+
+.show {
+    display: block;
+    margin-left: -117px;
+    margin-top: 57px;
+}
+
+/***************************************/
+/*                                     */
+/*            END SECTION 3            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*   SECTION 4 - Page Structure CSS    */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 4            */
+/*                                     */
+/***************************************/
 
 .top-section-base {
     float: left;
@@ -157,146 +366,8 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.input-search-field {
-    height: 33px;
-    width: 150px;
-    float: right;
-    margin-top: 12px !important;
-    margin-right: 19px !important;
-    display: inline-block;
-    border-radius: 5px;
-    transition: all 0.4s ease-in-out;
-}
-
-.input-search-field:focus {
-    transition: all 0.4s ease-in-out;
-    border-color: #1779ba;
-    width: 200px;
-}
-
-.settings-dropdown {
-    float: right;
-    border: solid white 2px;
-    border-radius: 35px;
-    height: 40px;
-    width: 40px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    margin-top: 8px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    border: solid 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-.dropdown-content>hr {
-    margin: 0;
-}
-
-.dropdown-content div {
-    padding: 12px 0;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content div>a {
-    color: black;
-}
-
-.dropdown-content>div:nth-child(2):hover {
-    background-color: #1779ba;
-}
-
-.dropdown-content>div:nth-child(2):hover>a>p,
-.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
-    color: white;
-}
-
-.dropdown-content div:nth-child(4)>a>p:hover,
-.dropdown-content div:nth-child(6)>a>p:hover {
-    background-color: #1779ba;
-    color: white;
-}
-
-.dropdown-content>div:nth-child(2)>a>p:first-child {
-    font-size: 15px;
-    margin: 0;
-}
-
-.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
-    font-size: 12px;
-    margin: 0;
-    color: grey;
-}
-
-.dropdown {
-    float: right;
-    position: relative;
-    display: inline-block;
-}
-
-.show {
-    display: block;
-    margin-left: -117px;
-    margin-top: 57px;
-}
-
-.caret {
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    border-right-width: 10px;
-    border-left-width: 10px;
-    border-bottom: 10px solid #f9f9f9;
-    margin-top: -34px;
-    margin-left: 126px;
-}
-
-.view-profile-wrapper {
-    padding-bottom: 0 !important;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    height: 56px;
-    padding-top: 6px !important;
-}
-
-.list-item-style {
-    font-size: 13px;
-    margin-bottom: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 16px;
-}
-
 .add-16px-margin-left {
     margin-left: 16px !important;
-}
-
-.arrow-box {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    bottom: 20px;
-    right: 1px;
-    border-color: #1779ba;
-    border-style: solid;
-    transition: 0.7s ease;
-    border-radius: 50px;
-    margin-right: 10px;
-    display: none;
-}
-
-.large-arrow {
-    font-size: 28px !important;
-    margin-left: 4px;
-    margin-top: 2px;
 }
 
 .font-size-14px {

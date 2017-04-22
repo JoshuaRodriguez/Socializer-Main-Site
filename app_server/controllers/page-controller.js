@@ -1,8 +1,8 @@
-var pageData = require("../global/page-data.js");
+var pageText = require("../global/page-text.js");
 
 var homePageDummyData = function(lang) {
     return {
-        pageText: pageData("homePage", lang),
+        pageText: pageText("homePage", lang),
         loggedInUser: {
             userId: 1,
             userName: "daniel.castilla.710",
@@ -85,7 +85,7 @@ var homePageDummyData = function(lang) {
 
 var userProfilePageDummyData = function(lang) {
     return {
-        pageText: pageData("userProfilePage", lang),
+        pageText: pageText("userProfilePage", lang),
         loggedInUser: {
             userId: 1,
             userName: "daniel.castilla.710",
@@ -99,7 +99,7 @@ var userProfilePageDummyData = function(lang) {
 
 var landingPage = function(req, res) {
     var lang = req.app.get("setLang");
-    res.render("landing-page/landing-page", pageData("landingPage", lang));
+    res.render("landing-page/landing-page", pageText("landingPage", lang));
 };
 
 var userHomePage = function(req, res) {

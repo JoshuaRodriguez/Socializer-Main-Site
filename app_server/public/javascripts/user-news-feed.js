@@ -33,6 +33,7 @@
     var $body = $("body");
     var $loading = $(".loading-news-feed");
     var fetching = false;
+    var newsFeedPostRenderingURL = "render/fetchNewsFeedPosts";
 
     $browserWindow.scroll(function() {
         var currentScrollPosition = Math.floor($browserWindow.innerHeight() + $browserWindow.scrollTop());
@@ -45,7 +46,7 @@
                     $loading.before(data);
                     $loading.hide();
                     fetching = false;
-                }, 500);
+                }, 200);
             });
             $loading.show();
         }
@@ -128,15 +129,16 @@
         var $commentBox = $parentDiv.siblings(".comment-box");
         var $commentFeed = $parentDiv.siblings(".comment-feed");
         var $loadingGif = $parentDiv.siblings(".loading-user-comments");
+        var eTarget = event.target;
 
-        if (event.target.matches("a.interaction-button.comment")) {
+        if (eTarget.matches("a.interaction-button.comment") || eTarget.matches("a.interaction-button.comment > .fa")) {
             $commentBox.show();
             loadCommentSection($commentFeed, $loadingGif);
-        } else if (event.target.matches("a.interaction-button.like")) {
+        } else if (eTarget.matches("a.interaction-button.like") || eTarget.matches("a.interaction-button.like > .fa")) {
             // LIKED POST
-        } else if (event.target.matches("a.interaction-button.dislike")) {
+        } else if (eTarget.matches("a.interaction-button.dislike") || eTarget.matches("a.interaction-button.dislike > .fa")) {
             // DISLIKED POST
-        } else if (event.target.matches("a.interaction-button.share")) {
+        } else if (eTarget.matches("a.interaction-button.share") || eTarget.matches("a.interaction-button.share > .fa")) {
             // SHARED POST
         }
     });

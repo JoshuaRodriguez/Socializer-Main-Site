@@ -1,5 +1,3 @@
-/* CSS CLASSES */
-
 * {
     font-family: 'Bitter', serif !important;
 }
@@ -141,9 +139,6 @@
     overflow-y: hidden;
 }
 
-
-/* CSS ID's */
-
 #checkbox {
     margin-left: 15px;
 }
@@ -163,9 +158,6 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     background-color: #D3D3D3;
 }*/
-
-
-/* MEDIA QUERIES */
 
 @media (max-width: 1155px) {
     .head-line {

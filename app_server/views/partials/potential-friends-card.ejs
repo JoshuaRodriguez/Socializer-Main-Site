@@ -1,0 +1,36 @@
+<div class="dashboard-card">
+    <div class="dashboard-card-content-wrapper font-size-14px" >
+        <div>
+            <p class="dashboard-card-header"><%= pageText.peopleYouMayKnow %></p>
+            <small>.</small>
+            <a class="refresh-link"><%= pageText.refresh %></a>
+            <small>.</small>
+            <a class="show-all-link"><%= pageText.showAll %></a>
+            <div>
+                <ul class="possible-friend-list">
+                    <% possibleFriends.forEach(function(possibleFriend, index) { %>
+                    <% if (index != possibleFriends.length - 1) { %> 
+                    <li>
+                        <div class="possible-friend">
+                            <span class="data-attr" data-user-id="<%= possibleFriends[index].userId %>"></span>
+                            <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
+                            <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].name %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                            <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+                        </div>
+                    </li>
+                    <% } else { %>
+                    <li>
+                        <div class="possible-friend last-in-list" >
+                            <span class="data-attr" data-user-id="<%= possibleFriends[index].userId %>"></span>
+                            <a class="possible-friend-picture" style="background-image: url(<%= possibleFriends[index].profilePicture %>);"></a>
+                            <p class="possible-friend-text-wrapper"><a style="color: black;"><%= possibleFriends[index].name %></a><i class="fa fa-times on-people-you-may-know" aria-hidden="true"></i></p>
+                            <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+                        </div>
+                    </li>
+                    <% } %>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

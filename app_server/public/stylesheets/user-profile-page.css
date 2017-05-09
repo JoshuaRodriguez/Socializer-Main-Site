@@ -1,0 +1,649 @@
+/**************** TABLE OF CONTENTS **************/
+/*                                               */
+/*   SECTION 1 - Global CSS Settings             */
+/*   SECTION 2 - Page Structure CSS              */
+/*   SECTION 3 - Site Navbar CSS                 */
+/*   SECTION 4 - Dashboard Profile Card CSS      */
+/*                                               */
+/*************************************************/
+
+/***************************************/
+/*                                     */
+/*   SECTION 1 - Global CSS Settings   */
+/*                                     */
+/***************************************/
+
+* {
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+html {
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+/***************************************/
+/*                                     */
+/*            END SECTION 1            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*   SECTION 2 - Page Structure CSS    */
+/*                                     */
+/***************************************/
+
+.site-header {
+    height: 57px;
+    background-color: #1779ba;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.site-content {
+    padding-top: 70px;
+    padding-left: 40px;
+    background-color: rgba(230, 230, 230, 0.6);
+}
+
+/** START BACK-TO-TOP ARROW CSS **/
+.arrow-box {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 1px;
+    border-color: #1779ba;
+    border-style: solid;
+    transition: 0.7s ease;
+    border-radius: 50px;
+    margin-right: 10px;
+    display: none;
+}
+
+.large-arrow {
+    font-size: 28px !important;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+/** END BACK-TO-TOP ARROW CSS **/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 2            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*     SECTION 3 - Site Navbar CSS     */
+/*                                     */
+/***************************************/
+
+.site-navbar {
+    width: 1225px;
+    margin: 0 auto;
+}
+
+.navbar-links {
+    height: 100%;
+    list-style: none;
+    float: left;
+    margin: 0;
+}
+
+.navbar-logo {
+    font-size: 40px;
+    color: white;
+    font-family: 'Marck Script', cursive !important;
+    margin-bottom: 0px;
+    width: 24px;
+    position: absolute;
+    left: 50%
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.settings-dropdown {
+    float: right;
+    border: solid white 2px;
+    border-radius: 35px;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-top: 8px;
+}
+
+/** START DROPDOWN-CONTENT CSS **/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-content>hr {
+    margin: 0;
+}
+
+.dropdown-content div {
+    padding: 12px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content div>a {
+    color: black;
+}
+
+.dropdown-content>div:nth-child(2):hover {
+    background-color: #1779ba;
+}
+
+.dropdown-content>div:nth-child(2):hover>a>p,
+.dropdown-content>div:nth-child(2):hover>a>p:nth-child(2) {
+    color: white;
+}
+
+.dropdown-content div:nth-child(4)>a>p:hover,
+.dropdown-content div:nth-child(6)>a>p:hover {
+    background-color: #1779ba;
+    color: white;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:first-child {
+    font-size: 15px;
+    margin: 0;
+}
+
+.dropdown-content>div:nth-child(2)>a>p:nth-child(2) {
+    font-size: 12px;
+    margin: 0;
+    color: grey;
+}
+/** END DROPDOWN-CONTENT CSS **/
+
+.caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 10px solid #f9f9f9;
+    margin-top: -34px;
+    margin-left: 126px;
+}
+
+.view-profile-wrapper {
+    padding-bottom: 0px !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 56px;
+    padding-top: 6px !important;
+}
+
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+}
+
+.input-search-field {
+    height: 33px;
+    width: 150px;
+    float: right;
+    margin-top: 12px !important;
+    margin-right: 19px !important;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+}
+
+.input-search-field:focus {
+    transition: all 0.4s ease-in-out;
+    border-color: #1779ba;
+    width: 200px;
+}
+
+/** START NAVBAR-LINKS CSS **/
+.navbar-links>li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 17px;
+    height: 40px;
+}
+
+.navbar-links>li>a {
+    color: white;
+}
+
+.navbar-links>li>a>span>.fa {
+    margin-right: 10px;
+}
+
+.navbar-links>li:nth-child(4)>a>span>.fa {
+    transform: rotate(20deg);
+}
+
+.navbar-links:first-child {
+    margin-left: 0px;
+}
+
+.navbar-links>li:hover {
+    border-bottom: solid white 3px;
+}
+/** END NAVBAR-LINKS CSS **/
+
+.list-item-style {
+    font-size: 13px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 16px;
+}
+
+.show {
+    display: block;
+    margin-left: -117px;
+    margin-top: 57px;
+}
+
+/***************************************/
+/*                                     */
+/*            END SECTION 3            */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*   SECTION 4 - Page Structure CSS    */
+/*                                     */
+/***************************************/
+
+/***************************************/
+/*                                     */
+/*            END SECTION 4            */
+/*                                     */
+/***************************************/
+
+.top-section-base {
+    float: left;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.bottom-section-base {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 45px;
+    float: left;
+}
+
+.profile-container {
+    width: 1225px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    height: 344px;
+}
+
+.profile-picture {
+    height: 200px;
+    width: 200px;
+    border-radius: 110px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    margin-left: 31px;
+    margin-top: -169px;
+}
+
+.tab-menu {
+    height: 100%;
+    margin-top: -31px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 631px;
+}
+
+.tab-menu > ul {
+    list-style: none;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.tab-menu li {
+    display: inline-block;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.tab-menu li:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 15px;
+}
+
+.tab-menu li a {
+    text-align: center;
+    font-weight: 700;
+}
+
+.tab-menu li a:hover {
+    color: #083554;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 16px/1 FontAwesome !important;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.add-16px-margin-left {
+    margin-left: 16px !important;
+}
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+.margin-right-8px {
+    margin-right: 8px;
+}
+
+.profile-section-caret {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 8.7px solid rgb(230, 230, 230);
+    display: block;
+    margin: 0 auto;
+}
+
+.profile-photos-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.profile-friends-container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.profile-photos-header {
+    width: 100%;
+    height: 66px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 13px;
+}
+
+.profile-friends-header {
+    width: 100%;
+    height: 66px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-top: 13px;
+}
+
+
+.profile-photos-header-text {
+    color: black;
+    display: inline-block;
+    font-size: 21px;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.profile-friends-header-text {
+    color: black;
+    display: inline-block;
+    font-size: 21px;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.fa.fa-camera-retro {
+    font: normal normal normal 21px/1 FontAwesome !important;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.fa.fa-users {
+    font: normal normal normal 21px/1 FontAwesome !important;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.profile-photos-view {
+    height: 100%;
+    padding-bottom: 10px;
+}
+
+.profile-friends-view {
+    height: 100%;
+    padding-top: 20px;
+}
+
+.loading-photos-gif {
+    width: 36px;
+    margin: 0 auto;
+    display: none;
+}
+
+.photo {
+    height: 195px;
+    width: 195px;
+    display: inline-block;
+    margin: 8px -6px -8px 9px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.friends-profile-picture {
+    height: 100%;
+    width: 100px;
+    background: dodgerblue;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.friend-list-element {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 393px;
+    height: 100px;
+}
+
+.name-and-friend-count {
+    display: inline-block;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.friend-status-button {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: #BDBDBD;
+    float: right;
+    margin-top: 37px;
+    margin-right: 5px;
+    color: white;
+    font-size: 14px;
+}
+
+.friend-status-button > i {
+    margin-right: 4px;
+}
+
+.mini-profile-view {
+    border-radius: 4px;
+    width: 290px;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.0980392);
+    background: white;
+    margin-left: 0px;
+    top: 218px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+    display: none;
+    z-index: 1;
+}
+
+.mini-profile-view-caret {
+    margin-left: 14px;
+    margin-top: -10px;
+    border-bottom: 10px solid gray;
+}
+
+.mini-profile-view-buttons {
+    width: 177px;
+    margin: 0 auto;
+}
+
+.profile-card-image-wrapper {
+    height: 150px;
+    padding: 16px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.profile-card-content-wrapper {
+    height: 100%;
+    padding: 16px;
+}
+
+.profile-picture {
+    height: 100px;
+    width: 100px;
+    margin-top: -68px;
+    margin-left: 76px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.users-full-name {
+    margin-top: 8px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.users-quote {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: -6px;
+}
+
+.add-friend-button {
+    border: solid 1px #1779ba;
+    border-radius: 4px;
+    padding-left: 6px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    color: white;
+    font-size: 13px;
+    background: #1779ba;
+}
+
+.add-friend-button:hover {
+    background: #0E6096;
+    color: white;
+}
+
+.add-friend-button>i {
+    font-size: 14px !important;
+    margin-right: 3px;
+}
+
+/*::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #D3D3D3;
+}*/
+
+@media (max-width: 1100px) {
+    .navbar-links>li>a>span.text {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .input-search-field {
+        display: none;
+    }
+}
+
+@media (max-width: 465px) {
+    .navbar-logo {
+        left: 65%;
+        transition: all 0.1s ease-in-out;
+    }
+}
+
+@media (max-width: 336px) {
+    .navbar-logo {
+        left: 80%;
+        transition: all 0.1s ease-in-out;
+    }
+}

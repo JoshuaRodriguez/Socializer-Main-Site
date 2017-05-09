@@ -1,0 +1,4 @@
+# /node_modules/* ignored by default
+
+# Ignore foundation-js files
+app_server/public/javascripts/foundation-js

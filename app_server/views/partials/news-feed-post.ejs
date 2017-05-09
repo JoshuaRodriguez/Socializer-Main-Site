@@ -1,0 +1,30 @@
+<div class="dashboard-news-feed-post-card">
+    <div class="dashboard-card-content-wrapper font-size-14px">
+        <div>
+            <span class="data-attr" data-user-id="<%= userPost.userId %>"></span>
+            <a class="user-picture" style="background-image: url(<%= userPost.profilePicture %>);"></a>
+            <p class="user-name"><%= userPost.name %></p>
+            <p class="time-elapsed"><%= userPost.timeElapsed %></p>
+            <div style="clear: both;"></div>
+            <p class="user-post"><%= userPost.postText %></p>
+            <% if (userPost.postedImage) { %>
+            <img class="image-post" src="<%= userPost.postedImage %>"></img>
+            <% } %>
+            <hr/>
+            <div>
+                <a class="interaction-button like"><i class="fa fa-thumbs-o-up margin-right-8px" aria-hidden="true"></i><%= pageText.like %></a>
+                <a class="interaction-button dislike"><i class="fa fa-thumbs-o-down margin-right-8px" aria-hidden="true"></i><%= pageText.dislike %></a>
+                <a class="interaction-button comment"><i class="fa fa-comment-o margin-right-8px" aria-hidden="true"></i><%= pageText.comment %></a>
+                <a class="interaction-button share"><i class="fa fa-share margin-right-8px" aria-hidden="true"></i><%= pageText.share %></a>
+            </div>
+            <div class="comment-feed"></div>
+            <div class="loading-user-comments">
+                <image src="images/ellipsis.gif" style="height: 36px; margin-top: 15px;"></image>
+            </div>
+            <div class="comment-box">
+                <a class="comment-box-user-picture" style="background-image: url(<%= loggedInUser.profilePicture %>);"></a>
+                <input class="input-comment-field" type="text" placeholder="<%= pageText.comment %>">
+            </div>
+        </div>
+    </div>
+</div>

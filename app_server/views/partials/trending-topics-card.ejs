@@ -1,0 +1,26 @@
+<div class="dashboard-card">
+    <div class="dashboard-card-content-wrapper font-size-14px">
+        <div>
+            <p class="dashboard-card-header">Trending Topics</p>
+            <small>.</small>
+            <a class="see-more-trends"><%= pageText.seeMore %></a>
+        </div>
+        <div>
+            <ul class="list-of-trending-topics">
+                <% trendingTopics.forEach(function(trendingTopic, index) { %>
+                <li>
+                    <div class="trending" style="display: inline-block; width: 100%;">
+                        <i class="fa fa-fire trend" aria-hidden="true"></i>
+                        <a href="" class="trending-topic"><%= trendingTopic.topicTitle %></a><i class="fa fa-times on-trending-topics" aria-hidden="true"></i>
+                        <% if (index != trendingTopics.length - 1) { %>
+                        <p style="font-size: 12px;"><%= trendingTopic.numberOfPeopleTalking %></p>
+                        <% } else { %>
+                        <p class="people-talking-about-trend"><%= trendingTopic.numberOfPeopleTalking %></p>
+                        <% } %>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>

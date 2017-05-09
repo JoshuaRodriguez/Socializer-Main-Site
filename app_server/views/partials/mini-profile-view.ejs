@@ -1,0 +1,13 @@
+<div class="mini-profile-view">
+    <div class="mini-profile-view-caret caret"></div>
+    <div class="profile-card-image-wrapper" style="background-image: url(<%= user.coverPhoto %>);"></div>
+    <div class="profile-card-content-wrapper">
+        <div class="profile-picture" style="background-image: url(<%= user.profilePicture %>);"></div>
+        <h6 class="users-full-name"><%= user.name %></h6>
+        <p class="users-quote"><%= user.quote %><P>
+        <div class="mini-profile-view-buttons">
+            <a class="add-friend-button"><i class="fa fa-plus" aria-hidden="true"></i><%= pageText.addFriend %></a>
+            <a class="add-friend-button"><i class="fa fa-envelope" aria-hidden="true"></i><%= pageText.messages.substring(0, 7) %></a>
+        </div>
+    </div>
+</div>

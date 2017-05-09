@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- META TAGS -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- END META TAGS -->
+
+        <!-- SITE TITLE -->
+        <title>Socializer</title>
+        <!-- END SITE TITLE -->
+
+        <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+        <!-- END FONTS -->
+
+        <!-- CSS FILES -->
+        <link rel="stylesheet" href="../../stylesheets/foundation-css/foundation.min.css" />
+        <link rel="stylesheet" href="../../stylesheets/font-awesome/font-awesome.min.css" />
+        <link rel="stylesheet" href="../../stylesheets/user-profile-page.css"/>
+        <!-- END CSS FILES -->
+    </head>
+    <body>
+        <!-- SITE HEADER -->
+        <div class="site-header">
+            <!-- NEWS FEED PAGE NAVBAR -->
+            <%- include("../partials/site-navbar.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
+            <!-- END NEWS FEED PAGE NAVBAR -->
+        </div>
+        <!-- END SITE HEADER -->
+
+        <!-- SITE CONTENT -->
+        <div class="site-content">
+            <div class="profile-container">
+                <%- include("../partials/user-profile-page-header.ejs", { loggedInUser: loggedInUser, pageText: pageText }); %>
+                <div class="profile-friends-container">
+                    <div class="profile-friends-header">
+                        <h4 class="profile-friends-header-text"><i class="fa fa-users" aria-hidden="true"></i>Friends</h4>
+                    </div>
+                    <div class="profile-friends-view">
+                        <ul style="list-style: none;">
+                            <li style="display: inline-block;">
+                                <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="4"></span>
+                                    <a class="friends-profile-picture" style="background-image: url(../../images/christian.jpg);"></a>
+                                    <div class="name-and-friend-count">
+                                        <a href="" style="font-size:14px; font-weight: bold;">Christian Castilla</a>
+                                        <p style="font-size: 14px;">89 friends</p>
+                                    </div>
+                                    <a class="friend-status-button"><i class="fa fa-check" aria-hidden="true"></i>Friends</a>
+                                </div>
+                            </li>
+                            <li style="display: inline-block;">
+                                <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="5"></span>
+                                    <a class="friends-profile-picture" style="background-image: url(../../images/kyle.jpg);"></a>
+                                    <div class="name-and-friend-count">
+                                        <a href="" style="font-size:14px; font-weight: bold;">Kyle Blasingame</a>
+                                        <p style="font-size: 14px;">120 friends</p>
+                                    </div>
+                                    <a class="friend-status-button"><i class="fa fa-check" aria-hidden="true"></i>Friends</a>
+                                </div>
+                            </li>
+                            <li style="display: inline-block;">
+                                <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="3"></span>
+                                    <a class="friends-profile-picture" style="background-image: url(../../images/random-girl.jpg);"></a>
+                                    <div class="name-and-friend-count">
+                                        <a href="" style="font-size:14px; font-weight: bold;">Phoebe Toshiko</a>
+                                        <p style="font-size: 14px;">978 friends</p>
+                                    </div>
+                                    <a class="friend-status-button"><i class="fa fa-check" aria-hidden="true"></i>Friends</a>
+                                </div>
+                            </li>
+                            <li style="display: inline-block;">
+                                <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="2"></span>
+                                    <a class="friends-profile-picture" style="background-image: url(../../images/random-guy.jpg);"></a>
+                                    <div class="name-and-friend-count">
+                                        <a href="" style="font-size:14px; font-weight: bold;">Joshua Rodriguez-Santiago</a>
+                                        <p style="font-size: 14px;">320 friends</p>
+                                    </div>
+                                    <a class="friend-status-button"><i class="fa fa-check" aria-hidden="true"></i>Friends</a>
+                                </div>
+                            </li>
+                            <li style="display: inline-block;">
+                                <div class="friend-list-element">
+                                    <span class="data-attr" data-user-id="6"></span>
+                                    <a class="friends-profile-picture" style="background-image: url(../../images/abdullah.jpg);"></a>
+                                    <div class="name-and-friend-count">
+                                        <a href="" style="font-size:14px; font-weight: bold;">Abdullah Hamad Almoqbil</a>
+                                        <p style="font-size: 14px;">2450 friends</p>
+                                    </div>
+                                    <a class="friend-status-button"><i class="fa fa-check" aria-hidden="true"></i>Friends</a>
+                                </div>
+                            </li>
+                        </ul>
+                    <div>
+                </div>
+            </div>
+        </div>
+        <!-- END SITE CONTENT -->
+
+        <!-- BACK TO TOP ARROW -->
+        <a class="back-to-top" href="#top">
+            <div class="arrow-box">
+                <i class="fa fa-arrow-up large-arrow" aria-hidden="true"></i>
+            </div>
+        </a>
+        <!-- END BACK TO TOP ARROW -->
+
+        <!-- SITE FOOTER -->
+        <div class="site-footer"></div>
+        <!-- END SITE FOOTER -->
+
+        <!-- JAVASCRIPT FILES -->
+        <script type="text/javascript" src="../../javascripts/foundation-js/jquery.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/foundation.min.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/what-input.js"></script>
+        <script type="text/javascript" src="../../javascripts/foundation-js/run-foundation.js"></script>
+        <script type="text/javascript" src="../../javascripts/user-profile-page.js"></script>
+        <!-- END JAVASCRIPT FILES -->
+    </body>
+</html>

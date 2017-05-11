@@ -1,7 +1,7 @@
-var ejs = require("ejs");
-var pageText = require("../global/page-text.js");
+let ejs = require("ejs");
+let pageText = require("../global/page-text.js");
 
-var setLang = function(req, res) {
+let setLang = function (req, res) {
     if (req.query.lang) {
         if (req.query.lang === "spanish") {
             req.app.set("setLang", "spanish");
@@ -12,18 +12,18 @@ var setLang = function(req, res) {
     }
 };
 
-var fetchNewsFeedPosts = function(req, res) {
-    var templatePath = "app_server/views/partials/news-feed-post.ejs";
+let fetchNewsFeedPosts = function (req, res) {
+    let templatePath = "app_server/views/partials/news-feed-post.ejs";
 
-    var lang = req.app.get("setLang");
+    let lang = req.app.get("setLang");
 
-    var loggedInUser = {
+    let loggedInUser = {
         userId: 1,
         name: "Daniel Castilla",
         profilePicture: "/images/random-guy-2.jpg"
     };
 
-    var sampleUserPosts = [{
+    let sampleUserPosts = [{
         userId: 1,
         name: "Daniel Castilla",
         profilePicture: "/images/random-guy-2.jpg",
@@ -46,22 +46,25 @@ var fetchNewsFeedPosts = function(req, res) {
         postedImage: ""
     }];
 
-    var templateData = {
+    let templateData = {
         loggedInUser: loggedInUser,
         pageText: pageText("homePage", lang)
     };
 
-    var callback = function(err, data) {
+    let callback = function (err, data) {
         if (!err) {
             htmlData += data;
         } else {
-            res.status(500).send({ "message": "Internal Server Error", "error": err });
+            res.status(500).send({
+                "message": "Internal Server Error",
+                "error": err
+            });
         }
     };
 
-    var htmlData = "";
+    let htmlData = "";
 
-    for (var i = 0; i < Math.floor(Math.random() * 20); i++) {
+    for (let i = 0; i < Math.floor(Math.random() * 20); i++) {
         templateData.userPost = sampleUserPosts[Math.floor(Math.random() * 3)];
         ejs.renderFile(templatePath, templateData, callback);
     }
@@ -69,10 +72,10 @@ var fetchNewsFeedPosts = function(req, res) {
     res.status(200).send(htmlData);
 };
 
-var fetchUserComments = function(req, res) {
-    var templatePath = "app_server/views/partials/user-comment-in-feed.ejs";
+let fetchUserComments = function (req, res) {
+    let templatePath = "app_server/views/partials/user-comment-in-feed.ejs";
 
-    var sampleUserComments = [{
+    let sampleUserComments = [{
         userId: 1,
         name: "Daniel Castilla",
         profilePicture: "/images/random-guy-2.jpg",
@@ -94,19 +97,22 @@ var fetchUserComments = function(req, res) {
         commentText: "Not sure how I feel about that..."
     }];
 
-    var callback = function(err, data) {
+    let callback = function (err, data) {
         if (!err) {
             htmlData += data;
         } else {
-            res.status(500).send({ "message": "Internal Server Error", "error": err });
+            res.status(500).send({
+                "message": "Internal Server Error",
+                "error": err
+            });
         }
     };
 
-    var templateData = {};
+    let templateData = {};
 
-    var htmlData = "";
+    let htmlData = "";
 
-    for (var i = 0; i < Math.floor(Math.random() * 20); i++) {
+    for (let i = 0; i < Math.floor(Math.random() * 20); i++) {
         templateData.user = sampleUserComments[Math.floor(Math.random() * 3)];
         ejs.renderFile(templatePath, templateData, callback);
     }
@@ -114,16 +120,16 @@ var fetchUserComments = function(req, res) {
     res.status(200).send(htmlData);
 };
 
-var fetchMiniProfileView = function(req, res) {
-    var templatePath = "app_server/views/partials/mini-profile-view.ejs";
+let fetchMiniProfileView = function (req, res) {
+    let templatePath = "app_server/views/partials/mini-profile-view.ejs";
 
-    var lang = req.app.get("setLang");
+    let lang = req.app.get("setLang");
 
-    var userId = req.body.userId;
+    let userId = req.body.userId;
 
-    var miniProfileView = "";
+    let miniProfileView = "";
 
-    var sampleUsers = [{
+    let sampleUsers = [{
         userId: 1,
         name: "Daniel Castilla",
         profilePicture: "/images/random-guy-2.jpg",
@@ -185,21 +191,24 @@ var fetchMiniProfileView = function(req, res) {
         coverPhoto: "/images/programming-cover-photo.png"
     }];
 
-    var templateData = {
+    let templateData = {
         pageText: pageText("homePage", lang)
     };
 
-    for (var index = 0; index < sampleUsers.length; index++) {
+    for (let index = 0; index < sampleUsers.length; index++) {
         if (sampleUsers[index].userId == userId) {
             templateData.user = sampleUsers[index];
         }
     }
 
-    var callback = function(err, data) {
+    let callback = function (err, data) {
         if (!err) {
             miniProfileView = data;
         } else {
-            res.status(500).send({ "message": "Internal Server Error", "error": err });
+            res.status(500).send({
+                "message": "Internal Server Error",
+                "error": err
+            });
         }
     };
 

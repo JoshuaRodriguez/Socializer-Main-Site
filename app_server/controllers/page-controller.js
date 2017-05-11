@@ -1,7 +1,14 @@
-var pageText = require("../global/page-text.js");
+let pageText = require("../global/page-text.js");
 
-var homePageDummyData = function(lang) {
+let landingPageDummyData = function(lang) {
     return {
+        pageText: pageText("landingPage", lang)
+    };
+};
+
+let homePageDummyData = function (lang, currentPath) {
+    return {
+        currentPath: currentPath,
         pageText: pageText("homePage", lang),
         loggedInUser: {
             userId: 1,
@@ -17,7 +24,7 @@ var homePageDummyData = function(lang) {
             profilePicture: "../images/random-guy.jpg",
             timeElapsed: "10m",
             postText: "Etiam eget elit vel dui vehicula lacinia nec nec mauris. Donec cursus porttitor risus ut laoreet. Nam dapibus leo felis, non lacinia nisl dignissim at. " +
-            "Ut maximus sollicitudin ligula, eget efficitur lacus fermentum non. Fusce dapibus imperdiet suscipit.",
+                "Ut maximus sollicitudin ligula, eget efficitur lacus fermentum non. Fusce dapibus imperdiet suscipit.",
             postedImage: ""
         }, {
             userId: 3,
@@ -66,25 +73,26 @@ var homePageDummyData = function(lang) {
         possibleFriends: [{
             userId: 4,
             name: "Christian Castilla",
-            profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032914_1341682239188761_1208149176963666741_n.jpg?oh=fe8d9971188ec420de4dc9753487a867&oe=591C0E56"
+            profilePicture: "../images/christian.jpg"
         }, {
             userId: 5,
             name: "Kyle Blasingame",
-            profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/15032289_1133493216748605_769622635020935443_n.jpg?oh=f4d4a46c62368787d243e6969dc2343c&oe=5912CDF3"
+            profilePicture: "../images/kyle.jpg"
         }, {
             userId: 6,
             name: "Abdullah Hamad Almoqbil",
-            profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/67745_1329335653324_4607492_n.jpg?oh=6cb9d324cbac2906626e0c7cdbb5fe53&oe=5901D790"
+            profilePicture: "../images/abdullah.jpg"
         }, {
             userId: 7,
             name: "Asaif Aamir",
-            profilePicture: "https://scontent-mia1-2.xx.fbcdn.net/v/t1.0-9/12122630_10207379515663022_4169579083574170794_n.jpg?oh=85d02339695c6c26d33cf10aa9c63b53&oe=594A533B"
+            profilePicture: "../images/asaif.jpg"
         }]
     };
 };
 
-var userProfilePageDummyData = function(lang) {
+let userProfilePageDummyData = function (lang, currentPath) {
     return {
+        currentPath: currentPath,
         pageText: pageText("userProfilePage", lang),
         loggedInUser: {
             userId: 1,
@@ -93,36 +101,35 @@ var userProfilePageDummyData = function(lang) {
             quote: "Saving lives is my motto",
             profilePicture: "../images/random-guy-2.jpg",
             coverPhoto: "../images/campfire.jpg"
-        }
+        },
+
     };
 };
 
-var landingPage = function(req, res) {
-    var lang = req.app.get("setLang");
-    res.render("landing-page/landing-page", pageText("landingPage", lang));
+let renderRequestedPage = function (req, res, path, data) {
+    let lang = req.app.get("setLang");
+    let currentPath = res.locals.currentPath;
+    res.render(path, data(lang, currentPath));
 };
 
-var userHomePage = function(req, res) {
-    var lang = req.app.get("setLang");
-    res.render("user-news-feed-page/user-news-feed", homePageDummyData(lang));
+let landingPage = function (req, res) {
+    renderRequestedPage(req, res, "landing-page/landing-page", landingPageDummyData);
 };
 
-var userProfilePage = function(req, res) {
-    var lang = req.app.get("setLang");
-    res.render("user-profile-pages/timeline", userProfilePageDummyData(lang));
+let userHomePage = function (req, res) {
+    renderRequestedPage(req, res, "user-news-feed-page/user-news-feed", homePageDummyData);
 };
 
-var userProfileSection = function(req, res, next) {
-    var lang = req.app.get("setLang");
-    var section = req.params.section;
-    var sectionNames = ["timeline", "about", "friends", "photos", "videos", "groups"];
+let userProfilePage = function (req, res) {
+    renderRequestedPage(req, res, "user-profile-pages/timeline", userProfilePageDummyData);
+};
 
-    if (sectionNames.includes(section)) {
-        res.render("user-profile-pages/" + section, userProfilePageDummyData(lang));
+let userProfileSection = function (req, res, next) {
+    if (res.locals.profileSections.includes(req.params.section)) {
+        renderRequestedPage(req, res, "user-profile-pages/" + req.params.section, userProfilePageDummyData);
     } else {
         next();
     }
-
 };
 
 module.exports = {

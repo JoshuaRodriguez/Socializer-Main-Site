@@ -23,8 +23,8 @@
     <body>
         <!-- SITE-HEADER -->
         <div class="site-header">
-            <h3 class="site-logo"><%= siteLogo %></h3>
-            <button class="hollow signin button" data-open="signinModal"><%= signinButtonText %></button>
+            <h3 class="site-logo"><%= pageText.siteLogo %></h3>
+            <button class="hollow signin button" data-open="signinModal"><%= pageText.signinButtonText %></button>
         </div>
         <!-- END SITE-HEADER -->
 
@@ -33,28 +33,28 @@
 
             <!-- BACKGROUND IMAGE -->
             <div class="background-image">
-                <h2 class="head-line"><%= headLine %></h2>
-                <h4 class="sub-head-line"><%= subheadLine %></h4>
+                <h2 class="head-line"><%= pageText.headLine %></h2>
+                <h4 class="sub-head-line"><%= pageText.subheadLine %></h4>
             </div>
             <!-- BACKGROUND IMAGE -->
 
             <!-- LOGIN MODAL -->
             <div class="reveal animated fadeInDown" style="border-radius: 3px;" id="signinModal" data-reveal>
                 <form>
-                    <p class="modal window text"><%= signinButtonText %></p>
+                    <p class="modal window text"><%= pageText.signinButtonText %></p>
                     <div class="row">
                         <div class="large-12 columns">
-                            <input type="email" name="email" class="input field" placeholder="<%= emailFieldText %>" required>
+                            <input type="email" name="email" class="input field" placeholder="<%= pageText.emailFieldText %>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="large-12 columns">
-                            <input type="password" name="password" class="input field" placeholder="<%= passwordFieldText %>" required>
+                            <input type="password" name="password" class="input field" placeholder="<%= pageText.passwordFieldText %>" required>
                         </div>
                     </div>
-                    <input id="checkbox" type="checkbox"><label for="checkbox1"><%= rememberMe %></label>
-                    <a class="modal reset text"><%= resetPassword %></a>
-                    <button class="button primary sign in"><%= signinButtonText %></button>
+                    <input id="checkbox" type="checkbox"><label for="checkbox1"><%= pageText.rememberMe %></label>
+                    <a class="modal reset text"><%= pageText.resetPassword %></a>
+                    <button class="button primary sign in"><%= pageText.signinButtonText %></button>
                 </form>
                 <button class="close-button" data-close aria-label="Close modal" type="button">
                     <span aria-hidden="true">&times;</span>
@@ -65,17 +65,17 @@
             <!-- SECTION ONE BLOCK -->
             <div class="section-one">
                 <p>
-                    <%= sectionOneText['part-1'] %>
-                    <b class='blue-bolded-text'><%= sectionOneText['blue-bolded-text'] %></b>
-                    <%= sectionOneText['part-2'] %>
-                    <b><%= sectionOneText['bolded-text-1'] %>
-                    </b> <%= sectionOneText['part-3'] %> <b>
-                        <%= sectionOneText['bolded-text-2'] %></b>.
-                    <%= sectionOneText['part-4'] %> <b>
-                        <%= sectionOneText['bolded-text-3'] %></b>.
-                    <%= sectionOneText['part-5'] %>
+                    <%= pageText.sectionOneText['part-1'] %>
+                    <b class='blue-bolded-text'><%= pageText.sectionOneText['blue-bolded-text'] %></b>
+                    <%= pageText.sectionOneText['part-2'] %>
+                    <b><%= pageText.sectionOneText['bolded-text-1'] %>
+                    </b> <%= pageText.sectionOneText['part-3'] %> <b>
+                        <%= pageText.sectionOneText['bolded-text-2'] %></b>.
+                    <%= pageText.sectionOneText['part-4'] %> <b>
+                        <%= pageText.sectionOneText['bolded-text-3'] %></b>.
+                    <%= pageText.sectionOneText['part-5'] %>
                 </p>
-                <button class="create profile button primary" href=""><%= createProfileButtonText %></button>
+                <button class="create profile button primary" href=""><%= pageText.createProfileButtonText %></button>
             </div>
             <!-- END SECTION ONE BLOCK -->
 
@@ -88,7 +88,7 @@
 
         <!-- SITE FOOTER -->
         <div class="site-footer">
-            <p class="copyright"><%= siteFooterCopyright %></p>
+            <p class="copyright"><%= pageText.siteFooterCopyright %></p>
         </div>
         <!-- END SITE FOOTER -->
 

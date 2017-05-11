@@ -1,6 +1,6 @@
 var globalStrings = require("./global-strings");
 
-module.exports = function(requestedPage, lang) {
+module.exports = function (requestedPage, lang) {
 
     var pages = {
         "landingPage": {

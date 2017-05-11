@@ -4,12 +4,12 @@
         <div class="profile-picture" style="background-image: url(../../images/random-guy-2.jpg);"></div>
         <div class="tab-menu">
             <ul>
-                <li><a href="/<%= loggedInUser.userName %>"><%= pageText.timeLine %></a></li>
-                <li><a href="/<%= loggedInUser.userName %>/about"><%= pageText.about %></a><span class="profile-section-caret"></span></li>
-                <li><a href="/<%= loggedInUser.userName %>/friends"><%= pageText.friends %></a></li>
-                <li><a href="/<%= loggedInUser.userName %>/photos"><%= pageText.photos %></a></li>
-                <li><a href="/<%= loggedInUser.userName %>/videos"><%= pageText.videos %></a></li>
-                <li><a href="/<%= loggedInUser.userName %>/groups"><%= pageText.socializerGroups %></a></li>
+                <li><a href="/<%= loggedInUser.userName %>"><%= pageText.timeLine %></a><span class="<%= currentPath.indexOf(loggedInUser.userName) || currentPath.indexOf('/timeline') != -1 ? 'profile-section-caret' : '' %>"></span></li>
+                <li><a href="/<%= loggedInUser.userName %>/about"><%= pageText.about %></a><span class="<%= currentPath.indexOf('/about') != -1 ? 'profile-section-caret' : '' %>"></span></li>
+                <li><a href="/<%= loggedInUser.userName %>/friends"><%= pageText.friends %></a><span class="<%= currentPath.indexOf('/friends') != -1 ? 'profile-section-caret' : '' %>"></span></li>
+                <li><a href="/<%= loggedInUser.userName %>/photos"><%= pageText.photos %></a><span class="<%= currentPath.indexOf('/photos') != -1 ? 'profile-section-caret' : '' %>"></span></li>
+                <li><a href="/<%= loggedInUser.userName %>/videos"><%= pageText.videos %></a><span class="<%= currentPath.indexOf('/videos') != -1 ? 'profile-section-caret' : '' %>"></span></li>
+                <li><a href="/<%= loggedInUser.userName %>/groups"><%= pageText.socializerGroups %></a><span class="<%= currentPath.indexOf('/groups') != -1 ? 'profile-section-caret' : '' %>"></span></li>
             </ul>
         </div>
     </div>

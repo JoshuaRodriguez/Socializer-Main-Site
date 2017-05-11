@@ -48,7 +48,7 @@ module.exports = {
         "about": "About",
         "photos": "Photos",
         "videos": "Videos",
-        "socializer-groups":"Socializer Groups"
+        "socializer-groups": "Socializer Groups"
     },
     spanish: {
         "site-logo-text": "Socializer",
@@ -99,6 +99,6 @@ module.exports = {
         "about": "Información",
         "photos": "Fotos",
         "videos": "Vídeos",
-        "socializer-groups":"Groupos Socializer"
+        "socializer-groups": "Groupos Socializer"
     }
 };

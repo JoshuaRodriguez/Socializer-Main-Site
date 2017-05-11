@@ -1,6 +1,6 @@
-var express = require("express");
-var router = express.Router();
-var renderController = require("../controllers/render-controller.js");
+let express = require("express");
+let router = express.Router();
+let renderController = require("../controllers/render-controller.js");
 
 router.get("/setLang", renderController.setLang);
 router.get("/fetchNewsFeedPosts", renderController.fetchNewsFeedPosts);

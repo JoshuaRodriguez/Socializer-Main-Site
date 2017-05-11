@@ -1,6 +1,6 @@
-var express = require("express");
-var router = express.Router();
-var pageController = require("../controllers/page-controller.js");
+let express = require("express");
+let router = express.Router();
+let pageController = require("../controllers/page-controller.js");
 
 router.get("/", pageController.landingPage);
 router.get("/home", pageController.userHomePage);

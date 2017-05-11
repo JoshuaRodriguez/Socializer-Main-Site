@@ -286,6 +286,8 @@ html {
 
 .navbar-links>li>a {
     color: white;
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 
 .navbar-links>li>a>span>.fa {
@@ -817,6 +819,9 @@ a.see-more-trends:hover {
 @media (max-width: 1100px) {
     .navbar-links>li>a>span.text {
         display: none;
+    }
+    .navbar-links>li>a>span.icon>i {
+        margin: 0px;
     }
 }
 

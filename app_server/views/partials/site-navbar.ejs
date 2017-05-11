@@ -12,9 +12,7 @@
             <div class="caret"></div>
             <div class="view-profile-wrapper">
                 <a href="/<%= loggedInUser.userName %>">
-                    <% var name = loggedInUser.name; %>
-                    <% var whiteSpaceIndex = name.indexOf(" "); %>
-                    <% name = name.substring(0, whiteSpaceIndex); %>
+                    <% name = loggedInUser.name.substring(0, loggedInUser.name.indexOf(" ")); %>
                     <p class="add-16px-margin-left"><%= (name || loggedInUser.name) %></p>
                     <p class="add-16px-margin-left"><%= pageText.viewProfile %></p>
                 </a>

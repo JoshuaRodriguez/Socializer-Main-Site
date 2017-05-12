@@ -126,48 +126,30 @@
         loadingGif.show();
     };
 
-    $("body").on("click", "a.view-more-comments", function () {
+    $("div.dashboard-center").on("click", "a.view-more-comments", function () {
         var $viewMoreComments = $(this);
         var $commentFeed = $(this).parent();
         var $loadingGif = $viewMoreComments.children("img");
         loadCommentSection($commentFeed, $viewMoreComments, $loadingGif, false);
     });
 
-    $("div.dashboard-center").on("click", "a.interaction-button.comment, a.interaction-button.comment > .fa", function() {
-        var $parentDiv = $(this).parent("div");
+    $("div.dashboard-center").on("click", "a.interaction-button.comment, a.interaction-button.comment > .fa", function(event) {
+        var $this = $(this);
+        var $parentDiv = $this.parent("div");
         var $commentBox = $parentDiv.siblings(".comment-box");
         var $commentFeed = $parentDiv.siblings(".comment-feed");
         var $viewMoreComments = $commentFeed.children("a.view-more-comments");
         var $loadingGif = $parentDiv.siblings(".loading-user-comments");
         $commentBox.show();
+        $this.removeClass("interaction-button comment");
+        $this.addClass("loading-disabled comment");
         loadCommentSection($commentFeed, $viewMoreComments, $loadingGif);
-        $(this).addClass("no-more-loading");
     });
-
-    // $("body").on("click", "a.interaction-button", function (event) {
-    //     var $parentDiv = $(this).parent("div");
-    //     var $commentBox = $parentDiv.siblings(".comment-box");
-    //     var $commentFeed = $parentDiv.siblings(".comment-feed");
-    //     var $viewMoreComments = $commentFeed.children("a.view-more-comments");
-    //     var $loadingGif = $parentDiv.siblings(".loading-user-comments");
-    //     var eTarget = event.target;
-
-    //     if (eTarget.matches("a.interaction-button.comment") || eTarget.matches("a.interaction-button.comment > .fa")) {
-    //         $commentBox.show();
-    //         loadCommentSection($commentFeed, $viewMoreComments, $loadingGif, true);
-    //     } else if (eTarget.matches("a.interaction-button.like") || eTarget.matches("a.interaction-button.like > .fa")) {
-    //         // LIKED POST
-    //     } else if (eTarget.matches("a.interaction-button.dislike") || eTarget.matches("a.interaction-button.dislike > .fa")) {
-    //         // DISLIKED POST
-    //     } else if (eTarget.matches("a.interaction-button.share") || eTarget.matches("a.interaction-button.share > .fa")) {
-    //         // SHARED POST
-    //     }
-    // });
 })();
 
 /** MOUSE OVER PROFILE PICTURE ON POST FUNCTIONALITY **/
 (function () {
-    $(document).on("mouseover", "a.user-picture, a.possible-friend-picture", function () {
+    $("body").on("mouseover", "a.user-picture, a.possible-friend-picture", function () {
         var $pictureEl = $(this);
         var $userId = $pictureEl.siblings(".data-attr").data().userId;
         var $newsFeedPostImageTop = $pictureEl.position().top;
@@ -195,7 +177,7 @@
             });
         }, 500);
 
-        $(document).on("mouseout", "a.user-picture, a.possible-friend-picture, .mini-profile-view", function () {
+        $("body").on("mouseout", "a.user-picture, a.possible-friend-picture, .mini-profile-view", function () {
             clearTimeout(timeoutId);
             var $currentElement = $(this);
             if ($currentElement.is("a.user-picture") || $currentElement.is("a.possible-friend-picture")) {
@@ -208,7 +190,7 @@
             }
         });
 
-        $(document).on("mouseover", ".mini-profile-view", function () {
+        $("body").on("mouseover", ".mini-profile-view", function () {
             $(this).stop(true, true).show();
         });
     });

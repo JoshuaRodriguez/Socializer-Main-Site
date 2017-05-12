@@ -17,9 +17,14 @@
                 <a class="interaction-button comment"><i class="fa fa-comment-o margin-right-8px" aria-hidden="true"></i><%= pageText.comment %></a>
                 <a class="interaction-button share"><i class="fa fa-share margin-right-8px" aria-hidden="true"></i><%= pageText.share %></a>
             </div>
-            <div class="comment-feed"></div>
+            <div class="comment-feed">
+                <a class="view-more-comments" style="text-decoration: underline; margin-left: 5px;">
+                    View more comments
+                    <img src="/images/view-more-comments-loading.gif" style="margin-left: 5px; margin-top: -5px; display: none;"></img>
+                </a>
+            </div>
             <div class="loading-user-comments">
-                <image src="images/ellipsis.gif" style="height: 36px; margin-top: 15px;"></image>
+                <img src="images/ellipsis.gif" style="height: 36px; margin-top: 15px;"></img>
             </div>
             <div class="comment-box">
                 <a class="comment-box-user-picture" style="background-image: url(<%= loggedInUser.profilePicture %>);"></a>

@@ -1,8 +1,8 @@
-var globalStrings = require("./global-strings");
+let globalStrings = require("./global-strings");
 
 module.exports = function (requestedPage, lang) {
 
-    var pages = {
+    let pages = {
         "landingPage": {
             "siteLogo": globalStrings[lang]["site-logo-text"],
             "headLine": globalStrings[lang]["main-page-headline"],

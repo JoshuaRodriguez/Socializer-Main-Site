@@ -46,7 +46,7 @@
                         $loading.before(data);
                         $loading.hide();
                         fetching = false;
-                    }, 200);
+                    }, 500);
                 });
             $loading.show();
         }
@@ -114,34 +114,55 @@
 
 /** USER POST INTERACTIONS FUNCTIONALITY **/
 (function () {
-    var loadCommentSection = function (commentFeed, loadingGif) {
+    var loadCommentSection = function (commentFeed, viewMoreComments, loadingGif) {
         $.get("render/fetchUserComments")
             .done(function (data) {
-                commentFeed.append(data);
-                commentFeed.show();
-                loadingGif.hide();
+                setTimeout(function() {
+                    viewMoreComments.before(data);
+                    commentFeed.show();
+                    loadingGif.hide();
+                }, 1000);
             });
         loadingGif.show();
     };
 
-    $("body").on("click", "a.interaction-button", function (event) {
+    $("body").on("click", "a.view-more-comments", function () {
+        var $viewMoreComments = $(this);
+        var $commentFeed = $(this).parent();
+        var $loadingGif = $viewMoreComments.children("img");
+        loadCommentSection($commentFeed, $viewMoreComments, $loadingGif, false);
+    });
+
+    $("div.dashboard-center").on("click", "a.interaction-button.comment, a.interaction-button.comment > .fa", function() {
         var $parentDiv = $(this).parent("div");
         var $commentBox = $parentDiv.siblings(".comment-box");
         var $commentFeed = $parentDiv.siblings(".comment-feed");
+        var $viewMoreComments = $commentFeed.children("a.view-more-comments");
         var $loadingGif = $parentDiv.siblings(".loading-user-comments");
-        var eTarget = event.target;
-
-        if (eTarget.matches("a.interaction-button.comment") || eTarget.matches("a.interaction-button.comment > .fa")) {
-            $commentBox.show();
-            loadCommentSection($commentFeed, $loadingGif);
-        } else if (eTarget.matches("a.interaction-button.like") || eTarget.matches("a.interaction-button.like > .fa")) {
-            // LIKED POST
-        } else if (eTarget.matches("a.interaction-button.dislike") || eTarget.matches("a.interaction-button.dislike > .fa")) {
-            // DISLIKED POST
-        } else if (eTarget.matches("a.interaction-button.share") || eTarget.matches("a.interaction-button.share > .fa")) {
-            // SHARED POST
-        }
+        $commentBox.show();
+        loadCommentSection($commentFeed, $viewMoreComments, $loadingGif);
+        $(this).addClass("no-more-loading");
     });
+
+    // $("body").on("click", "a.interaction-button", function (event) {
+    //     var $parentDiv = $(this).parent("div");
+    //     var $commentBox = $parentDiv.siblings(".comment-box");
+    //     var $commentFeed = $parentDiv.siblings(".comment-feed");
+    //     var $viewMoreComments = $commentFeed.children("a.view-more-comments");
+    //     var $loadingGif = $parentDiv.siblings(".loading-user-comments");
+    //     var eTarget = event.target;
+
+    //     if (eTarget.matches("a.interaction-button.comment") || eTarget.matches("a.interaction-button.comment > .fa")) {
+    //         $commentBox.show();
+    //         loadCommentSection($commentFeed, $viewMoreComments, $loadingGif, true);
+    //     } else if (eTarget.matches("a.interaction-button.like") || eTarget.matches("a.interaction-button.like > .fa")) {
+    //         // LIKED POST
+    //     } else if (eTarget.matches("a.interaction-button.dislike") || eTarget.matches("a.interaction-button.dislike > .fa")) {
+    //         // DISLIKED POST
+    //     } else if (eTarget.matches("a.interaction-button.share") || eTarget.matches("a.interaction-button.share > .fa")) {
+    //         // SHARED POST
+    //     }
+    // });
 })();
 
 /** MOUSE OVER PROFILE PICTURE ON POST FUNCTIONALITY **/

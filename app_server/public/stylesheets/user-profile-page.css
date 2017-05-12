@@ -330,19 +330,6 @@ html {
     height: 344px;
 }
 
-.profile-picture {
-    height: 200px;
-    width: 200px;
-    border-radius: 110px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    border: 5px solid #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-    margin-left: 31px;
-    margin-top: -169px;
-}
-
 .tab-menu {
     height: 100%;
     margin-top: -31px;
@@ -559,11 +546,11 @@ html {
 }
 
 .profile-picture {
-    height: 100px;
-    width: 100px;
-    margin-top: -68px;
+    height: 180px;
+    width: 180px;
+    margin-top: -150px;
     margin-left: 76px;
-    border-radius: 50px;
+    border-radius: 90px;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;

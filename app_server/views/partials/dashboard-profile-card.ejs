@@ -1,7 +1,9 @@
 <div class="dashboard-profile-card">
     <div class="profile-card-image-wrapper" style="background-image: url(<%= loggedInUser.coverPhoto %>);"></div>
     <div class="profile-card-content-wrapper">
-        <div class="profile-picture" style="background-image: url(<%= loggedInUser.profilePicture %>);"></div>
+        <div class="profile-picture" style="background-image: url(<%= loggedInUser.profilePicture %>);">
+            <a href="/<%= loggedInUser.userName %>" style="height: 100px; width: 100px; display: block; border-radius: 50px;"></a>
+        </div>
         <h6 class="users-full-name"><%= loggedInUser.name %></h6>
         <p class="users-quote"><%= loggedInUser.quote %><p>
         <ul class="friends-and-groups-listing">
